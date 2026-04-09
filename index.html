@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manoj Achari — Portfolio</title>
+  <meta name="description" content="Founding Product Designer & Product Manager. I help startups ship products that are beautifully designed and strategically sound." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─────────────────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────────────────── */
+    :root {
+      --dark:           #111111;
+      --dark-60:        #11111199;
+      --dark-12:        #1111111f;
+      --dark-4:         #1111110b;
+      --white:          #ffffff;
+      --white-60:       #ffffff99;
+      --white-12:       #ffffff1f;
+      --accent:         #EE502D;
+      --font-display:   'Big Shoulders Display', sans-serif;
+      --font-body:      'Archivo', sans-serif;
+      --pad-x:          60px;
+    }
+
+    /* ─────────────────────────────────────────────────
+       RESET
+    ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; width: 100%; height: auto; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ─────────────────────────────────────────────────
+       LAYOUT HELPERS
+    ───────────────────────────────────────────────── */
+    .outer {
+      width: 100%;
+      padding-left: var(--pad-x);
+      padding-right: var(--pad-x);
+    }
+    .spacer-10  { height: 10dvh; }
+    .spacer-15  { height: 15dvh; }
+    .spacer-4   { height:  4dvh; }
+    .spacer-3   { height:  3dvh; }
+    .spacer-40  { height: 40px; }
+
+    /* ─────────────────────────────────────────────────
+       DECORATIVE DIVIDER  (line + 2 dots)
+    ───────────────────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 0;
+    }
+    .divider .line {
+      flex: 1;
+      height: 2px;
+      background: var(--dark-12);
+      transform-origin: left center;
+      transform: scaleX(0);
+      transition: transform 1.2s cubic-bezier(.4,.4,0,1);
+    }
+    .divider .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--dark-12);
+      margin-left: 8px;
+      transform: scale(0);
+      transition: transform 1.2s cubic-bezier(.4,.4,0,1) 500ms;
+    }
+    .divider.dark-bg .line { background: var(--white-12); }
+    .divider.dark-bg .dot  { background: var(--white-12); }
+
+    /* appeared state */
+    .appeared .line { transform: scaleX(1); }
+    .appeared .dot  { transform: scale(1); }
+
+    /* ─────────────────────────────────────────────────
+       SCROLL APPEAR BASE
+    ───────────────────────────────────────────────── */
+    .appear-fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.2s cubic-bezier(.4,.4,0,1),
+                  transform 1.2s cubic-bezier(.4,.4,0,1);
+    }
+    .appear-fade.appeared { opacity: 1; transform: translateY(0); }
+
+    /* ─────────────────────────────────────────────────
+       HEADER
+    ───────────────────────────────────────────────── */
+    #site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32px var(--pad-x);
+      position: relative;
+      z-index: 10;
+    }
+    .logo {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(18px, 2.57vw, 37px);
+      letter-spacing: -0.01em;
+      color: var(--dark);
+    }
+    .hamburger {
+      width: 60px; height: 60px;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      transition: transform 0.3s;
+    }
+    .hamburger:hover { background: var(--accent); }
+
+    /* ─────────────────────────────────────────────────
+       MENU OVERLAY
+    ───────────────────────────────────────────────── */
+    #menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--dark);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      padding: 0 var(--pad-x) 40px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-20px);
+      transition: opacity 0.6s cubic-bezier(.4,.4,0,1), transform 0.6s cubic-bezier(.4,.4,0,1);
+    }
+    #menu-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+    .menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32px 0;
+    }
+    .menu-logo {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(18px, 2.57vw, 37px);
+      color: var(--white);
+    }
+    .menu-close {
+      width: 60px; height: 60px;
+      background: var(--white-12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 24px;
+      transition: background 0.3s;
+    }
+    .menu-close:hover { background: var(--accent); }
+    .menu-nav { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0; }
+    .menu-divider { width: 100%; height: 1px; background: var(--white-12); }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+      color: var(--white);
+    }
+    .menu-item-left { display: flex; align-items: center; gap: 16px; }
+    .menu-num {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(11px, 0.83vw, 12px);
+      color: var(--white-60);
+    }
+    .menu-link {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(22px, 2.01vw, 29px);
+      color: var(--white);
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+    }
+    .menu-link:hover { color: var(--accent); }
+    .menu-arrow { color: var(--white-60); font-size: 18px; }
+    .menu-footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid var(--white-12);
+    }
+    .menu-socials { display: flex; gap: 12px; }
+    .social-icon {
+      width: 44px; height: 44px;
+      background: var(--white-12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--font-body);
+      transition: background 0.3s;
+    }
+    .social-icon:hover { background: var(--dark-12); color: var(--dark); }
+    .menu-copyright {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--white-60);
+    }
+
+    /* ─────────────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────────────── */
+    .hero-section { padding: 0 var(--pad-x); }
+    .hero-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11.11vw;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    /* ─────────────────────────────────────────────────
+       INTRO BLOCK
+    ───────────────────────────────────────────────── */
+    .intro-block {
+      padding: 0 var(--pad-x);
+      display: flex;
+      gap: 40px;
+    }
+    .intro-left { width: 50%; }
+    .intro-right { width: 50%; }
+    .intro-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(20px, 1.6vw, 23px);
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .intro-tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      color: var(--dark-60);
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--dark-4);
+      padding: 8px 12px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+    .badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .intro-desc {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(22px, 2.01vw, 29px);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+    .intro-body {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      line-height: 1.8;
+      color: var(--dark-60);
+    }
+
+    /* ─────────────────────────────────────────────────
+       PROJECTS GRID
+    ───────────────────────────────────────────────── */
+    .projects-grid {
+      padding: 0 var(--pad-x);
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .project-item {
+      width: 50%;
+      padding-right: 40px;
+      padding-bottom: 60px;
+    }
+    .project-item:nth-child(even) { padding-right: 0; padding-left: 40px; }
+    .project-img-wrap {
+      width: 100%;
+      overflow: hidden;
+      background: var(--dark-4);
+      aspect-ratio: 4/3;
+      position: relative;
+    }
+    .project-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(.4,.4,0,1);
+    }
+    .project-item:hover .project-img-wrap img { transform: scale(1.04); }
+    .project-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-4);
+      font-size: 12px;
+      color: var(--dark-60);
+      font-family: var(--font-body);
+    }
+    .project-meta {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      opacity: 0.6;
+      transition: opacity 0.4s;
+    }
+    .project-item:hover .project-meta { opacity: 1; }
+    .project-title-wrap { display: flex; flex-direction: column; gap: 4px; }
+    .project-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(18px, 1.6vw, 23px);
+      letter-spacing: -0.01em;
+      position: relative;
+      display: inline-block;
+    }
+    .project-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 2px;
+      background: var(--dark);
+      transition: width 0.4s cubic-bezier(.4,.4,0,1);
+    }
+    .project-item:hover .project-title::after { width: 100%; }
+    .project-num {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--dark-60);
+    }
+    .project-num-right {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--dark-60);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      opacity: 0.6;
+      transition: opacity 0.4s;
+    }
+    .project-item:hover .project-tags { opacity: 1; }
+    .tag {
+      background: var(--dark-4);
+      padding: 8px 12px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .project-desc {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      line-height: 1.8;
+      color: var(--dark-60);
+      opacity: 0.6;
+      transition: opacity 0.4s;
+    }
+    .project-item:hover .project-desc { opacity: 1; }
+
+    /* ─────────────────────────────────────────────────
+       SECTION LABEL
+    ───────────────────────────────────────────────── */
+    .section-label {
+      padding: 0 var(--pad-x);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark-60);
+    }
+
+    /* ─────────────────────────────────────────────────
+       SERVICES
+    ───────────────────────────────────────────────── */
+    .services-block {
+      padding: 0 var(--pad-x);
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .services-left {
+      width: 40%;
+    }
+    .services-left-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(20px, 1.6vw, 23px);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .services-left-body {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      line-height: 1.8;
+      color: var(--dark-60);
+    }
+    .services-right { width: 60%; display: flex; flex-direction: column; gap: 0; }
+
+    .service-item {
+      border-top: 1px solid var(--dark-12);
+      padding: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .service-item:last-child { border-bottom: 1px solid var(--dark-12); }
+    .service-content { flex: 1; }
+    .service-num {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--dark-60);
+      margin-bottom: 8px;
+    }
+    .service-name {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(20px, 1.6vw, 23px);
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .service-desc {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      line-height: 1.8;
+      color: var(--dark-60);
+    }
+    .service-cta {
+      width: 60px; height: 60px;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .service-cta svg {
+      width: 20px; height: 20px;
+      stroke: var(--white);
+      fill: none;
+      transition: stroke 0.3s;
+    }
+    .service-item:hover .service-cta {
+      background: var(--accent);
+      transform: rotate(90deg);
+    }
+
+    /* ─────────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────────── */
+    #site-footer {
+      padding: 0 var(--pad-x);
+    }
+    .footer-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 4dvh 0;
+    }
+    .footer-name {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(18px, 1.6vw, 23px);
+      letter-spacing: -0.01em;
+    }
+    .footer-right { text-align: right; }
+    .footer-role {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(13px, 1.04vw, 15px);
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .footer-tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      color: var(--dark-60);
+      margin-bottom: 8px;
+    }
+    .footer-copy {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--dark-60);
+    }
+    .footer-bottom-line {
+      width: 100%;
+      height: 1px;
+      background: var(--dark-12);
+    }
+
+    /* ─────────────────────────────────────────────────
+       CONTACT SECTION (dark bg)
+    ───────────────────────────────────────────────── */
+    #contact {
+      background: var(--dark);
+      padding: 80px var(--pad-x);
+      margin-top: 15dvh;
+    }
+    .contact-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(40px, 8vw, 120px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 40px;
+    }
+    .contact-grid {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .contact-left { width: 50%; }
+    .contact-right { width: 50%; }
+    .contact-desc {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      line-height: 1.8;
+      color: var(--white-60);
+      margin-bottom: 32px;
+    }
+    .contact-email {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(18px, 1.6vw, 23px);
+      color: var(--white);
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid var(--white-12);
+      padding-bottom: 8px;
+      transition: border-color 0.3s;
+    }
+    .contact-email:hover { border-color: var(--accent); }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-top: 1px solid var(--white-12);
+      color: var(--white);
+      transition: color 0.2s;
+    }
+    .contact-link-item:last-child { border-bottom: 1px solid var(--white-12); }
+    .contact-link-item:hover { color: var(--accent); }
+    .contact-link-name {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(18px, 1.6vw, 23px);
+      letter-spacing: -0.01em;
+    }
+    .contact-link-arrow {
+      width: 44px; height: 44px;
+      background: var(--white-12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .contact-link-item:hover .contact-link-arrow {
+      background: var(--accent);
+      transform: rotate(-45deg);
+    }
+    .contact-link-arrow svg {
+      width: 16px; height: 16px;
+      stroke: var(--white);
+      fill: none;
+    }
+
+    /* ─────────────────────────────────────────────────
+       ABOUT SECTION (dark bg)
+    ───────────────────────────────────────────────── */
+    #about {
+      background: var(--dark);
+      padding: 80px var(--pad-x) 0;
+    }
+    .about-grid {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+    .about-left { width: 40%; }
+    .about-right { width: 60%; }
+    .about-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .about-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white-60);
+      margin-bottom: 24px;
+    }
+    .about-body {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      line-height: 1.8;
+      color: var(--white-60);
+    }
+    .about-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .skill-tag {
+      background: var(--white-12);
+      color: var(--white);
+      padding: 8px 12px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .about-experience { margin-top: 48px; }
+    .exp-item {
+      padding: 28px 0;
+      border-top: 1px solid var(--white-12);
+    }
+    .exp-item:last-child { border-bottom: 1px solid var(--white-12); }
+    .exp-company {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(18px, 1.6vw, 23px);
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .exp-role {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(13px, 1.04vw, 15px);
+      color: var(--white-60);
+    }
+
+    /* ─────────────────────────────────────────────────
+       FOOTER (dark variant inside contact)
+    ───────────────────────────────────────────────── */
+    .dark-footer {
+      background: var(--dark);
+      padding: 4dvh var(--pad-x) 0;
+    }
+    .dark-footer .footer-content { border-top: 1px solid var(--white-12); }
+    .dark-footer .footer-name { color: var(--white); }
+    .dark-footer .footer-role { color: var(--white); }
+    .dark-footer .footer-tagline { color: var(--white-60); }
+    .dark-footer .footer-copy { color: var(--white-60); }
+    .dark-footer .footer-bottom-line { background: var(--white-12); }
+    .dark-footer .divider .line { background: var(--white-12); }
+    .dark-footer .divider .dot { background: var(--white-12); }
+
+    /* ─────────────────────────────────────────────────
+       RESPONSIVE — SMALL @1140px
+    ───────────────────────────────────────────────── */
+    @media (max-width: 1140px) {
+      :root { --pad-x: 40px; }
+      .hero-heading { font-size: 13vw; }
+      .logo { font-size: 22px; }
+    }
+
+    /* ─────────────────────────────────────────────────
+       RESPONSIVE — TABLET @840px
+    ───────────────────────────────────────────────── */
+    @media (max-width: 840px) {
+      :root { --pad-x: 40px; }
+
+      .project-item { width: 100%; padding-right: 0; padding-left: 0; }
+      .project-item:nth-child(even) { padding-left: 0; }
+
+      .intro-block { flex-direction: column; gap: 24px; }
+      .intro-left, .intro-right { width: 100%; }
+
+      .services-block { flex-direction: column; gap: 32px; }
+      .services-left, .services-right { width: 100%; }
+
+      .about-grid { flex-direction: column; gap: 40px; }
+      .about-left, .about-right { width: 100%; }
+
+      .contact-grid { flex-direction: column; gap: 32px; }
+      .contact-left, .contact-right { width: 100%; }
+
+      .footer-content { flex-direction: column; gap: 16px; }
+      .footer-right { text-align: left; }
+
+      .hero-heading { font-size: 16vw; }
+    }
+
+    /* ─────────────────────────────────────────────────
+       RESPONSIVE — MOBILE @540px
+    ───────────────────────────────────────────────── */
+    @media (max-width: 540px) {
+      :root { --pad-x: 20px; }
+      .hero-heading { font-size: 14vw; }
+      .hamburger { width: 48px; height: 48px; }
+      .menu-link { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ───────── HEADER ───────── -->
+  <header id="site-header">
+    <div class="logo">Manoj Achari</div>
+    <button class="hamburger" id="menu-btn" aria-label="Open Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- ───────── MENU OVERLAY ───────── -->
+  <div id="menu-overlay" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="menu-header">
+      <div class="menu-logo">Manoj Achari</div>
+      <button class="menu-close" id="menu-close-btn" aria-label="Close Menu">✕</button>
+    </div>
+
+    <nav class="menu-nav">
+      <div class="menu-divider"></div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-num">[01]</span>
+          <a href="#hero" class="menu-link" data-menu-close>HOME</a>
+        </div>
+        <span class="menu-arrow">→</span>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-num">[02]</span>
+          <a href="#work" class="menu-link" data-menu-close>WORK</a>
+        </div>
+        <span class="menu-arrow">→</span>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-num">[03]</span>
+          <a href="#services" class="menu-link" data-menu-close>SERVICES</a>
+        </div>
+        <span class="menu-arrow">→</span>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-num">[04]</span>
+          <a href="#about" class="menu-link" data-menu-close>ABOUT</a>
+        </div>
+        <span class="menu-arrow">→</span>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-num">[05]</span>
+          <a href="#contact" class="menu-link" data-menu-close>CONTACT</a>
+        </div>
+        <span class="menu-arrow">→</span>
+      </div>
+      <div class="menu-divider"></div>
+    </nav>
+
+    <div class="menu-footer-bar">
+      <div class="menu-socials">
+        <a href="https://github.com/manojacharix" class="social-icon" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+        <a href="https://linkedin.com/in/manojachari" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a>
+        <a href="https://twitter.com/manojachari" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter / X">X</a>
+      </div>
+      <span class="menu-copyright">©2025 Manoj Achari</span>
+    </div>
+  </div>
+
+  <!-- ───────── MAIN ───────── -->
+  <main id="hero">
+
+    <!-- Spacer -->
+    <div class="spacer-10"></div>
+
+    <!-- Hero heading with dividers -->
+    <section class="hero-section">
+      <div class="divider appear-divider">
+        <div class="line"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="spacer-4"></div>
+      <h1 class="hero-heading appear-fade">DESIGNER<br>&amp; BUILDER</h1>
+      <div class="spacer-4"></div>
+      <div class="divider appear-divider">
+        <div class="line"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </section>
+
+    <!-- Spacer -->
+    <div class="spacer-10"></div>
+
+    <!-- Intro two-column -->
+    <section class="intro-block">
+      <div class="intro-left appear-fade">
+        <div class="intro-label">PRODUCT DESIGNER —</div>
+        <div class="intro-tagline">check out the latest work —</div>
+        <span class="badge">CURRENTLY AVAILABLE</span>
+      </div>
+      <div class="intro-right appear-fade">
+        <p class="intro-desc">Founding designer who ships products that are beautiful, fast and built to grow —</p>
+        <p class="intro-body">I HELP STARTUPS DESIGN PRODUCTS PEOPLE ACTUALLY WANT TO USE. FROM PAYMENT FLOWS TO MAPPING EXPERIENCES, I BRING DESIGN THINKING AND PRODUCT OWNERSHIP TOGETHER. CURRENTLY OPEN TO PRODUCT DESIGN & PM ROLES.</p>
+      </div>
+    </section>
+
+    <!-- Spacer -->
+    <div class="spacer-15"></div>
+
+    <!-- Projects -->
+    <section id="work" class="projects-grid">
+
+      <!-- Project 1 -->
+      <article class="project-item appear-fade">
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">ZATAAK SE — PAYMENTS</div>
+        </div>
+        <div class="spacer-40"></div>
+        <div class="project-meta">
+          <div class="project-title-wrap">
+            <span class="project-num">[01]</span>
+            <span class="project-title">Zataak Se</span>
+          </div>
+          <span class="project-num-right">01 | 2024</span>
+        </div>
+        <div class="spacer-3"></div>
+        <div class="project-tags">
+          <span class="tag">PRODUCT DESIGN</span>
+          <span class="tag">PAYMENTS</span>
+          <span class="tag">GEO-FENCING</span>
+        </div>
+        <div class="spacer-3"></div>
+        <p class="project-desc">End-to-end product design for a payments startup — from design system to Kafka-driven real-time dashboards and geofenced transaction flows —</p>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-item appear-fade">
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">LITSCREEN — APP</div>
+        </div>
+        <div class="spacer-40"></div>
+        <div class="project-meta">
+          <div class="project-title-wrap">
+            <span class="project-num">[02]</span>
+            <span class="project-title">Litscreen</span>
+          </div>
+          <span class="project-num-right">02 | 2024</span>
+        </div>
+        <div class="spacer-3"></div>
+        <div class="project-tags">
+          <span class="tag">PRODUCT BUILD</span>
+          <span class="tag">API INTEGRATION</span>
+          <span class="tag">UI/UX</span>
+        </div>
+        <div class="spacer-3"></div>
+        <p class="project-desc">Designed and built Litscreen from zero to launch — product strategy, UI design, and API integration all under one roof —</p>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-item appear-fade">
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">DESIGN SYSTEM</div>
+        </div>
+        <div class="spacer-40"></div>
+        <div class="project-meta">
+          <div class="project-title-wrap">
+            <span class="project-num">[03]</span>
+            <span class="project-title">Design System</span>
+          </div>
+          <span class="project-num-right">03 | 2024</span>
+        </div>
+        <div class="spacer-3"></div>
+        <div class="project-tags">
+          <span class="tag">DESIGN SYSTEMS</span>
+          <span class="tag">COMPONENTS</span>
+          <span class="tag">BRANDING</span>
+        </div>
+        <div class="spacer-3"></div>
+        <p class="project-desc">Built a comprehensive component library and brand identity system used across the full Zataak Se product suite —</p>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-item appear-fade">
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">MAPS & GEO-FENCING</div>
+        </div>
+        <div class="spacer-40"></div>
+        <div class="project-meta">
+          <div class="project-title-wrap">
+            <span class="project-num">[04]</span>
+            <span class="project-title">Maps Experience</span>
+          </div>
+          <span class="project-num-right">04 | 2025</span>
+        </div>
+        <div class="spacer-3"></div>
+        <div class="project-tags">
+          <span class="tag">MAPS API</span>
+          <span class="tag">GEO-FENCING</span>
+          <span class="tag">REAL-TIME</span>
+        </div>
+        <div class="spacer-3"></div>
+        <p class="project-desc">Designed the real-time geo-fencing and maps UX — merchant proximity detection, zone drawing tools, and live transaction overlays —</p>
+      </article>
+
+    </section>
+
+    <!-- Spacer -->
+    <div class="spacer-15"></div>
+
+    <!-- Services label -->
+    <div class="section-label appear-fade" id="services">SERVICES</div>
+    <div style="height: 32px;"></div>
+
+    <!-- Services block -->
+    <div class="services-block">
+      <div class="services-left appear-fade">
+        <div class="services-left-label">What I offer —</div>
+        <p class="services-left-body">I work across the full product spectrum — from early-stage research and wireframes to final UI, design systems, and PRDs that dev teams can build from directly —</p>
+      </div>
+      <div class="services-right appear-fade">
+        <!-- Service 1 -->
+        <div class="service-item">
+          <div class="service-content">
+            <div class="service-num">[01]</div>
+            <div class="service-name">Product Design</div>
+            <p class="service-desc">End-to-end UI/UX design, design systems, prototyping, user research, and interaction design —</p>
+          </div>
+          <button class="service-cta" aria-label="Learn more about Product Design">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <!-- Service 2 -->
+        <div class="service-item">
+          <div class="service-content">
+            <div class="service-num">[02]</div>
+            <div class="service-name">Product Management</div>
+            <p class="service-desc">Roadmaps, PRDs, sprint planning, stakeholder alignment, and product strategy for early-stage teams —</p>
+          </div>
+          <button class="service-cta" aria-label="Learn more about Product Management">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <!-- Service 3 -->
+        <div class="service-item">
+          <div class="service-content">
+            <div class="service-num">[03]</div>
+            <div class="service-name">Branding &amp; Systems</div>
+            <p class="service-desc">Visual identity, component libraries, brand guidelines, and design tokens for scalable products —</p>
+          </div>
+          <button class="service-cta" aria-label="Learn more about Branding">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spacer -->
+    <div class="spacer-15"></div>
+
+  </main>
+
+  <!-- ───────── ABOUT (dark) ───────── -->
+  <section id="about">
+    <div class="divider dark-bg appear-divider">
+      <div class="line"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="spacer-4"></div>
+    <div class="about-grid">
+      <div class="about-left appear-fade">
+        <div class="about-label">ABOUT</div>
+        <h2 class="about-heading">MANOJ<br>ACHARI</h2>
+        <p class="about-body">Founding Product Designer with a BMS in Marketing. I've worked across payments, mapping, and real-time data products — taking on both design and product ownership at a startup from day one —</p>
+        <div class="about-skills">
+          <span class="skill-tag">UI/UX</span>
+          <span class="skill-tag">FIGMA</span>
+          <span class="skill-tag">DESIGN SYSTEMS</span>
+          <span class="skill-tag">PRODUCT MANAGEMENT</span>
+          <span class="skill-tag">BRANDING</span>
+          <span class="skill-tag">PAYMENTS</span>
+          <span class="skill-tag">MAPS API</span>
+          <span class="skill-tag">KAFKA</span>
+          <span class="skill-tag">API INTEGRATION</span>
+          <span class="skill-tag">MARKETING</span>
+        </div>
+      </div>
+      <div class="about-right appear-fade">
+        <div class="about-label">EXPERIENCE</div>
+        <div class="about-experience">
+          <div class="exp-item">
+            <div class="exp-company">Zataak Se</div>
+            <div class="exp-role">Founding Product Designer + Product Manager — 2024 → Present</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-company">Litscreen</div>
+            <div class="exp-role">Founder — Product Design &amp; Build — 2024</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-company">Self-directed</div>
+            <div class="exp-role">BMS Marketing — Freelance Design &amp; Product Work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="spacer-4"></div>
+    <div class="divider dark-bg appear-divider">
+      <div class="line"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </section>
+
+  <!-- ───────── CONTACT (dark) ───────── -->
+  <section id="contact">
+    <div class="contact-heading appear-fade">LET'S WORK<br>TOGETHER —</div>
+    <div class="contact-grid">
+      <div class="contact-left appear-fade">
+        <p class="contact-desc">Open to product design and PM roles at startups that care about craft. I'm available for full-time, contract, and advisory work —</p>
+        <a href="mailto:manojachari@example.com" class="contact-email">
+          manojachari@example.com →
+        </a>
+      </div>
+      <div class="contact-right appear-fade">
+        <div class="contact-links">
+          <a href="https://github.com/manojacharix" class="contact-link-item" target="_blank" rel="noopener">
+            <span class="contact-link-name">GitHub</span>
+            <div class="contact-link-arrow">
+              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/manojachari" class="contact-link-item" target="_blank" rel="noopener">
+            <span class="contact-link-name">LinkedIn</span>
+            <div class="contact-link-arrow">
+              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+          <a href="https://twitter.com/manojachari" class="contact-link-item" target="_blank" rel="noopener">
+            <span class="contact-link-name">Twitter / X</span>
+            <div class="contact-link-arrow">
+              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FOOTER (dark) ───────── -->
+  <footer class="dark-footer">
+    <div class="footer-content">
+      <div class="footer-name">Manoj Achari</div>
+      <div class="footer-right">
+        <div class="footer-role">PRODUCT DESIGNER</div>
+        <div class="footer-tagline">designing products people love —</div>
+        <div class="footer-copy">©2025</div>
+      </div>
+    </div>
+    <div class="footer-bottom-line"></div>
+    <div style="height: 32px;"></div>
+  </footer>
+
+  <!-- ───────── JAVASCRIPT ───────── -->
+  <script>
+    /* ─────────────────────────────
+       MENU TOGGLE
+    ───────────────────────────── */
+    const menuBtn      = document.getElementById('menu-btn');
+    const menuOverlay  = document.getElementById('menu-overlay');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+
+    function openMenu() {
+      menuOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      menuCloseBtn.focus();
+    }
+    function closeMenu() {
+      menuOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+      menuBtn.focus();
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    menuCloseBtn.addEventListener('click', closeMenu);
+
+    // Close when clicking a nav link
+    document.querySelectorAll('[data-menu-close]').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('open')) closeMenu();
+    });
+
+    /* ─────────────────────────────
+       INTERSECTION OBSERVER (scroll appear)
+    ───────────────────────────── */
+    const appearObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appeared');
+          appearObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    // Observe fade elements
+    document.querySelectorAll('.appear-fade').forEach(el => {
+      appearObserver.observe(el);
+    });
+
+    // Observe dividers separately (they have their own CSS classes)
+    document.querySelectorAll('.appear-divider').forEach(el => {
+      el.classList.add('divider'); // ensure base divider class
+      appearObserver.observe(el);
+    });
+
+    /* ─────────────────────────────
+       STAGGER project items on initial load
+    ───────────────────────────── */
+    document.querySelectorAll('.project-item').forEach((el, i) => {
+      el.style.transitionDelay = (i * 100) + 'ms';
+    });
+
+    /* ─────────────────────────────
+       PAGE TRANSITION
+    ───────────────────────────── */
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.6s cubic-bezier(.4,.4,0,1)';
+    window.addEventListener('load', () => {
+      requestAnimationFrame(() => {
+        document.body.style.opacity = '1';
+      });
+    });
+  </script>
+</body>
+</html>
