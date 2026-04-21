@@ -1,11 +1,8 @@
 import type { Metadata } from "next"
-import { Geist } from "next/font/google"
 import "./globals.css"
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
 import meta from "@/content/meta.json"
-
-const geist = Geist({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: `${meta.name} — ${meta.title}`,
@@ -15,9 +12,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${geist.className} bg-white text-zinc-900 antialiased`}>
+      <head>
+        <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" async />
+      </head>
+      <body>
         <Nav />
-        <main className="pt-14">{children}</main>
+        <main style={{ paddingTop: 88, position: "relative", zIndex: 10 }}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
