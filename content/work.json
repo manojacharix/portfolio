@@ -1,0 +1,51 @@
+[
+  {
+    "slug": "litscreen",
+    "title": "Litscreen",
+    "category": "AI Product · 0 to 1",
+    "tags": ["AI/LLM", "SaaS", "0-to-1", "Automation"],
+    "headline": "Built an AI screening tool solo in 8 weeks — 89% faster than manual.",
+    "summary": "Litscreen is an AI-powered candidate screening tool I designed and built solo from scratch. Multi-model pipeline using Gemini and Claude APIs reduced screening time from 45 minutes to 5 minutes.",
+    "metrics": [
+      { "label": "Time to build", "value": "8 weeks" },
+      { "label": "Code written", "value": "23K LOC" },
+      { "label": "Efficiency gain", "value": "89%" },
+      { "label": "Screening time", "value": "45 min → 5 min" }
+    ],
+    "problem": "Hiring teams were spending 45+ minutes manually screening each candidate — unscalable for high-volume pipelines.",
+    "approach": "Defined the full product spec, designed the UX, and built the multi-model AI pipeline myself. Used Gemini for document parsing and Claude for reasoning and scoring. Iterated on prompt architecture to improve accuracy.",
+    "outcome": "Shipped a working product in 8 weeks with 23K lines of code. Screening time dropped 89%. Proved that a PM with a strong point of view on AI can move as fast as a small eng team.",
+    "tags_target": ["AI PM", "LLM", "Technical PM", "0-to-1", "SaaS", "Automation"]
+  },
+  {
+    "slug": "zataak-se",
+    "title": "Zataak Se",
+    "category": "Fintech · Payments · Quick Commerce",
+    "tags": ["Payments", "Fintech", "Design System", "Cross-functional"],
+    "headline": "From founding designer to de facto PM — 3 apps, 1 design system, real impact.",
+    "summary": "Joined as a founding designer at a payments + quick commerce startup. Grew into a PM role owning product across consumer, merchant, and operations apps.",
+    "metrics": [
+      { "label": "Engagement increase", "value": "20%" },
+      { "label": "Timeframe", "value": "3 months" },
+      { "label": "Reconciliation reduction", "value": "80%" },
+      { "label": "UI inconsistencies reduced", "value": "30%" }
+    ],
+    "problem": "Three separate product surfaces (consumer app, merchant app, ops app) with no shared design language and a manual payment reconciliation process costing hours per day.",
+    "approach": "Built a unified design system used across all 3 apps. Wrote PRDs for the payments flow and geo-fencing features. Partnered with engineers on Kafka integration and Maps API implementation.",
+    "outcome": "20% engagement increase in 3 months. 80% reduction in manual payment reconciliation via AI automation. 30% fewer UI inconsistencies across the product suite.",
+    "tags_target": ["Payments", "Fintech", "Marketplace", "Quick Commerce", "GTM", "Design Systems", "Cross-functional", "PRDs"]
+  },
+  {
+    "slug": "vordo-ai",
+    "title": "Vordo AI",
+    "category": "AI SaaS",
+    "tags": ["AI/LLM", "SaaS", "Product Design"],
+    "headline": "AI SaaS product — end-to-end product and design.",
+    "summary": "Defined product requirements and designed the full UX for Vordo AI, an AI SaaS tool.",
+    "metrics": [],
+    "problem": "TBD — fill in with specifics.",
+    "approach": "TBD — fill in with specifics.",
+    "outcome": "TBD — fill in with specifics.",
+    "tags_target": ["AI PM", "SaaS", "LLM"]
+  }
+]
