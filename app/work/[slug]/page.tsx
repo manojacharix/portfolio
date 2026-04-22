@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
 import work from "@/content/work.json"
 
@@ -11,49 +12,93 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   if (!item) notFound()
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-20">
+    <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 48px" }}>
+
+      {/* Back */}
+      <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan-700)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 40 }}>
+        ← Back to work
+      </Link>
+
       {/* Header */}
-      <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4">
-        {item.category}
+      <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+        <span style={{ color: "var(--cyan-200)" }}>//</span> {item.category}
+      </div>
+      <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(36px,5vw,64px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 20 }}>
+        {item.title}
+      </h1>
+      <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--cyan-800)", opacity: 0.8, marginBottom: 48, maxWidth: 600 }}>
+        {item.headline}
       </p>
-      <h1 className="text-4xl font-semibold tracking-tight mb-4">{item.title}</h1>
-      <p className="text-xl text-zinc-500 mb-10">{item.headline}</p>
 
       {/* Metrics */}
       {item.metrics.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14 p-6 bg-zinc-50 rounded-xl">
-          {item.metrics.map((m) => (
-            <div key={m.label}>
-              <p className="text-2xl font-semibold text-zinc-900">{m.value}</p>
-              <p className="text-xs text-zinc-400 mt-1">{m.label}</p>
+        <div style={{
+          display: "grid", gridTemplateColumns: `repeat(${item.metrics.length}, 1fr)`,
+          gap: 0, marginBottom: 56,
+          border: "1px solid var(--border)", borderRadius: 12,
+          background: "var(--surface)", overflow: "hidden",
+        }}>
+          {item.metrics.map((m, i) => (
+            <div key={m.label} style={{
+              padding: "24px 28px",
+              borderRight: i < item.metrics.length - 1 ? "1px solid var(--border)" : "none",
+            }}>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 700, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 6 }}>
+                {m.value}
+              </div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan-800)", opacity: 0.5 }}>
+                {m.label}
+              </div>
             </div>
           ))}
         </div>
       )}
 
-      {/* Body */}
-      <div className="space-y-10 text-zinc-700 leading-relaxed">
-        <section>
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-3">Problem</h2>
-          <p>{item.problem}</p>
-        </section>
-        <section>
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-3">Approach</h2>
-          <p>{item.approach}</p>
-        </section>
-        <section>
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-3">Outcome</h2>
-          <p>{item.outcome}</p>
-        </section>
+      {/* Body sections */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
+        {[
+          { heading: "Problem", body: item.problem },
+          { heading: "Approach", body: item.approach },
+          { heading: "Outcome", body: item.outcome },
+        ].map(s => (
+          <div key={s.heading} style={{ borderLeft: "2px solid var(--border-md)", paddingLeft: 24 }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ color: "var(--cyan-200)" }}>//</span> {s.heading}
+            </div>
+            <p style={{ fontSize: 16, lineHeight: 1.8, color: "var(--cyan-800)", opacity: 0.85 }}>
+              {s.body}
+            </p>
+          </div>
+        ))}
       </div>
 
       {/* Tags */}
-      <div className="flex flex-wrap gap-2 mt-12">
-        {item.tags.map((tag) => (
-          <span key={tag} className="text-xs px-2 py-0.5 bg-zinc-100 text-zinc-500 rounded-full">
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 56, paddingTop: 32, borderTop: "1px solid var(--border)" }}>
+        {item.tags.map(tag => (
+          <span key={tag} style={{
+            fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase",
+            padding: "5px 12px", borderRadius: 3,
+            border: "1px solid var(--border-md)", color: "var(--cyan-700)", background: "var(--cyan-100)",
+          }}>
             {tag}
           </span>
         ))}
+      </div>
+
+      {/* Next project */}
+      <div style={{ marginTop: 64, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan-600)", textDecoration: "none" }}>
+          ← All work
+        </Link>
+        <Link href="/contact" style={{
+          fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
+          letterSpacing: "0.08em", textTransform: "uppercase",
+          padding: "11px 22px", borderRadius: 5,
+          background: "var(--cyan-600)", color: "#fff", textDecoration: "none",
+          boxShadow: "0 4px 16px rgba(38,192,248,0.25)",
+        }}>
+          Init contact →
+        </Link>
       </div>
     </div>
   )

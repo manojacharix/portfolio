@@ -15,13 +15,13 @@
     "problem": "Hiring teams were spending 45+ minutes manually screening each candidate — unscalable for high-volume pipelines.",
     "approach": "Defined the full product spec, designed the UX, and built the multi-model AI pipeline myself. Used Gemini for document parsing and Claude for reasoning and scoring. Iterated on prompt architecture to improve accuracy.",
     "outcome": "Shipped a working product in 8 weeks with 23K lines of code. Screening time dropped 89%. Proved that a PM with a strong point of view on AI can move as fast as a small eng team.",
-    "tags_target": ["AI PM", "LLM", "Technical PM", "0-to-1", "SaaS", "Automation"]
+    "tags_target": ["AI PM", "LLM", "Technical PM", "0-to-1", "SaaS", "Automation", "Health", "Insurance", "Mental Health"]
   },
   {
     "slug": "zataak-se",
     "title": "Zataak Se",
     "category": "Fintech · Payments · Quick Commerce",
-    "tags": ["Payments", "Fintech", "Design System", "Cross-functional"],
+    "tags": ["Payments", "Fintech", "Ecommerce", "B2C"],
     "headline": "From founding designer to de facto PM — 3 apps, 1 design system, real impact.",
     "summary": "Joined as a founding designer at a payments + quick commerce startup. Grew into a PM role owning product across consumer, merchant, and operations apps.",
     "metrics": [
@@ -33,19 +33,50 @@
     "problem": "Three separate product surfaces (consumer app, merchant app, ops app) with no shared design language and a manual payment reconciliation process costing hours per day.",
     "approach": "Built a unified design system used across all 3 apps. Wrote PRDs for the payments flow and geo-fencing features. Partnered with engineers on Kafka integration and Maps API implementation.",
     "outcome": "20% engagement increase in 3 months. 80% reduction in manual payment reconciliation via AI automation. 30% fewer UI inconsistencies across the product suite.",
-    "tags_target": ["Payments", "Fintech", "Marketplace", "Quick Commerce", "GTM", "Design Systems", "Cross-functional", "PRDs"]
+    "tags_target": ["Payments", "Fintech", "Ecommerce", "B2C", "Marketplace", "Quick Commerce", "GTM", "Design Systems", "Cross-functional", "PRDs"]
+  },
+  {
+    "slug": "shopx",
+    "title": "ShopX",
+    "category": "D2C · Ecommerce · Growth",
+    "tags": ["Ecommerce", "B2C", "Growth", "D2C"],
+    "headline": "Took offline retailers online — D2C growth and CRO at scale.",
+    "summary": "Growth Marketing Manager at ShopX, leading D2C marketing strategy, offline-to-online retailer onboarding, and conversion rate optimization campaigns.",
+    "metrics": [],
+    "problem": "Offline retailers needed a path to digital commerce but lacked the tools, playbooks, and onboarding support to make the transition effectively.",
+    "approach": "Built retailer onboarding programs to move offline sellers onto the platform. Ran CRO-driven campaigns to improve conversion across the funnel. Led D2C marketing strategy across product lifecycle stages.",
+    "outcome": "Onboarded a significant base of offline retailers to digital commerce. Drove measurable conversion improvements through CRO campaigns. Strengthened D2C growth playbook adopted across the business.",
+    "tags_target": ["Ecommerce", "B2C", "D2C", "Growth", "CRO", "Retail", "Travel"]
+  },
+  {
+    "slug": "job-automation",
+    "title": "Job Search Automation",
+    "category": "AI Pipeline · 0 to 1 · Ops Tooling",
+    "tags": ["AI/LLM", "Automation", "SaaS", "0-to-1"],
+    "headline": "Built an end-to-end AI outreach pipeline — scrape, enrich, draft, send, track.",
+    "summary": "Designed and built a fully automated job outreach system from scratch: multi-portal scraping via Apify, contact resolution via Apollo, AI-generated personalized emails, LaTeX resume tailoring per JD, OOO detection, scheduled sending, and A/B template testing — all tracked in Google Sheets.",
+    "metrics": [
+      { "label": "Portals scraped", "value": "5+" },
+      { "label": "Pipeline stages", "value": "8" },
+      { "label": "Resume tailored", "value": "Per JD" },
+      { "label": "Send cadence", "value": "1/hr automated" }
+    ],
+    "problem": "Manual job outreach is slow, inconsistent, and impossible to iterate on at scale. Most job seekers send generic emails with no personalization or tracking.",
+    "approach": "Applied product thinking to my own job search. Designed the full pipeline spec, then built it: Apify actors for multi-portal scraping, Apollo for contact resolution with confidence scoring, OpenAI for email generation with playbook enforcement, LaTeX + tectonic for per-JD resume tailoring, Gmail API for draft creation, and Google Sheets as the tracking layer. A/B tests template variants per send.",
+    "outcome": "Fully automated daily outreach pipeline running in production. Each email is personalized, resume-tailored, and sent at an optimized time. The system itself is a live PM proof point — 0-to-1 build, data-driven, self-applied product thinking.",
+    "tags_target": ["AI/LLM", "Automation", "SaaS", "0-to-1", "SAAS", "Insurance", "Fintech", "Health"]
   },
   {
     "slug": "vordo-ai",
     "title": "Vordo AI",
     "category": "AI SaaS",
-    "tags": ["AI/LLM", "SaaS", "Product Design"],
-    "headline": "AI SaaS product — end-to-end product and design.",
-    "summary": "Defined product requirements and designed the full UX for Vordo AI, an AI SaaS tool.",
+    "tags": ["AI/LLM", "SaaS", "0-to-1"],
+    "headline": "AI SaaS product — end-to-end product strategy and design.",
+    "summary": "Defined product requirements, designed the full UX, and drove go-to-market strategy for Vordo AI, an AI-powered SaaS tool.",
     "metrics": [],
-    "problem": "TBD — fill in with specifics.",
-    "approach": "TBD — fill in with specifics.",
-    "outcome": "TBD — fill in with specifics.",
-    "tags_target": ["AI PM", "SaaS", "LLM"]
+    "problem": "Teams building AI-powered workflows lacked a product-grade interface that could surface model outputs clearly and integrate with existing tools without heavy engineering lift.",
+    "approach": "Owned product strategy end-to-end: user research, PRD writing, UX design, and GTM planning. Focused on reducing time-to-value for non-technical users interacting with AI outputs.",
+    "outcome": "Shipped a production-ready product with a clear positioning and GTM plan. Established the design system and product principles for future iteration.",
+    "tags_target": ["AI PM", "SaaS", "LLM", "SAAS"]
   }
 ]
