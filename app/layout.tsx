@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import { ThemeProvider } from "@/components/ThemeProvider"
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
 import AuroraBackground from "@/components/AuroraBackground"
@@ -20,12 +21,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" async />
       </head>
       <body style={{ fontFamily: "var(--font-body)" }}>
-        <AuroraBackground />
-        <Nav />
-        <main style={{ paddingTop: 88, position: "relative", zIndex: 10 }}>
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <AuroraBackground />
+          <Nav />
+          <main style={{ paddingTop: 88, position: "relative", zIndex: 10 }}>
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -8,6 +8,7 @@ export default function Footer() {
       background: "var(--surface)",
       padding: "28px 80px",
       position: "relative", zIndex: 10,
+      transition: "background 0.3s ease, border-color 0.3s ease",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
 
@@ -16,7 +17,7 @@ export default function Footer() {
             <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", boxShadow: "0 0 6px var(--cyan)", animation: "pulse 2s ease-in-out infinite" }} />
             Autonomous agent active
           </div>
-          <div style={{ fontSize: 12, color: "var(--text-2)", opacity: 0.7, maxWidth: 500, lineHeight: 1.5 }}>
+          <div style={{ fontSize: 12, color: "var(--text-2)", maxWidth: 500, lineHeight: 1.5 }}>
             Manoj is deep in ongoing projects. An{" "}
             <span style={{ color: "var(--cyan)" }}>autonomous agent</span>{" "}
             monitors his latest work and keeps this site current.
@@ -33,7 +34,6 @@ export default function Footer() {
                 fontFamily: "var(--font-mono)", fontSize: 10,
                 letterSpacing: "0.08em", textTransform: "uppercase",
                 color: "var(--text-muted)", textDecoration: "none",
-                transition: "color 0.15s",
               }}>
                 {label}
               </Link>

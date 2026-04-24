@@ -38,7 +38,7 @@ export default function Contact() {
       </div>
 
       <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px,5vw,64px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 16 }}>
-        Got something<br />to <span style={{ color: "var(--accent)" }}>build?</span>
+        Got something<br />to <span style={{ color: "var(--cyan)" }}>build?</span>
       </h1>
 
       <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--text-2)", maxWidth: 480, marginBottom: 48 }}>
@@ -47,7 +47,7 @@ export default function Contact() {
 
       {sent ? (
         <div style={{ textAlign: "center", padding: "60px 0" }}>
-          <i className="ph-bold ph-check-circle" style={{ fontSize: 56, color: "var(--accent)", display: "block", marginBottom: 20 }} />
+          <i className="ph-bold ph-check-circle" style={{ fontSize: 56, color: "var(--cyan)", display: "block", marginBottom: 20 }} />
           <div style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 600, color: "var(--text-1)", marginBottom: 10 }}>Transmitted.</div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--cyan)", letterSpacing: "0.06em" }}>Agent received it. I&apos;ll be in touch.</div>
         </div>
@@ -89,8 +89,8 @@ export default function Contact() {
               fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12,
               letterSpacing: "0.08em", textTransform: "uppercase",
               padding: "13px 28px", borderRadius: 5, cursor: "pointer", border: "none",
-              background: "var(--accent)", color: "#fff",
-              boxShadow: "var(--shadow-accent)",
+              background: "var(--cyan)", color: "#fff",
+              boxShadow: "var(--shadow-cyan)",
               display: "inline-flex", alignItems: "center", gap: 10,
               transition: "all 0.2s",
             }}>

@@ -43,7 +43,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               padding: "24px 28px",
               borderRight: i < item.metrics.length - 1 ? "1px solid var(--border)" : "none",
             }}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 700, letterSpacing: "-0.04em", color: "var(--accent)", marginBottom: 6 }}>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 700, letterSpacing: "-0.04em", color: "var(--cyan)", marginBottom: 6 }}>
                 {m.value}
               </div>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)" }}>
@@ -95,8 +95,8 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
           letterSpacing: "0.08em", textTransform: "uppercase",
           padding: "11px 22px", borderRadius: 5,
-          background: "var(--accent)", color: "#fff", textDecoration: "none",
-          boxShadow: "var(--shadow-accent)",
+          background: "var(--cyan)", color: "#fff", textDecoration: "none",
+          boxShadow: "var(--shadow-cyan)",
         }}>
           Init contact →
         </Link>

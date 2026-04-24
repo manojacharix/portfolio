@@ -1,73 +1,92 @@
 @import "tailwindcss";
 
-/* ── All tokens pulled from design files/colors_and_type.css ── */
-:root {
-  /* Light Blue scale */
-  --lightblue-950: #011A23;
-  --lightblue-900: #023345;
-  --lightblue-800: #05678A;
-  --lightblue-700: #079ACF;
-  --lightblue-600: #26C0F8;
-  --lightblue-500: #6DD5FA;
-  --lightblue-400: #89DCFB;
-  --lightblue-300: #A6E5FC;
-  --lightblue-200: #C4EEFD;
-  --lightblue-100: #E1F6FE;
-  --lightblue-50:  #F0FBFE;
+/* ════════════════════════════════════════════
+   MANOJ ACHARI — Design System Tokens
+   Source: design files/colors_and_type.css
+   ════════════════════════════════════════════ */
 
-  /* Yellow scale */
-  --yellow-700: #935901;
-  --yellow-600: #C17401;
-  --yellow-500: #F18F01;
-  --yellow-400: #FEA92A;
-  --yellow-300: #FEC062;
-  --yellow-100: #FFEBCC;
-  --yellow-50:  #FFF5E6;
+:root {
+  /* ── Light theme (default) ── */
+  --bg:         #F0FBFE;
+  --bg-alt:     #FFFFFF;
+  --surface:    #FFFFFF;
+  --surface2:   #E1F6FE;
+
+  --text-1:     #010D14;
+  --text-2:     #05678A;
+  --text-3:     #079ACF;
+  --text-muted: #A6CEDF;
+
+  --cyan:       #26C0F8;
+  --cyan-700:   #079ACF;
+  --cyan-800:   #05678A;
+  --cyan-900:   #023345;
+  --cyan-dim:   #6DD5FA;
+  --cyan-100:   #E1F6FE;
+  --cyan-50:    #F0FBFE;
+
+  --yellow:     #F18F01;
+  --yellow-l:   #FEA92A;
+  --yellow-d:   #C17401;
+
+  --border:     rgba(38,192,248,0.15);
+  --border-md:  rgba(38,192,248,0.30);
+  --border-str: rgba(38,192,248,0.50);
+
+  --shadow-sm:     0 1px 4px rgba(5,103,138,0.06), 0 4px 16px rgba(5,103,138,0.04);
+  --shadow-md:     0 4px 24px rgba(5,103,138,0.10), 0 1px 4px rgba(5,103,138,0.06);
+  --shadow-lg:     0 12px 48px rgba(5,103,138,0.14), 0 4px 12px rgba(5,103,138,0.08);
+  --shadow-accent: 0 4px 20px rgba(241,143,1,0.20);
+  --shadow-cyan:   0 0 32px rgba(38,192,248,0.18);
+
+  --nav-bg:     rgba(255,255,255,0.90);
+  --nav-bar-bg: rgba(255,255,255,0.92);
 
   /* Typography */
   --font-display: 'Space Grotesk', sans-serif;
   --font-body:    'DM Sans', sans-serif;
   --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
-  /* Animation tokens */
+  /* Animation */
   --dur-fast:    150ms;
   --dur-default: 200ms;
   --dur-medium:  300ms;
-  --dur-slow:    400ms;
-  --dur-enter:   500ms;
+  --ease-out:    cubic-bezier(0.0, 0, 0.2, 1);
   --ease-default: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out:     cubic-bezier(0.0, 0, 0.2, 1);
-  --ease-in-out:  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Dark theme semantic tokens (active) ── */
-:root {
-  --bg:          #010D14;   /* dark-bg */
-  --surface:     #011A23;   /* dark-surface */
-  --surface2:    #023345;   /* dark-surface2 */
+/* ── Dark theme overrides ── */
+[data-theme="dark"] {
+  --bg:         #010D14;
+  --bg-alt:     #011A23;
+  --surface:    #011A23;
+  --surface2:   #023345;
 
-  --text-1:      #FFFFFF;   /* dark-text-1 */
-  --text-2:      #A6E5FC;   /* dark-text-2 */
-  --text-3:      #6DD5FA;   /* dark-text-3 */
-  --text-muted:  #05678A;   /* dark-text-muted */
+  --text-1:     #FFFFFF;
+  --text-2:     #A6E5FC;
+  --text-3:     #6DD5FA;
+  --text-muted: #05678A;
 
-  --border:      rgba(38,192,248,0.12);   /* dark-border */
-  --border-md:   rgba(38,192,248,0.28);   /* dark-border-md */
-  --border-str:  rgba(38,192,248,0.50);
+  --border:     rgba(38,192,248,0.12);
+  --border-md:  rgba(38,192,248,0.28);
+  --border-str: rgba(38,192,248,0.50);
 
-  --accent:      #F18F01;   /* yellow-500 — CTAs, hover, emphasis */
-  --accent-h:    #FEA92A;   /* yellow-400 — hover state */
-  --accent-d:    #C17401;   /* yellow-600 — press state */
-  --cyan:        #26C0F8;   /* lightblue-600 — AI/tech, interactive */
-  --cyan-dim:    #6DD5FA;   /* lightblue-500 */
-  --cyan-muted:  #A6E5FC;   /* lightblue-300 */
-
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.5);
-  --shadow-md:     0 4px 16px rgba(0,0,0,0.6);
-  --shadow-lg:     0 12px 40px rgba(0,0,0,0.7);
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.50);
+  --shadow-md:     0 4px 16px rgba(0,0,0,0.60);
+  --shadow-lg:     0 12px 40px rgba(0,0,0,0.70);
   --shadow-accent: 0 0 24px rgba(241,143,1,0.30);
   --shadow-cyan:   0 0 24px rgba(38,192,248,0.20);
+
+  --nav-bg:     rgba(1,13,20,0.92);
+  --nav-bar-bg: rgba(1,13,20,0.95);
+
+  --cyan-100:   rgba(38,192,248,0.08);
+  --cyan-50:    rgba(38,192,248,0.04);
 }
+
+/* ════════════════════════════════════════════
+   BASE STYLES
+   ════════════════════════════════════════════ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -79,20 +98,33 @@ body {
   font-family: var(--font-body);
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Subtle dot grid — very dim on dark */
+/* Dot grid overlay */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: 1; pointer-events: none;
-  background-image: radial-gradient(circle, rgba(38,192,248,0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(38,192,248,0.14) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.7;
+  opacity: 0.55;
 }
 
 /* ── Keyframes ── */
-@keyframes pulse    { 0%,100%{opacity:1} 50%{opacity:0.35} }
-@keyframes blink    { 0%,100%{opacity:1} 50%{opacity:0} }
-@keyframes fadeUp   { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-@keyframes fadeIn   { from{opacity:0} to{opacity:1} }
-@keyframes ma-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+@keyframes pulse  { 0%,100%{opacity:1} 50%{opacity:0.35} }
+@keyframes blink  { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+/* ma-* animation utilities from animations.css */
+.ma-fade-up   { animation: fadeUp 500ms var(--ease-default) both; }
+.ma-delay-1   { animation-delay: 60ms; }
+.ma-delay-2   { animation-delay: 120ms; }
+.ma-delay-3   { animation-delay: 180ms; }
+.ma-delay-4   { animation-delay: 240ms; }
+
+.ma-hover-lift { transition: transform var(--dur-default) var(--ease-out), box-shadow var(--dur-default) var(--ease-out); }
+.ma-hover-lift:hover { transform: translateY(-3px); }
+
+.ma-pulse { animation: pulse 2s ease-in-out infinite; }
+.ma-blink { animation: blink 1s step-end infinite; }

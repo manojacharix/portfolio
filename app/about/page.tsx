@@ -42,7 +42,7 @@ export default function About() {
                   </div>
                   <div>
                     <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--text-1)", marginBottom: 3 }}>{exp.role}</div>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--accent)", marginBottom: 10, letterSpacing: "0.06em" }}>{exp.company}</div>
+                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--cyan)", marginBottom: 10, letterSpacing: "0.06em" }}>{exp.company}</div>
                     <div style={{ fontSize: 14, color: "var(--text-2)", lineHeight: 1.65 }}>{exp.summary}</div>
                   </div>
                 </div>
@@ -52,8 +52,8 @@ export default function About() {
 
           {/* Open to roles */}
           <div style={{ padding: 28, border: "1px solid var(--border-md)", borderRadius: 12, background: "var(--surface)", boxShadow: "var(--shadow-md)" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", boxShadow: "var(--shadow-accent)", animation: "pulse 2s ease-in-out infinite" }} />
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
+              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", boxShadow: "var(--shadow-cyan)", animation: "pulse 2s ease-in-out infinite" }} />
               Open to roles
             </div>
             <p style={{ fontSize: 15, color: "var(--text-2)", marginBottom: 20, lineHeight: 1.6 }}>
@@ -64,8 +64,8 @@ export default function About() {
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
                 letterSpacing: "0.08em", textTransform: "uppercase",
                 padding: "11px 22px", borderRadius: 5,
-                background: "var(--accent)", color: "#fff", textDecoration: "none",
-                boxShadow: "var(--shadow-accent)",
+                background: "var(--cyan)", color: "#fff", textDecoration: "none",
+                boxShadow: "var(--shadow-cyan)",
               }}>
                 Schedule a call
               </a>
@@ -129,9 +129,9 @@ export default function About() {
           }}>
             <div>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 600, color: "var(--text-1)", marginBottom: 4 }}>Resume</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--accent)", letterSpacing: "0.06em" }}>VIEW PDF →</div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--cyan)", letterSpacing: "0.06em" }}>VIEW PDF →</div>
             </div>
-            <i className="ph-bold ph-file-pdf" style={{ fontSize: 24, color: "var(--cyan-dim)" }} />
+            <i className="ph-bold ph-file-pdf" style={{ fontSize: 24, color: "var(--cyan-dim, var(--cyan-700))" }} />
           </a>
 
         </div>

@@ -2,12 +2,12 @@
 import { useState } from "react"
 
 const ALL_PROJECTS = [
-  { tag: "AI Product",    title: "Intelligent Doc Assistant",  desc: "LLM-powered Q&A with citations. UX, backend, deploy.",       cat: "ai",     icon: "ph-brain",         grad: "linear-gradient(135deg,#011A23,#023345,#05678A)", ago: "2h ago" },
-  { tag: "SaaS",          title: "Growth Analytics Platform",  desc: "Real-time metrics for indie SaaS. Wireframe to live, 3 wks.", cat: "saas",   icon: "ph-chart-line-up", grad: "linear-gradient(135deg,#190F00,#613A00,#935901)", ago: "5h ago" },
-  { tag: "Design System", title: "Brand OS",                   desc: "Full design system + component library for a B2B startup.",   cat: "design",  icon: "ph-cube",          grad: "linear-gradient(135deg,#011A23,#040B11,#194E71)", ago: "1d ago" },
-  { tag: "AI Product",    title: "Prompt Engineering Toolkit", desc: "Internal tooling for prompt iteration and version control.",  cat: "ai",     icon: "ph-lightning",     grad: "linear-gradient(135deg,#023345,#05678A,#079ACF22)", ago: "12h ago" },
-  { tag: "SaaS",          title: "Onboarding Flow Engine",     desc: "No-code onboarding builder. Drag-and-drop + A/B testing.",   cat: "saas",   icon: "ph-rocket-launch", grad: "linear-gradient(135deg,#190F00,#331F00,#613A00)", ago: "2d ago" },
-  { tag: "Branding",      title: "Identity Rebuild",           desc: "New brand identity for a fintech startup — logo to motion.", cat: "brand",  icon: "ph-palette",       grad: "linear-gradient(135deg,#040B11,#081A26,#11344B)", ago: "3d ago" },
+  { tag: "AI Product",    title: "Intelligent Doc Assistant",  desc: "LLM-powered Q&A with citations. UX, backend, deploy.",       cat: "ai",     icon: "ph-brain",         grad: "linear-gradient(135deg,#E1F6FE,#A6E5FC,#6DD5FA)", ago: "2h ago" },
+  { tag: "SaaS",          title: "Growth Analytics Platform",  desc: "Real-time metrics for indie SaaS. Wireframe to live, 3 wks.", cat: "saas",   icon: "ph-chart-line-up", grad: "linear-gradient(135deg,#FFF5E6,#FFD494,#FEA92A)", ago: "5h ago" },
+  { tag: "Design System", title: "Brand OS",                   desc: "Full design system + component library for a B2B startup.",   cat: "design",  icon: "ph-cube",          grad: "linear-gradient(135deg,#E1F6FE,#C4EEFD,#26C0F8)", ago: "1d ago" },
+  { tag: "AI Product",    title: "Prompt Engineering Toolkit", desc: "Internal tooling for prompt iteration and version control.",  cat: "ai",     icon: "ph-lightning",     grad: "linear-gradient(135deg,#EEF9FE,#C4EEFD,#79DBFC)", ago: "12h ago" },
+  { tag: "SaaS",          title: "Onboarding Flow Engine",     desc: "No-code onboarding builder. Drag-and-drop + A/B testing.",   cat: "saas",   icon: "ph-rocket-launch", grad: "linear-gradient(135deg,#FFF8EE,#FFE4B2,#F9C46A)", ago: "2d ago" },
+  { tag: "Branding",      title: "Identity Rebuild",           desc: "New brand identity for a fintech startup. Logo to motion.",   cat: "brand",  icon: "ph-palette",       grad: "linear-gradient(135deg,#F0FBFE,#D4F3FD,#A6E5FC)", ago: "3d ago" },
 ]
 
 const FILTERS = [
@@ -53,8 +53,8 @@ export default function WorkIndex() {
               style={{
                 fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase",
                 padding: "7px 16px", borderRadius: 4, cursor: "pointer", transition: "all 0.15s",
-                background: active === f.key ? "var(--accent)" : "transparent",
-                border: active === f.key ? "1.5px solid var(--accent)" : "1.5px solid var(--border-md)",
+                background: active === f.key ? "var(--cyan)" : "transparent",
+                border: active === f.key ? "1.5px solid var(--cyan)" : "1.5px solid var(--border-md)",
                 color: active === f.key ? "#fff" : "var(--text-2)",
               }}
             >
@@ -92,7 +92,7 @@ export default function WorkIndex() {
                   <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--cyan)", display: "inline-block", opacity: 0.5 }} />
                   indexed {p.ago}
                 </span>
-                <i className="ph-bold ph-arrow-right" style={{ fontSize: 14, color: "var(--accent)" }} />
+                <i className="ph-bold ph-arrow-right" style={{ fontSize: 14, color: "var(--cyan)" }} />
               </div>
             </div>
           </div>
