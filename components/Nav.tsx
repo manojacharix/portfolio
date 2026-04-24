@@ -58,7 +58,7 @@ export default function Nav() {
           <Image
             src="/manoj_logo_full.svg"
             alt={meta.name}
-            width={120} height={20}
+            width={100} height={17}
             className="nav-logo"
             style={{
               filter: isDark ? "brightness(0) invert(1)" : "brightness(0)",
