@@ -1,6 +1,18 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import about from "@/content/about.json"
 import meta from "@/content/meta.json"
+
+export const metadata: Metadata = {
+  title: "About",
+  description: `${meta.name} is an AI Product Manager with a design background. Built Litscreen (AI research tool), led product at Zataak Se (payments, quick commerce), and ships end-to-end without agency overhead.`,
+  alternates: { canonical: "https://manojachari.com/about" },
+  openGraph: {
+    title: `About — ${meta.name}`,
+    description: "AI PM. Former founding designer. Shipped Litscreen, led payments product at Zataak Se. Now targeting AI PM and PM roles.",
+    url: "https://manojachari.com/about",
+  },
+}
 
 export default function About() {
   return (
