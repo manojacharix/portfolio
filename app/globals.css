@@ -439,6 +439,76 @@ body::before {
 }
 
 /* ════════════════════════════════════════════
+   CASE STUDY COMPONENTS
+   ════════════════════════════════════════════ */
+
+/* Metrics row */
+.cs-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.cs-metric-cell {
+  padding: 24px 28px;
+}
+
+/* Hero image */
+.cs-hero-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* Inline image grid: 2-col by default */
+.cs-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Single image takes full width */
+.cs-image-grid:has(.cs-image-item:only-child) {
+  grid-template-columns: 1fr;
+}
+
+/* 3 images: first full width, next two side by side */
+.cs-image-grid:has(.cs-image-item:nth-child(3)):not(:has(.cs-image-item:nth-child(4))) .cs-image-item:first-child {
+  grid-column: 1 / -1;
+}
+
+.cs-image-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+@media (max-width: 768px) {
+  .cs-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs-metric-cell:nth-child(2),
+  .cs-metric-cell:nth-child(4) {
+    border-right: none !important;
+  }
+
+  .cs-metric-cell:nth-child(3),
+  .cs-metric-cell:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+
+  .cs-image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ════════════════════════════════════════════
    RESPONSIVE LAYOUT UTILITIES
    ════════════════════════════════════════════ */
 

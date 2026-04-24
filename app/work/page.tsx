@@ -1,103 +1,154 @@
-"use client"
-import { useState } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import work from "@/content/work.json"
 
-const ALL_PROJECTS = [
-  { tag: "AI Product",    title: "Intelligent Doc Assistant",  desc: "LLM-powered Q&A with citations. UX, backend, deploy.",       cat: "ai",     icon: "ph-brain",         grad: "linear-gradient(135deg,#E1F6FE,#A6E5FC,#6DD5FA)", year: "2024" },
-  { tag: "SaaS",          title: "Growth Analytics Platform",  desc: "Real-time metrics for indie SaaS. Wireframe to live, 3 wks.", cat: "saas",   icon: "ph-chart-line-up", grad: "linear-gradient(135deg,#FFF5E6,#FFD494,#FEA92A)", year: "2024" },
-  { tag: "Design System", title: "Brand OS",                   desc: "Full design system + component library for a B2B startup.",   cat: "design", icon: "ph-cube",          grad: "linear-gradient(135deg,#E1F6FE,#C4EEFD,#26C0F8)", year: "2023" },
-  { tag: "AI Product",    title: "Prompt Engineering Toolkit", desc: "Internal tooling for prompt iteration and version control.",  cat: "ai",     icon: "ph-lightning",     grad: "linear-gradient(135deg,#E1F6FE,#A6E5FC,#079ACF)", year: "2024" },
-  { tag: "SaaS",          title: "Onboarding Flow Engine",     desc: "No-code onboarding builder. Drag-and-drop + A/B testing.",   cat: "saas",   icon: "ph-rocket-launch", grad: "linear-gradient(135deg,#FFF5E6,#FFEBCC,#FEA92A)", year: "2023" },
-  { tag: "Branding",      title: "Identity Rebuild",           desc: "New brand identity for a fintech startup. Logo to motion.",   cat: "brand",  icon: "ph-palette",       grad: "linear-gradient(135deg,#D1E7F5,#75B6E0,#2980B9)", year: "2023" },
-]
+const GRADS: Record<string, string> = {
+  "litscreen":      "linear-gradient(135deg,#1a2a1a,#0d1f0d)",
+  "zataak-se":      "linear-gradient(135deg,#2a1a00,#1a0d00)",
+  "job-automation": "linear-gradient(135deg,#001a2a,#000d1a)",
+  "vordo-ai":       "linear-gradient(135deg,#1a001a,#0d000d)",
+}
 
-const FILTERS = [
-  { key: "all",    label: "All" },
-  { key: "ai",     label: "AI Product" },
-  { key: "saas",   label: "SaaS" },
-  { key: "design", label: "Design System" },
-  { key: "brand",  label: "Branding" },
-]
-
-const AGO = ["43m ago", "1h ago", "2h ago", "5h ago", "12h ago", "1d ago"]
+const ICONS: Record<string, string> = {
+  "litscreen":      "ph-brain",
+  "zataak-se":      "ph-storefront",
+  "job-automation": "ph-git-branch",
+  "vordo-ai":       "ph-microphone",
+}
 
 export default function WorkIndex() {
-  const [active, setActive] = useState("all")
-  const filtered = active === "all" ? ALL_PROJECTS : ALL_PROJECTS.filter(p => p.cat === active)
-
   return (
     <div className="page-wrap" style={{ paddingTop: 60, paddingBottom: 60 }}>
 
       {/* Header */}
       <div style={{ marginBottom: 48 }}>
-        <div className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+        <div className="ma-fade-up" style={{
+          fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em",
+          textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16,
+          display: "flex", alignItems: "center", gap: 8,
+        }}>
           <span style={{ opacity: 0.4 }}>//</span> Work
         </div>
         <h1 className="ma-fade-up ma-delay-1" style={{
-          fontFamily: "var(--font-display)",
-          fontSize: "clamp(40px, 5vw, 72px)",
-          fontWeight: 700, lineHeight: 0.96,
-          letterSpacing: "-0.05em", color: "var(--text-1)",
-          marginBottom: 16,
+          fontFamily: "var(--font-display)", fontSize: "clamp(40px, 5vw, 72px)",
+          fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.05em",
+          color: "var(--text-1)", marginBottom: 16,
         }}>
           Things I&apos;ve shipped
-          <span className="ma-blink" style={{ display: "inline-block", width: 3, height: "0.8em", background: "var(--yellow)", marginLeft: 8, verticalAlign: "middle" }} />
+          <span className="ma-blink" style={{
+            display: "inline-block", width: 3, height: "0.8em",
+            background: "var(--yellow)", marginLeft: 8, verticalAlign: "middle",
+          }} />
         </h1>
-        <p className="ma-fade-up ma-delay-2" style={{ fontSize: 16, color: "var(--text-2)", maxWidth: 480, lineHeight: 1.6, marginBottom: 28 }}>
-          AI products, SaaS tools, design systems, brand rebuilds. All real, all shipped.
+        <p className="ma-fade-up ma-delay-2 page-sub-text" style={{
+          fontSize: 16, color: "var(--text-2)", maxWidth: 480, lineHeight: 1.6,
+        }}>
+          AI products, payments, quick commerce, and ops tooling. All real decisions, real outcomes.
         </p>
-
-        {/* Filter bar */}
-        <div className="ma-fade-up ma-delay-3" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-          {FILTERS.map(f => (
-            <button
-              key={f.key}
-              onClick={() => setActive(f.key)}
-              className={`filter-btn-item${active === f.key ? " active" : ""}`}
-              style={{
-                fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase",
-                padding: "7px 16px", borderRadius: "var(--radius-md)", cursor: "pointer",
-                background: active === f.key ? "var(--cyan)" : "transparent",
-                border: active === f.key ? "1.5px solid var(--cyan)" : "1.5px solid var(--border-md)",
-                color: active === f.key ? "#fff" : "var(--text-2)",
-              }}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* Grid */}
       <div className="work-grid">
-        {filtered.map((p, i) => (
-          <div key={i} className="project-card" style={{
-            background: "var(--surface)", border: "1px solid var(--border)",
-            borderRadius: "var(--radius-lg)", overflow: "hidden",
-            boxShadow: "var(--shadow-md)",
-            cursor: "pointer",
-          }}>
-            <div style={{ height: 180, background: p.grad, display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
-              <i className={`ph-thin ${p.icon}`} style={{ fontSize: 64, color: "rgba(5,103,138,0.2)" }} />
+        {work.map((p, i) => (
+          <Link key={p.slug} href={`/work/${p.slug}`} style={{ textDecoration: "none" }}>
+            <div className="project-card" style={{
+              background: "var(--surface)", border: "1px solid var(--border)",
+              borderRadius: "var(--radius-lg)", overflow: "hidden",
+              boxShadow: "var(--shadow-md)",
+            }}>
+              {/* Image or gradient fallback */}
+              <div style={{
+                height: 200, position: "relative", overflow: "hidden",
+                background: GRADS[p.slug] || "var(--surface2)",
+                borderBottom: "1px solid var(--border)",
+              }}>
+                {p.hero_image ? (
+                  <Image
+                    src={p.hero_image}
+                    alt={p.title}
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "top" }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div style={{
+                    width: "100%", height: "100%",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                  }}>
+                    <i className={`ph-thin ${ICONS[p.slug] || "ph-cube"}`}
+                      style={{ fontSize: 64, color: "rgba(38,192,248,0.15)" }} />
+                  </div>
+                )}
+              </div>
+
+              <div style={{ padding: 20 }}>
+                <div style={{
+                  fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em",
+                  textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8,
+                }}>
+                  {p.category}
+                </div>
+                <div style={{
+                  fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 600,
+                  color: "var(--text-1)", marginBottom: 8, letterSpacing: "-0.01em",
+                }}>
+                  {p.title}
+                </div>
+                <div className="project-desc-text" style={{
+                  fontSize: 13, color: "var(--text-2)", lineHeight: 1.55, marginBottom: 16,
+                }}>
+                  {p.summary}
+                </div>
+
+                {/* Metrics preview */}
+                {p.metrics.length > 0 && (
+                  <div style={{
+                    display: "flex", gap: 12, flexWrap: "wrap",
+                    marginBottom: 16, paddingBottom: 16,
+                    borderBottom: "1px solid var(--border)",
+                  }}>
+                    {p.metrics.slice(0, 3).map(m => (
+                      <div key={m.label}>
+                        <div style={{
+                          fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700,
+                          color: "var(--cyan)", letterSpacing: "-0.02em", lineHeight: 1,
+                        }}>
+                          {m.value}
+                        </div>
+                        <div style={{
+                          fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.06em",
+                          textTransform: "uppercase", color: "var(--text-muted)", marginTop: 3,
+                        }}>
+                          {m.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div style={{
+                  display: "flex", justifyContent: "space-between", alignItems: "center",
+                  paddingTop: p.metrics.length > 0 ? 0 : 12,
+                  borderTop: p.metrics.length > 0 ? "none" : "1px solid var(--border)",
+                }}>
+                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                    {p.tags.slice(0, 2).map(tag => (
+                      <span key={tag} style={{
+                        fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.06em",
+                        textTransform: "uppercase", padding: "3px 8px",
+                        borderRadius: "var(--radius-sm)", border: "1px solid var(--border)",
+                        color: "var(--text-muted)", background: "transparent",
+                      }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <i className="ph-bold ph-arrow-right project-arrow"
+                    style={{ fontSize: 14, color: "var(--cyan)", flexShrink: 0 }} />
+                </div>
+              </div>
             </div>
-            <div style={{ padding: 20 }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8 }}>
-                {p.tag}
-              </div>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 600, color: "var(--text-1)", marginBottom: 8, letterSpacing: "-0.01em" }}>
-                {p.title}
-              </div>
-              <div className="project-desc-text" style={{ fontSize: 13, color: "var(--text-2)", lineHeight: 1.55, marginBottom: 16 }}>
-                {p.desc}
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: 14 }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 5 }}>
-                  <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--cyan)", display: "inline-block", opacity: 0.5 }} />
-                  indexed {AGO[i % AGO.length]}
-                </span>
-                <i className="ph-bold ph-arrow-right project-arrow" style={{ fontSize: 14, color: "var(--cyan)" }} />
-              </div>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
 
