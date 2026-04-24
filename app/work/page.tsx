@@ -52,9 +52,10 @@ export default function WorkIndex() {
             <button
               key={f.key}
               onClick={() => setActive(f.key)}
+              className={`filter-btn-item${active === f.key ? " active" : ""}`}
               style={{
                 fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase",
-                padding: "7px 16px", borderRadius: "var(--radius-md)", cursor: "pointer", transition: "all 0.15s",
+                padding: "7px 16px", borderRadius: "var(--radius-md)", cursor: "pointer",
                 background: active === f.key ? "var(--cyan)" : "transparent",
                 border: active === f.key ? "1.5px solid var(--cyan)" : "1.5px solid var(--border-md)",
                 color: active === f.key ? "#fff" : "var(--text-2)",
@@ -69,11 +70,10 @@ export default function WorkIndex() {
       {/* Grid */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
         {filtered.map((p, i) => (
-          <div key={i} className="ma-hover-lift" style={{
+          <div key={i} className="project-card" style={{
             background: "var(--surface)", border: "1px solid var(--border)",
             borderRadius: "var(--radius-lg)", overflow: "hidden",
             boxShadow: "var(--shadow-md)",
-            transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s",
             cursor: "pointer",
           }}>
             <div style={{ height: 180, background: p.grad, display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
@@ -86,7 +86,7 @@ export default function WorkIndex() {
               <div style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 600, color: "var(--text-1)", marginBottom: 8, letterSpacing: "-0.01em" }}>
                 {p.title}
               </div>
-              <div style={{ fontSize: 13, color: "var(--text-2)", lineHeight: 1.55, marginBottom: 16 }}>
+              <div className="project-desc-text" style={{ fontSize: 13, color: "var(--text-2)", lineHeight: 1.55, marginBottom: 16 }}>
                 {p.desc}
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: 14 }}>
@@ -94,7 +94,7 @@ export default function WorkIndex() {
                   <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--cyan)", display: "inline-block", opacity: 0.5 }} />
                   indexed {AGO[i % AGO.length]}
                 </span>
-                <i className="ph-bold ph-arrow-right" style={{ fontSize: 14, color: "var(--cyan)", transition: "transform 0.15s" }} />
+                <i className="ph-bold ph-arrow-right project-arrow" style={{ fontSize: 14, color: "var(--cyan)" }} />
               </div>
             </div>
           </div>

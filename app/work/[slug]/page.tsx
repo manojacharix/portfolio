@@ -14,7 +14,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 48px" }}>
 
-      <Link href="/work" className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 40, transition: "color 0.15s" }}>
+      <Link href="/work" className="ma-fade-up back-link" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 40 }}>
         <i className="ph-bold ph-arrow-left" style={{ fontSize: 12 }} /> Back to work
       </Link>
 
@@ -92,12 +92,12 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}>
           All work
         </Link>
-        <Link href="/contact" className="ma-press" style={{
+        <Link href="/contact" className="ma-press btn-primary" style={{
           fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
           letterSpacing: "0.08em", textTransform: "uppercase",
           padding: "11px 22px", borderRadius: "var(--radius-md)",
           background: "var(--cyan)", color: "#fff", textDecoration: "none",
-          boxShadow: "0 4px 20px rgba(38,192,248,0.3)", transition: "all 0.15s",
+          boxShadow: "0 4px 20px rgba(38,192,248,0.3)",
         }}>
           Init contact
         </Link>

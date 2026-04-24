@@ -67,7 +67,7 @@ export default function Nav() {
           ].map(({ href, label }) => {
             const active = path === href
             return (
-              <Link key={href} href={href} style={{
+              <Link key={href} href={href} className="nav-link-item" style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 400,
                 letterSpacing: "0.08em", textTransform: "uppercase",
                 color: active ? "var(--cyan)" : "var(--text-2)",
@@ -98,7 +98,7 @@ export default function Nav() {
           </button>
 
           {/* Primary CTA */}
-          <Link href="/contact" style={{
+          <Link href="/contact" className="nav-cta-btn" style={{
             fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
             letterSpacing: "0.08em", textTransform: "uppercase",
             background: "var(--cyan)", color: "#fff",

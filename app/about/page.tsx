@@ -13,7 +13,7 @@ export default function About() {
         <h1 className="ma-fade-up ma-delay-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px,5vw,72px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 20 }}>
           Not just a PM.<br />A builder.
         </h1>
-        <p className="ma-fade-up ma-delay-2" style={{ fontSize: 17, lineHeight: 1.75, color: "var(--text-2)", maxWidth: 560 }}>
+        <p className="ma-fade-up ma-delay-2 page-sub-text" style={{ fontSize: 17, lineHeight: 1.75, color: "var(--text-2)", maxWidth: 560 }}>
           {about.bio}
         </p>
       </div>
@@ -60,21 +60,21 @@ export default function About() {
               Actively looking for Product Manager and AI PM roles. If you&apos;re building something interesting, let&apos;s talk.
             </p>
             <div style={{ display: "flex", gap: 12 }}>
-              <a href={meta.calendly} target="_blank" rel="noopener noreferrer" className="ma-press" style={{
+              <a href={meta.calendly} target="_blank" rel="noopener noreferrer" className="ma-press btn-primary" style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
                 letterSpacing: "0.08em", textTransform: "uppercase",
                 padding: "11px 22px", borderRadius: "var(--radius-md)",
                 background: "var(--cyan)", color: "#fff", textDecoration: "none",
-                boxShadow: "0 4px 20px rgba(38,192,248,0.3)", transition: "all 0.15s",
+                boxShadow: "0 4px 20px rgba(38,192,248,0.3)",
               }}>
                 Schedule a call
               </a>
-              <Link href="/contact" style={{
+              <Link href="/contact" className="btn-outline" style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
                 letterSpacing: "0.08em", textTransform: "uppercase",
                 padding: "11px 22px", borderRadius: "var(--radius-md)",
                 background: "transparent", color: "var(--text-2)", textDecoration: "none",
-                border: "1.5px solid var(--border-md)", transition: "all 0.15s",
+                border: "1.5px solid var(--border-md)",
               }}>
                 Send a message
               </Link>
@@ -121,11 +121,10 @@ export default function About() {
             </div>
           </div>
 
-          <a href={meta.resume} target="_blank" rel="noopener noreferrer" className="ma-hover-lift" style={{
+          <a href={meta.resume} target="_blank" rel="noopener noreferrer" className="about-card" style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "20px 24px", border: "1px solid var(--border)",
             borderRadius: "var(--radius-lg)", background: "var(--surface)", textDecoration: "none",
-            transition: "border-color 0.15s, transform 0.2s, box-shadow 0.2s",
           }}>
             <div>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 600, color: "var(--text-1)", marginBottom: 4 }}>Resume</div>

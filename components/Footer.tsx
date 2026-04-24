@@ -17,7 +17,7 @@ export default function Footer() {
             <div className="ma-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", flexShrink: 0 }} />
             Autonomous agent active
           </div>
-          <div style={{ fontSize: 12, color: "var(--text-2)", maxWidth: 500, lineHeight: 1.5 }}>
+          <div className="about-body-text" style={{ fontSize: 12, color: "var(--text-2)", maxWidth: 500, lineHeight: 1.5 }}>
             Manoj is deep in ongoing projects. An{" "}
             <span style={{ color: "var(--cyan)" }}>autonomous agent</span>{" "}
             monitors his latest work and keeps this site current.
@@ -30,11 +30,10 @@ export default function Footer() {
               { href: "/work",    label: "Work" },
               { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
-              <Link key={href} href={href} style={{
+              <Link key={href} href={href} className="footer-nav-item" style={{
                 fontFamily: "var(--font-mono)", fontSize: 10,
                 letterSpacing: "0.08em", textTransform: "uppercase",
                 color: "var(--text-muted)", textDecoration: "none",
-                transition: "color 0.15s",
               }}>
                 {label}
               </Link>

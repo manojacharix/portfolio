@@ -256,3 +256,179 @@ body::before {
   transform: translateX(16px);
   background: var(--cyan);
 }
+
+/* ════════════════════════════════════════════
+   HOVER STATES — all interactive elements
+   (inline style props can't express :hover)
+   ════════════════════════════════════════════ */
+
+/* Nav links */
+.nav-link-item {
+  transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.nav-link-item:hover {
+  color: var(--cyan) !important;
+  background: var(--cyan-100) !important;
+}
+
+/* Nav primary CTA */
+.nav-cta-btn {
+  transition: background var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.nav-cta-btn:hover {
+  background: var(--cyan-700) !important;
+  box-shadow: 0 0 24px rgba(38,192,248,0.35) !important;
+}
+
+/* Primary CTA button */
+.btn-primary {
+  transition: background var(--dur-default) var(--ease-out), box-shadow var(--dur-default) var(--ease-out), transform var(--dur-default) var(--ease-out);
+}
+.btn-primary:hover {
+  background: var(--cyan-700) !important;
+  box-shadow: 0 4px 28px rgba(38,192,248,0.45) !important;
+  transform: translateY(-1px);
+}
+
+/* Outline button */
+.btn-outline {
+  transition: border-color var(--dur-default) var(--ease-out), background var(--dur-default) var(--ease-out), color var(--dur-default) var(--ease-out);
+}
+.btn-outline:hover {
+  border-color: var(--cyan) !important;
+  background: var(--cyan-100) !important;
+  color: var(--cyan) !important;
+}
+
+/* Project cards */
+.project-card {
+  transition: border-color var(--dur-default) var(--ease-out), box-shadow var(--dur-default) var(--ease-out), transform var(--dur-default) var(--ease-out);
+}
+.project-card:hover {
+  border-color: var(--border-md) !important;
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-3px);
+}
+.project-card:hover .project-arrow {
+  color: var(--cyan) !important;
+  transform: translateX(3px);
+}
+.project-arrow {
+  transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+/* About cards */
+.about-card {
+  transition: border-color var(--dur-default) var(--ease-out), box-shadow var(--dur-default) var(--ease-out), transform var(--dur-default) var(--ease-out);
+}
+.about-card:hover {
+  border-color: var(--border-md) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* Filter buttons (work page) */
+.filter-btn-item {
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.filter-btn-item:hover,
+.filter-btn-item.active {
+  background: var(--cyan) !important;
+  border-color: var(--cyan) !important;
+  color: #fff !important;
+}
+
+/* Social links (contact page) */
+.social-link-item {
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.social-link-item:hover {
+  border-color: var(--cyan) !important;
+  color: var(--cyan) !important;
+  background: var(--cyan-100) !important;
+}
+
+/* See-all link */
+.see-all-link {
+  transition: gap var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.see-all-link:hover {
+  gap: 10px !important;
+}
+
+/* Footer nav links */
+.footer-nav-item {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.footer-nav-item:hover {
+  color: var(--cyan) !important;
+}
+
+/* Back link (case study) */
+.back-link {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.back-link:hover {
+  color: var(--cyan) !important;
+}
+
+/* ════════════════════════════════════════════
+   LIGHT THEME CONTRAST FIXES
+   Secondary text in light = var(--cyan-800) per prototype
+   ════════════════════════════════════════════ */
+
+/* Agent bar: muted text needs to be visible in light */
+[data-theme="light"] .agent-bar-text {
+  color: var(--cyan-800);
+}
+
+/* Hero sub text in light — prototype: var(--cyan-800) opacity 0.8 */
+[data-theme="light"] .hero-sub-text {
+  color: var(--cyan-800) !important;
+  opacity: 0.8;
+}
+
+/* Stat label in light — prototype: var(--cyan-800) opacity 0.5 */
+[data-theme="light"] .stat-label-text {
+  color: var(--cyan-800) !important;
+  opacity: 0.5;
+}
+
+/* Project desc in light — prototype: var(--cyan-800) opacity 0.7 */
+[data-theme="light"] .project-desc-text {
+  color: var(--cyan-800) !important;
+  opacity: 0.7;
+}
+
+/* About body text in light */
+[data-theme="light"] .about-body-text {
+  color: var(--cyan-800) !important;
+  opacity: 0.8;
+}
+
+/* About card desc in light */
+[data-theme="light"] .about-card-desc-text {
+  color: var(--cyan-800) !important;
+  opacity: 0.65;
+}
+
+/* Page subtitle in light */
+[data-theme="light"] .page-sub-text {
+  color: var(--cyan-800) !important;
+  opacity: 0.7;
+}
+
+/* Form input in light */
+[data-theme="light"] .form-input-field {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text-1) !important;
+}
+[data-theme="light"] .form-input-field:focus {
+  border-color: var(--cyan) !important;
+  box-shadow: 0 0 0 3px rgba(38,192,248,0.1) !important;
+}
+
+/* "I build" dim text — in light it should be dark-tinted not white-tinted */
+[data-theme="light"] .hero-dim-text {
+  color: rgba(1,13,20,0.22) !important;
+}

@@ -41,7 +41,7 @@ export default function Contact() {
         Got something<br />to <span style={{ color: "var(--cyan)" }}>build?</span>
       </h1>
 
-      <p className="ma-fade-up ma-delay-2" style={{ fontSize: 16, lineHeight: 1.65, color: "var(--text-2)", maxWidth: 480, marginBottom: 48 }}>
+      <p className="ma-fade-up ma-delay-2 page-sub-text" style={{ fontSize: 16, lineHeight: 1.65, color: "var(--text-2)", maxWidth: 480, marginBottom: 48 }}>
         No sales funnel, no 5-step form, no &quot;our team will get back to you.&quot; Just me — and I&apos;m actually fast.
       </p>
 
@@ -107,12 +107,12 @@ export default function Contact() {
           { label: "Twitter / X", icon: "ph-twitter-logo",  href: "https://x.com/x_achari" },
           { label: "GitHub",      icon: "ph-github-logo",   href: "https://github.com/manojacharix" },
         ].map(s => (
-          <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{
+          <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="social-link-item" style={{
             display: "flex", alignItems: "center", gap: 8,
             padding: "10px 18px", border: "1.5px solid var(--border-md)", borderRadius: "var(--radius-md)",
             color: "var(--text-2)", fontFamily: "var(--font-mono)", fontSize: 11,
             letterSpacing: "0.06em", textDecoration: "none",
-            transition: "all 0.15s", background: "none",
+            background: "none",
           }}>
             <i className={`ph-bold ${s.icon}`} style={{ fontSize: 15 }} />
             {s.label}
