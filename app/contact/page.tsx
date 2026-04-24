@@ -103,6 +103,7 @@ export default function Contact() {
       {/* Social links */}
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 48, paddingTop: 36, borderTop: "1px solid var(--border)" }}>
         {[
+          { label: "Email",       icon: "ph-envelope",      href: `mailto:${meta.email}` },
           { label: "LinkedIn",    icon: "ph-linkedin-logo", href: meta.linkedin },
           { label: "Twitter / X", icon: "ph-twitter-logo",  href: "https://x.com/x_achari" },
           { label: "GitHub",      icon: "ph-github-logo",   href: "https://github.com/manojacharix" },

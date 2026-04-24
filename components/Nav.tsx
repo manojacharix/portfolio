@@ -106,7 +106,7 @@ export default function Nav() {
             boxShadow: "0 0 16px rgba(38,192,248,0.25)",
             transition: "all 0.15s",
           }}>
-            Init contact
+            Contact
           </Link>
         </div>
       </nav>
