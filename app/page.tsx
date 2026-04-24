@@ -7,56 +7,41 @@ const PLACEHOLDER_PROJECTS = [
     tag: "AI Product",
     title: "Intelligent Doc Assistant",
     desc: "LLM-powered Q&A with citations. UX, backend, deploy.",
-    year: "2024",
     icon: "ph-brain",
-    grad: "linear-gradient(135deg,#E1F6FE,#A6E5FC,#6DD5FA)",
+    grad: "linear-gradient(135deg,#011A23,#023345,#05678A)",
     ago: "2h ago",
   },
   {
     tag: "SaaS",
     title: "Growth Analytics Platform",
     desc: "Real-time metrics for indie SaaS. Wireframe to live in 3 weeks.",
-    year: "2024",
     icon: "ph-chart-line-up",
-    grad: "linear-gradient(135deg,#FFF5E6,#FFD494,#FEA92A)",
+    grad: "linear-gradient(135deg,#190F00,#613A00,#935901)",
     ago: "5h ago",
   },
   {
     tag: "Design System",
     title: "Brand OS",
     desc: "Full design system + component library for a B2B startup.",
-    year: "2023",
     icon: "ph-cube",
-    grad: "linear-gradient(135deg,#E1F6FE,#C4EEFD,#26C0F8)",
+    grad: "linear-gradient(135deg,#011A23,#023345,#079ACF18)",
     ago: "1d ago",
   },
 ]
 
 const ABOUT_CARDS = [
-  {
-    icon: "ph-brain",
-    title: "AI-native thinking",
-    desc: "Every product decision starts with: what does the model know, and where does the human loop in?",
-  },
-  {
-    icon: "ph-rocket-launch",
-    title: "Ship-first philosophy",
-    desc: "Perfect is the enemy of live. I bias toward shipping, measuring, iterating.",
-  },
-  {
-    icon: "ph-layout",
-    title: "Design that converts",
-    desc: "Interfaces that feel right and perform better. Systems that don't fall apart at page two.",
-  },
+  { icon: "ph-brain",         title: "AI-native thinking",    desc: "Every product decision starts with: what does the model know, and where does the human loop in?" },
+  { icon: "ph-rocket-launch", title: "Ship-first philosophy", desc: "Perfect is the enemy of live. I bias toward shipping, measuring, iterating." },
+  { icon: "ph-layout",        title: "Design that converts",  desc: "Interfaces that feel right and perform better. Systems that don't fall apart at page two." },
 ]
 
 const SKILLS = ["AI/ML Products", "Product Strategy", "Design Systems", "LLM Pipelines", "0-to-1 Builds", "Payments & Fintech"]
 
 const STATS = [
-  { num: "12", accent: "+", label: "Products launched" },
-  { num: "0",  accent: "→1", label: "Full-stack process" },
+  { num: "12", accent: "+",   label: "Products launched" },
+  { num: "0",  accent: "→1",  label: "Full-stack process" },
   { num: "AI", accent: "-first", label: "Every decision" },
-  { num: "1",  accent: "×", label: "No agency overhead" },
+  { num: "1",  accent: "×",   label: "No agency overhead" },
 ]
 
 export default function Home() {
@@ -65,11 +50,11 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section style={{
-        maxWidth: 1400, margin: "0 auto",
+        maxWidth: 1200, margin: "0 auto",
         padding: "80px 80px 60px",
         display: "grid",
-        gridTemplateColumns: "1fr 480px",
-        gap: 48,
+        gridTemplateColumns: "1fr 460px",
+        gap: 56,
         alignItems: "center",
         minHeight: "calc(100vh - 88px)",
       }}>
@@ -80,55 +65,54 @@ export default function Home() {
             display: "flex", alignItems: "center", gap: 10,
             fontFamily: "var(--font-mono)", fontSize: 11,
             letterSpacing: "0.12em", textTransform: "uppercase",
-            color: "var(--cyan-600)", marginBottom: 28,
+            color: "var(--cyan)", marginBottom: 28,
             animation: "fadeUp 0.5s ease both",
           }}>
-            <div style={{ width: 28, height: 1.5, background: "var(--cyan-600)" }} />
+            <div style={{ width: 28, height: 1.5, background: "var(--cyan)" }} />
             AI Product Manager
           </div>
 
           <h1 style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(52px, 6.5vw, 96px)",
+            fontSize: "clamp(52px, 6vw, 88px)",
             fontWeight: 700, lineHeight: 0.96,
-            letterSpacing: "-0.05em", color: "var(--text-1)",
-            maxWidth: 860, marginBottom: 30,
+            letterSpacing: "-0.05em",
+            marginBottom: 30,
             animation: "fadeUp 0.5s 0.1s ease both",
           }}>
-            <span style={{ color: "rgba(1,13,20,0.22)" }}>I build</span><br />
-            <span style={{
-              background: "linear-gradient(90deg, var(--cyan-600), var(--cyan-700))",
-              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-            }}>products.</span><br />
-            Zero to shipped.
+            <span style={{ color: "rgba(255,255,255,0.2)" }}>I build</span><br />
+            <span style={{ color: "var(--accent)" }}>products.</span><br />
+            <span style={{ color: "var(--text-1)" }}>Zero to shipped.</span>
           </h1>
 
           <p style={{
-            fontSize: 17, lineHeight: 1.7, color: "var(--cyan-800)",
-            maxWidth: 480, marginBottom: 48, opacity: 0.8,
+            fontSize: 17, lineHeight: 1.7, color: "var(--text-2)",
+            maxWidth: 460, marginBottom: 48,
             animation: "fadeUp 0.5s 0.2s ease both",
           }}>
             {meta.subheadline}
           </p>
 
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", animation: "fadeUp 0.5s 0.3s ease both" }}>
+            {/* Primary CTA — yellow */}
             <Link href="/work" style={{
               fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12,
               letterSpacing: "0.08em", textTransform: "uppercase",
               padding: "13px 26px", borderRadius: 5,
-              background: "var(--cyan-600)", color: "#fff", textDecoration: "none",
-              boxShadow: "0 4px 20px rgba(38,192,248,0.3)",
+              background: "var(--accent)", color: "#fff", textDecoration: "none",
+              boxShadow: "var(--shadow-accent)",
               display: "inline-flex", alignItems: "center", gap: 10,
               transition: "all 0.2s",
             }}>
               <i className="ph-bold ph-briefcase" style={{ fontSize: 14 }} />
               See the work
             </Link>
+            {/* Outline — dark */}
             <Link href="/contact" style={{
               fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12,
               letterSpacing: "0.08em", textTransform: "uppercase",
               padding: "13px 26px", borderRadius: 5,
-              background: "transparent", color: "var(--cyan-700)", textDecoration: "none",
+              background: "transparent", color: "var(--text-2)", textDecoration: "none",
               border: "1.5px solid var(--border-md)",
               display: "inline-flex", alignItems: "center", gap: 10,
               transition: "all 0.2s",
@@ -139,7 +123,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right: terminal */}
+        {/* Right — terminal */}
         <div style={{ height: 460, flexShrink: 0 }}>
           <HeroTerminal />
         </div>
@@ -147,8 +131,7 @@ export default function Home() {
 
       {/* ── STATS ── */}
       <div style={{
-        maxWidth: 1400, margin: "0 auto",
-        padding: "0 80px",
+        maxWidth: 1200, margin: "0 auto", padding: "0 80px",
         display: "grid", gridTemplateColumns: "repeat(4,1fr)",
         borderTop: "1px solid var(--border)",
       }}>
@@ -160,9 +143,9 @@ export default function Home() {
             paddingLeft: i > 0 ? 32 : 0,
           }}>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 38, fontWeight: 700, letterSpacing: "-0.05em", lineHeight: 1, color: "var(--text-1)", marginBottom: 6 }}>
-              {s.num}<span style={{ color: "var(--cyan-600)" }}>{s.accent}</span>
+              {s.num}<span style={{ color: "var(--accent)" }}>{s.accent}</span>
             </div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan-800)", opacity: 0.5 }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)" }}>
               {s.label}
             </div>
           </div>
@@ -171,19 +154,19 @@ export default function Home() {
 
       {/* ── ABOUT STRIP ── */}
       <div style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", marginTop: 40 }}>
-        <div style={{ maxWidth: 1400, margin: "0 auto", padding: "80px 80px", display: "grid", gridTemplateColumns: "5fr 4fr", gap: 80, alignItems: "start" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 80px", display: "grid", gridTemplateColumns: "5fr 4fr", gap: 80, alignItems: "start" }}>
 
           <div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 18, display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ color: "var(--cyan-200)" }}>//</span> About
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 18, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ color: "var(--border-md)" }}>//</span> About
             </div>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 40, fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.03em", color: "var(--text-1)", marginBottom: 20 }}>
               Not just a PM.<br />A builder.
             </h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--cyan-800)", opacity: 0.8, marginBottom: 14 }}>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--text-2)", marginBottom: 14 }}>
               I&apos;m Manoj — an AI product manager who doesn&apos;t stop at the PRD. I prototype in Figma, ship in code, and deploy before the meeting where we&apos;d normally &quot;discuss next steps.&quot;
             </p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--cyan-800)", opacity: 0.8 }}>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--text-2)" }}>
               No hand-waving. No &quot;we&apos;ll figure out engineering later.&quot; Just product thinking with the receipts to back it up.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 22 }}>
@@ -191,7 +174,8 @@ export default function Home() {
                 <span key={s} style={{
                   fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase",
                   padding: "5px 12px", borderRadius: 3,
-                  border: "1px solid var(--border-md)", color: "var(--cyan-700)", background: "var(--cyan-100)",
+                  border: "1px solid var(--border-md)", color: "var(--text-3)",
+                  background: "rgba(38,192,248,0.06)",
                 }}>
                   {s}
                 </span>
@@ -205,14 +189,14 @@ export default function Home() {
                 background: "var(--bg)", border: "1px solid var(--border)",
                 borderRadius: 8, padding: "18px 20px",
                 display: "flex", gap: 14, alignItems: "flex-start",
-                transition: "border-color 0.2s, box-shadow 0.2s",
+                transition: "border-color 0.2s",
               }}>
-                <div style={{ width: 34, height: 34, borderRadius: 6, background: "var(--cyan-100)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <i className={`ph-bold ${c.icon}`} style={{ fontSize: 16, color: "var(--cyan-600)" }} />
+                <div style={{ width: 34, height: 34, borderRadius: 6, background: "rgba(38,192,248,0.08)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <i className={`ph-bold ${c.icon}`} style={{ fontSize: 16, color: "var(--cyan)" }} />
                 </div>
                 <div>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 3 }}>{c.title}</div>
-                  <div style={{ fontSize: 12, color: "var(--cyan-800)", opacity: 0.65, lineHeight: 1.5 }}>{c.desc}</div>
+                  <div style={{ fontSize: 12, color: "var(--text-2)", lineHeight: 1.5 }}>{c.desc}</div>
                 </div>
               </div>
             ))}
@@ -222,11 +206,11 @@ export default function Home() {
       </div>
 
       {/* ── SELECTED WORK ── */}
-      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "80px 80px" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 80px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 36 }}>
           <div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ color: "var(--cyan-200)" }}>//</span> Selected Work
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ opacity: 0.4 }}>//</span> Selected Work
             </div>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--text-1)" }}>
               Things I&apos;ve shipped
@@ -234,9 +218,8 @@ export default function Home() {
           </div>
           <Link href="/work" style={{
             fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase",
-            color: "var(--cyan-600)", textDecoration: "none",
+            color: "var(--accent)", textDecoration: "none",
             display: "flex", alignItems: "center", gap: 6,
-            transition: "gap 0.15s",
           }}>
             All projects <i className="ph-bold ph-arrow-right" style={{ fontSize: 12 }} />
           </Link>
@@ -247,23 +230,24 @@ export default function Home() {
             <Link key={i} href="/work" style={{ textDecoration: "none" }}>
               <div style={{
                 background: "var(--surface)", border: "1px solid var(--border)",
-                borderRadius: 10, overflow: "hidden",
-                boxShadow: "var(--shadow-sm)",
-                transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s",
+                borderRadius: 12, overflow: "hidden",
+                boxShadow: "var(--shadow-md)",
+                transition: "border-color 0.2s, transform 0.2s",
               }}>
-                <div style={{ height: 160, background: p.grad, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <i className={`ph-thin ${p.icon}`} style={{ fontSize: 56, color: "rgba(5,103,138,0.2)" }} />
+                {/* Thumbnail — dark gradient with icon */}
+                <div style={{ height: 160, background: p.grad, display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--border)" }}>
+                  <i className={`ph-thin ${p.icon}`} style={{ fontSize: 56, color: "rgba(38,192,248,0.25)" }} />
                 </div>
-                <div style={{ padding: 18 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 8 }}>{p.tag}</div>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--text-1)", marginBottom: 6, letterSpacing: "-0.01em" }}>{p.title}</div>
-                  <div style={{ fontSize: 12, color: "var(--cyan-800)", opacity: 0.7, lineHeight: 1.5, marginBottom: 14 }}>{p.desc}</div>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: 12 }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 4 }}>
-                      <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--cyan-600)", display: "inline-block" }} />
+                <div style={{ padding: 20 }}>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8 }}>{p.tag}</div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--text-1)", marginBottom: 8, letterSpacing: "-0.01em" }}>{p.title}</div>
+                  <div style={{ fontSize: 13, color: "var(--text-2)", lineHeight: 1.55, marginBottom: 16 }}>{p.desc}</div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: 14 }}>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 5 }}>
+                      <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--cyan)", display: "inline-block", opacity: 0.6 }} />
                       indexed {p.ago}
                     </span>
-                    <i className="ph-bold ph-arrow-right" style={{ fontSize: 13, color: "var(--cyan-200)" }} />
+                    <i className="ph-bold ph-arrow-right" style={{ fontSize: 13, color: "var(--accent)" }} />
                   </div>
                 </div>
               </div>

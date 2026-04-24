@@ -12,6 +12,7 @@ export default function AuroraBackground() {
     if (!gl) return
 
     const vs = `attribute vec2 a_pos; void main(){ gl_Position = vec4(a_pos, 0, 1); }`
+    // Dark aurora: deep navy base, subtle cyan/teal light bands
     const fs = `
       precision mediump float;
       uniform float u_time;
@@ -35,24 +36,27 @@ export default function AuroraBackground() {
 
       void main(){
         vec2 uv = gl_FragCoord.xy / u_res;
-        float t = u_time * 0.08;
+        float t = u_time * 0.06;
 
-        float n1 = fbm(uv * 2. + vec2(t * .4, t * .2));
-        float n2 = fbm(uv * 1.5 + vec2(-t * .3, t * .15) + n1 * .5);
+        float n1 = fbm(uv * 2.2 + vec2(t * .35, t * .18));
+        float n2 = fbm(uv * 1.4 + vec2(-t * .25, t * .12) + n1 * .4);
         float aurora = n1 * n2;
 
-        vec3 base  = vec3(0.957, 0.984, 0.996);
-        vec3 tint1 = vec3(0.882, 0.965, 0.992);
-        vec3 tint2 = vec3(0.773, 0.933, 0.984);
-        vec3 tint3 = vec3(0.6,   0.88,  0.97);
+        /* Dark base: near-black navy */
+        vec3 base   = vec3(0.004, 0.051, 0.078);  /* #010D14 */
+        /* Subtle cyan lift */
+        vec3 tint1  = vec3(0.006, 0.080, 0.120);  /* very dark blue */
+        vec3 tint2  = vec3(0.010, 0.110, 0.168);  /* slightly lighter */
+        vec3 tint3  = vec3(0.024, 0.180, 0.260);  /* dim cyan band */
 
         vec3 col = base;
-        col = mix(col, tint1, smoothstep(0.3,  0.55, n1));
-        col = mix(col, tint2, smoothstep(0.45, 0.65, aurora));
-        col = mix(col, tint3, smoothstep(0.6,  0.8,  n2) * 0.5);
+        col = mix(col, tint1, smoothstep(0.30, 0.55, n1));
+        col = mix(col, tint2, smoothstep(0.45, 0.68, aurora));
+        col = mix(col, tint3, smoothstep(0.60, 0.80, n2) * 0.45);
 
-        float warmspot = 1. - length(uv - vec2(0.85, 0.15)) * 1.2;
-        col = mix(col, vec3(1., 0.97, 0.93), clamp(warmspot, 0., 1.) * 0.15);
+        /* Warm yellow glow — very subtle, top right corner */
+        float warm = 1. - length(uv - vec2(0.9, 0.08)) * 2.5;
+        col += vec3(0.06, 0.03, 0.0) * clamp(warm, 0., 1.) * 0.3;
 
         gl_FragColor = vec4(col, 1.);
       }
@@ -64,7 +68,6 @@ export default function AuroraBackground() {
       gl.compileShader(s)
       return s
     }
-
     const prog = gl.createProgram()!
     gl.attachShader(prog, compile(vs, gl.VERTEX_SHADER))
     gl.attachShader(prog, compile(fs, gl.FRAGMENT_SHADER))
@@ -74,7 +77,6 @@ export default function AuroraBackground() {
     const buf = gl.createBuffer()
     gl.bindBuffer(gl.ARRAY_BUFFER, buf)
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW)
-
     const pos = gl.getAttribLocation(prog, "a_pos")
     gl.enableVertexAttribArray(pos)
     gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0)

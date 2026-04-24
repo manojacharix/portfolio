@@ -170,14 +170,27 @@
   /* ============================================================
      LIGHT THEME SEMANTIC TOKENS
      ============================================================ */
-  --light-bg:        #F0FBFE;  /* lightblue-50 */
-  --light-surface:   #FFFFFF;
-  --light-surface2:  #E1F6FE;  /* lightblue-100 */
-  --light-border:    rgba(38,192,248,0.15);
-  --light-border-md: rgba(38,192,248,0.30);
-  --light-text-1:    #010D14;
-  --light-text-2:    #05678A;
-  --light-text-muted:#A6CEDF;
+  --light-bg:          #F0FBFE;  /* lightblue-50 */
+  --light-surface:     #FFFFFF;
+  --light-surface2:    #E1F6FE;  /* lightblue-100 */
+  --light-border:      rgba(38,192,248,0.15);
+  --light-border-md:   rgba(38,192,248,0.30);
+  --light-text-1:      #010D14;
+  --light-text-2:      #05678A;
+  --light-text-muted:  #A6CEDF;
+
+  /* ============================================================
+     DARK THEME SEMANTIC TOKENS
+     ============================================================ */
+  --dark-bg:           #010D14;
+  --dark-surface:      #011A23;
+  --dark-surface2:     #023345;
+  --dark-border:       rgba(38,192,248,0.12);
+  --dark-border-md:    rgba(38,192,248,0.28);
+  --dark-text-1:       #FFFFFF;
+  --dark-text-2:       #A6E5FC;
+  --dark-text-3:       #6DD5FA;
+  --dark-text-muted:   #05678A;
 
   /* ============================================================
      ANIMATION TOKENS

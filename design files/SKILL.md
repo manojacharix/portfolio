@@ -26,7 +26,11 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 **Key colors — Dark Theme:**
 - Background: `#010D14` (near-black navy)
+- Surface: `#011A23` / `#023345`
+- Text: `#FFFFFF` / `#A6E5FC` / `#6DD5FA`
 - Accent: `#26C0F8` (cyan), `#F18F01` (yellow)
+
+**Theme toggle:** Set `data-theme="dark"` on `<html>` for dark mode. All tokens switch via CSS `[data-theme="dark"]` overrides. Persists via `localStorage`. WebGL bg interpolates smoothly.
 
 **Tone:** Witty, direct, informal but genuine. First person. Short sentences. No emoji. No em dashes. No corporate fluff. Sentence case headings.
 

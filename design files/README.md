@@ -72,13 +72,29 @@ Dark-first. The base is near-black (`#030303` to `#141414`) — not pure black, 
 
 4px base unit. Scale: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96px. Sections breathe — generous vertical padding (64–96px). Component internals are tighter (8–24px).
 
+### Themes
+
+Two first-class themes — both fully supported:
+
+| Token | Light | Dark |
+|---|---|---|
+| `--bg` | `#F0FBFE` lightblue-50 | `#010D14` near-black navy |
+| `--surface` | `#FFFFFF` | `#011A23` |
+| `--surface2` | `#E1F6FE` | `#023345` |
+| `--text-1` | `#010D14` | `#FFFFFF` |
+| `--text-2` | `#05678A` | `#A6E5FC` |
+| `--text-muted` | `#A6CEDF` | `#05678A` |
+| `--border` | `rgba(38,192,248,0.15)` | `rgba(38,192,248,0.12)` |
+
+Toggle via `[data-theme="dark"]` on `<html>`. Persists to `localStorage`. WebGL aurora background interpolates smoothly between themes via `u_dark` uniform.
+
 ### Backgrounds & Surfaces
 
-- **Base surface:** `grey-950` (#030303)
-- **Raised surface:** `grey-800` (#080808) — cards, panels
-- **Elevated:** `grey-500` (#141414) — tooltips, dropdowns, modals
-- No background images by default. No gradients on backgrounds.
-- Subtle texture can be introduced via very low-opacity noise (optional, for hero sections).
+- **Light base:** `#F0FBFE` (lightblue-50) — primary site background
+- **Dark base:** `#010D14` (near-black navy) — deep, rich, not pure black
+- **Raised surface (light):** `#FFFFFF` — cards, panels
+- **Raised surface (dark):** `#011A23` — cards, panels
+- No background gradients on surfaces. WebGL aurora provides the ambient background texture.
 
 ### Cards
 
@@ -178,36 +194,46 @@ Dark-first. The base is near-black (`#030303` to `#141414`) — not pure black, 
 
 ```
 /
-├── README.md                    ← You are here
-├── SKILL.md                     ← Agent skill descriptor
-├── colors_and_type.css          ← All CSS tokens: colors, type, spacing, radii, shadows
+├── README.md                      ← You are here
+├── SKILL.md                       ← Agent skill descriptor
+├── colors_and_type.css            ← All CSS tokens: colors, type, spacing, radii, shadows, animation
+├── animations.css                 ← Keyframes + utility classes (ma-fade-up, ma-hover-lift, etc.)
 ├── assets/
-│   └── manoj_logo.svg           ← Primary logo mark
-├── preview/
-│   ├── colors-neutrals.html     ← Grey scale swatches
-│   ├── colors-yellow.html       ← Yellow accent scale
-│   ├── colors-blue.html         ← Blue + LightBlue scale
-│   ├── colors-semantic.html     ← Semantic token chips
-│   ├── colors-palette.html      ← Full palette + combos
-│   ├── type-display.html        ← Space Grotesk display specimens
-│   ├── type-body.html           ← DM Sans body specimens
-│   ├── spacing-scale.html       ← Spacing scale bars
-│   ├── spacing-radii-shadows.html ← Radii + shadow system
-│   ├── components-buttons.html  ← Button variants + sizes
-│   ├── components-badges.html   ← Badges + tags
-│   ├── components-cards.html    ← Card variants
-│   ├── components-inputs.html   ← Form inputs
-│   ├── brand-logo.html          ← Logo on dark + yellow
-│   └── brand-icons.html         ← Phosphor icon showcase
+│   ├── manoj_logo.svg             ← Icon mark only
+│   └── manoj_logo_full.svg        ← Full wordmark (icon + "Manoj achari" text)
+├── preview/                       ← Design System tab cards (all light theme #F0FBFE)
+│   ├── colors-neutrals.html       ← Grey scale swatches
+│   ├── colors-yellow.html         ← Yellow accent scale
+│   ├── colors-blue.html           ← Blue + LightBlue scale
+│   ├── colors-semantic.html       ← Semantic token chips (light + dark)
+│   ├── colors-palette.html        ← All 4 scales + combination tiles
+│   ├── type-display.html          ← Space Grotesk display specimens
+│   ├── type-body.html             ← DM Sans body + mono specimens
+│   ├── spacing-scale.html         ← Spacing scale bars
+│   ├── spacing-radii-shadows.html ← Radii + light/dark shadow system
+│   ├── components-buttons.html    ← Button variants + sizes
+│   ├── components-badges.html     ← Badges + tags
+│   ├── components-cards.html      ← Card variants
+│   ├── components-inputs.html     ← Form inputs
+│   ├── animations.html            ← Live animation demos (entrance, hover, continuous)
+│   ├── brand-logo.html            ← Full wordmark on 5 backgrounds
+│   └── brand-icons.html           ← Phosphor icon showcase
 └── ui_kits/
     └── personal_site/
         ├── README.md
-        └── index.html           ← Interactive personal site prototype
+        └── index.html             ← Interactive site prototype (light/dark toggle, WebGL, agent CLI)
 ```
 
 ---
+
+## Social
+
+- **LinkedIn:** linkedin.com/in/manoj-manages/
+- **Twitter / X:** x.com/x_achari
+- **GitHub:** github.com/manojacharix
 
 ## ⚠️ Caveats
 
 - **Font files missing:** `Space_Grotesk.zip` and `DM_Sans.zip` were listed but not found in uploads. Both fonts are loaded via Google Fonts CDN. For production/offline use, please provide the actual font files.
 - **No illustrations:** No brand illustrations were provided. Placeholder gradients used in project card thumbnails.
+- **Agent CLI terminal:** The typewriter animation in the site hero is decorative — not wired to a real agent.
