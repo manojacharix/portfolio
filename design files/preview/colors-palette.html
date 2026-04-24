@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../animations.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F0FBFE;padding:20px;display:flex;flex-direction:column;gap:14px;}
+.label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#A6CEDF;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+
+.swatch{flex:1;min-width:36px;height:44px;border-radius:4px;}
+.scale-row{display:flex;gap:2px;margin-bottom:6px;}
+.scale-row-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#A6CEDF;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+
+/* Combo cards */
+.combo{border-radius:8px;padding:12px 14px;border:1px solid rgba(255,255,255,0.1);}
+.combo-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.combo-sub{font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px;opacity:0.55;}
+</style>
+</head><body>
+
+<div class="ma-fade-up">
+  <div class="scale-row-label">Neutral</div>
+  <div class="scale-row">
+    <div class="swatch" style="background:#030303"></div>
+    <div class="swatch" style="background:#141414"></div>
+    <div class="swatch" style="background:#424242"></div>
+    <div class="swatch" style="background:#737373"></div>
+    <div class="swatch" style="background:#A1A1A1"></div>
+    <div class="swatch" style="background:#D1D1D1"></div>
+    <div class="swatch" style="background:#E8E8E8"></div>
+    <div class="swatch" style="background:#fff;border:1px solid rgba(0,0,0,0.06)"></div>
+  </div>
+</div>
+
+<div class="ma-fade-up ma-delay-1">
+  <div class="scale-row-label">Yellow</div>
+  <div class="scale-row">
+    <div class="swatch" style="background:#190F00"></div>
+    <div class="swatch" style="background:#613A00"></div>
+    <div class="swatch" style="background:#C17401"></div>
+    <div class="swatch" style="background:#F18F01"></div>
+    <div class="swatch" style="background:#FEA92A"></div>
+    <div class="swatch" style="background:#FEC062"></div>
+    <div class="swatch" style="background:#FFD494"></div>
+    <div class="swatch" style="background:#FFF5E6;border:1px solid rgba(241,143,1,0.1)"></div>
+  </div>
+</div>
+
+<div class="ma-fade-up ma-delay-2">
+  <div class="scale-row-label">Blue + LightBlue</div>
+  <div class="scale-row">
+    <div class="swatch" style="background:#040B11"></div>
+    <div class="swatch" style="background:#11344B"></div>
+    <div class="swatch" style="background:#2980B9"></div>
+    <div class="swatch" style="background:#75B6E0"></div>
+    <div class="swatch" style="background:#011A23"></div>
+    <div class="swatch" style="background:#05678A"></div>
+    <div class="swatch" style="background:#26C0F8"></div>
+    <div class="swatch" style="background:#F0FBFE;border:1px solid rgba(38,192,248,0.15)"></div>
+  </div>
+</div>
+
+<div class="ma-fade-up ma-delay-3">
+  <div class="label">// Color combinations</div>
+  <div class="row">
+    <div class="combo" style="background:#030303;flex:1">
+      <div class="combo-name" style="color:#F18F01">Dark x Yellow</div>
+      <div class="combo-sub" style="color:#737373">Primary. CTAs.</div>
+    </div>
+    <div class="combo" style="background:linear-gradient(135deg,#011A23,#05678A);flex:1">
+      <div class="combo-name" style="color:#26C0F8">Navy x Cyan</div>
+      <div class="combo-sub" style="color:rgba(166,229,252,0.5)">AI. Tech. Focus.</div>
+    </div>
+    <div class="combo" style="background:#F18F01;flex:1">
+      <div class="combo-name" style="color:#030303">Yellow x Black</div>
+      <div class="combo-sub" style="color:rgba(3,3,3,0.5)">Energy. CTA.</div>
+    </div>
+    <div class="combo" style="background:#F0FBFE;border:1px solid rgba(38,192,248,0.2);flex:1">
+      <div class="combo-name" style="color:#010D14">Light x Cyan</div>
+      <div class="combo-sub" style="color:#A6CEDF">Site. Editorial.</div>
+    </div>
+  </div>
+</div>
+</body></html>

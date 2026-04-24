@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../animations.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F0FBFE;font-family:'JetBrains Mono',monospace;padding:20px;display:flex;flex-direction:column;gap:18px;min-height:100vh;}
+
+.row-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#A6CEDF;margin-bottom:10px;}
+.row{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;}
+
+/* Demo cards */
+.demo-card{
+  background:#fff;border:1px solid rgba(38,192,248,0.18);
+  border-radius:10px;padding:16px 18px;
+  box-shadow:0 1px 4px rgba(5,103,138,0.06);
+  display:flex;flex-direction:column;gap:8px;
+  width:150px;
+}
+.demo-card-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#010D14;}
+.demo-card-sub{font-size:10px;color:#A6CEDF;line-height:1.4;}
+.demo-token{font-size:9px;color:rgba(38,192,248,0.7);margin-top:2px;}
+
+/* Entrance demo: replay on hover of parent */
+.entrance-stage{
+  background:rgba(38,192,248,0.04);border:1px solid rgba(38,192,248,0.12);
+  border-radius:8px;padding:16px;
+  display:flex;gap:8px;align-items:flex-end;cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.entrance-stage:hover .anim-item{ animation-play-state:running; }
+.entrance-stage .anim-item{ animation-play-state:paused; }
+.entrance-stage:hover .anim-item{ animation-play-state:running; }
+
+.anim-item{
+  width:40px;height:40px;border-radius:6px;background:#26C0F8;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.anim-item i{font-size:18px;color:#fff;}
+
+/* Duration tokens */
+.dur-bar{height:6px;border-radius:3px;background:#26C0F8;margin-top:4px;}
+.dur-row{display:flex;flex-direction:column;gap:2px;}
+.dur-label{font-size:9px;color:#A6CEDF;display:flex;justify-content:space-between;}
+
+/* Easing curves (CSS drawn) */
+.ease-demo{
+  width:52px;height:36px;position:relative;
+  border-bottom:1px solid rgba(38,192,248,0.2);
+  border-left:1px solid rgba(38,192,248,0.2);
+}
+.ease-demo svg{position:absolute;inset:0;width:100%;height:100%;}
+
+/* Live hover demos */
+.live-btn{
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
+  letter-spacing:0.06em;text-transform:uppercase;
+  padding:9px 18px;border-radius:5px;border:none;cursor:pointer;
+  background:#26C0F8;color:#fff;display:inline-flex;align-items:center;gap:7px;
+}
+.live-card{
+  background:#fff;border:1px solid rgba(38,192,248,0.2);
+  border-radius:8px;padding:14px 16px;width:140px;cursor:pointer;
+}
+.live-card-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#010D14;margin-bottom:4px;}
+.live-card-sub{font-size:11px;color:#A6CEDF;}
+
+/* Shimmer */
+.shimmer-card{
+  background:#fff;border:1px solid rgba(38,192,248,0.15);
+  border-radius:8px;padding:14px;width:180px;
+}
+.skel{border-radius:4px;margin-bottom:8px;}
+.skel-title{height:14px;width:70%;}
+.skel-line{height:10px;width:90%;}
+.skel-line2{height:10px;width:60%;}
+
+/* Dot pulse */
+.pulse-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:#26C0F8;
+}
+
+/* Float icon */
+.float-icon{
+  width:44px;height:44px;border-radius:10px;
+  background:linear-gradient(135deg,#E1F6FE,#A6E5FC);
+  border:1px solid rgba(38,192,248,0.2);
+  display:flex;align-items:center;justify-content:center;
+}
+.float-icon i{font-size:22px;color:#26C0F8;}
+
+/* Spinner */
+.spinner{
+  width:24px;height:24px;border-radius:50%;
+  border:2.5px solid rgba(38,192,248,0.15);
+  border-top-color:#26C0F8;
+}
+
+/* Stagger demo */
+.stagger-row{display:flex;gap:6px;align-items:flex-end;}
+.stagger-bar{width:20px;border-radius:3px 3px 0 0;background:#26C0F8;opacity:0.9;}
+</style>
+</head>
+<body>
+
+<!-- ENTRANCES -->
+<div>
+  <div class="row-label">// Entrance animations (hover to replay)</div>
+  <div class="row">
+    <div>
+      <div class="row-label" style="margin-bottom:6px">fade-up</div>
+      <div class="entrance-stage" style="width:64px;height:64px" onclick="replay(this)">
+        <div class="anim-item ma-fade-up" style="animation-duration:500ms;animation-fill-mode:both;animation-iteration-count:1">
+          <i class="ph-bold ph-arrow-up"></i>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row-label" style="margin-bottom:6px">scale-in</div>
+      <div class="entrance-stage" style="width:64px;height:64px" onclick="replay(this)">
+        <div class="anim-item ma-scale-in" style="animation-duration:500ms;animation-fill-mode:both;animation-iteration-count:1">
+          <i class="ph-bold ph-cube"></i>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row-label" style="margin-bottom:6px">slide-right</div>
+      <div class="entrance-stage" style="width:64px;height:64px" onclick="replay(this)">
+        <div class="anim-item ma-slide-right" style="animation-duration:500ms;animation-fill-mode:both;animation-iteration-count:1">
+          <i class="ph-bold ph-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row-label" style="margin-bottom:6px">fade-down</div>
+      <div class="entrance-stage" style="width:64px;height:64px" onclick="replay(this)">
+        <div class="anim-item ma-fade-down" style="animation-duration:500ms;animation-fill-mode:both;animation-iteration-count:1">
+          <i class="ph-bold ph-arrow-down"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Stagger demo -->
+    <div>
+      <div class="row-label" style="margin-bottom:6px">stagger (click)</div>
+      <div class="entrance-stage" style="gap:6px;align-items:flex-end;padding:12px" onclick="replayStagger(this)">
+        <div class="stagger-bar ma-fade-up" style="height:24px;animation-delay:0ms;animation-duration:400ms;animation-fill-mode:both"></div>
+        <div class="stagger-bar ma-fade-up" style="height:32px;animation-delay:60ms;animation-duration:400ms;animation-fill-mode:both"></div>
+        <div class="stagger-bar ma-fade-up" style="height:20px;animation-delay:120ms;animation-duration:400ms;animation-fill-mode:both"></div>
+        <div class="stagger-bar ma-fade-up" style="height:40px;animation-delay:180ms;animation-duration:400ms;animation-fill-mode:both"></div>
+        <div class="stagger-bar ma-fade-up" style="height:28px;animation-delay:240ms;animation-duration:400ms;animation-fill-mode:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DURATION SCALE -->
+<div>
+  <div class="row-label">// Duration scale</div>
+  <div class="row" style="align-items:flex-start;gap:6px">
+    <div style="display:flex;flex-direction:column;gap:5px;width:320px">
+      <div class="dur-row"><div class="dur-label"><span>instant</span><span>80ms</span></div><div class="dur-bar" style="width:10%"></div></div>
+      <div class="dur-row"><div class="dur-label"><span>fast</span><span>150ms</span></div><div class="dur-bar" style="width:19%;opacity:0.85"></div></div>
+      <div class="dur-row"><div class="dur-label"><span>default</span><span>200ms</span></div><div class="dur-bar" style="width:25%;opacity:0.8"></div></div>
+      <div class="dur-row"><div class="dur-label"><span>medium</span><span>300ms</span></div><div class="dur-bar" style="width:38%;opacity:0.75"></div></div>
+      <div class="dur-row"><div class="dur-label"><span>slow</span><span>400ms</span></div><div class="dur-bar" style="width:50%;opacity:0.65"></div></div>
+      <div class="dur-row"><div class="dur-label"><span>enter</span><span>500ms</span></div><div class="dur-bar" style="width:63%;opacity:0.55"></div></div>
+      <div class="dur-row"><div class="dur-label"><span>page</span><span>600ms</span></div><div class="dur-bar" style="width:75%;opacity:0.45"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOVER + CONTINUOUS -->
+<div>
+  <div class="row-label">// Micro-interactions + continuous</div>
+  <div class="row" style="align-items:center">
+    <button class="live-btn ma-hover-lift ma-press"><i class="ph-bold ph-rocket-launch" style="font-size:14px"></i>Hover lift</button>
+    <div class="live-card ma-hover-lift" style="transition:transform 200ms cubic-bezier(0,0,0.2,1),box-shadow 200ms cubic-bezier(0,0,0.2,1)">
+      <div class="live-card-title">Card lift</div>
+      <div class="live-card-sub">hover me</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div class="pulse-dot ma-pulse"></div>
+      <div style="font-size:9px;color:#A6CEDF">pulse</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div class="float-icon ma-float"><i class="ph-bold ph-brain"></i></div>
+      <div style="font-size:9px;color:#A6CEDF">float</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div class="spinner ma-spin"></div>
+      <div style="font-size:9px;color:#A6CEDF">spin</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="width:7px;height:14px;background:#26C0F8;border-radius:1px" class="ma-blink"></div>
+      <div style="font-size:9px;color:#A6CEDF">blink</div>
+    </div>
+    <!-- Shimmer -->
+    <div class="shimmer-card">
+      <div class="skel skel-title ma-shimmer"></div>
+      <div class="skel skel-line ma-shimmer" style="animation-delay:0.1s"></div>
+      <div class="skel skel-line2 ma-shimmer" style="animation-delay:0.2s"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function replay(stage){
+  const items = stage.querySelectorAll('[class*="ma-"]');
+  items.forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = '';
+  });
+}
+function replayStagger(stage){
+  const items = stage.querySelectorAll('.stagger-bar');
+  items.forEach(el => {
+    const delay = el.style.animationDelay;
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = '';
+    el.style.animationDelay = delay;
+  });
+}
+</script>
+</body></html>

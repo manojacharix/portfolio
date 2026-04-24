@@ -17,13 +17,21 @@ If the user invokes this skill without any other guidance, ask them what they wa
 **Logo:** `assets/manoj_logo.svg` — white on dark, or CSS `invert(1)` on light/yellow  
 **CSS tokens:** `colors_and_type.css` — import this first
 
-**Key colors:**
-- Background: `#030303` (grey-950)
-- Surface: `#080808` (grey-800)
-- Accent/CTA: `#F18F01` (yellow-500)
-- Tech/AI accent: `#26C0F8` (lightblue-600)
-- Text: `#FFFFFF` / `#D1D1D1` / `#737373`
+**Key colors — Light Theme (primary):**
+- Background: `#F0FBFE` (lightblue-50)
+- Surface: `#FFFFFF`
+- Accent/CTA: `#26C0F8` (lightblue-600)
+- Deep accent: `#F18F01` (yellow-500) — for CTAs, highlights
+- Text: `#010D14` / `#05678A` / `#A6CEDF`
 
-**Tone:** Witty, direct, informal but genuine. First person. Short sentences. No emoji. No corporate fluff. Sentence case headings.
+**Key colors — Dark Theme:**
+- Background: `#010D14` (near-black navy)
+- Accent: `#26C0F8` (cyan), `#F18F01` (yellow)
 
-**UI Kit:** `ui_kits/personal_site/index.html` — interactive prototype of the personal site
+**Tone:** Witty, direct, informal but genuine. First person. Short sentences. No emoji. No em dashes. No corporate fluff. Sentence case headings.
+
+**Animation:** Import `animations.css` for entrance classes (`ma-fade-up`, `ma-scale-in`, etc.), stagger delays (`ma-delay-1` through `ma-delay-6`), micro-interactions (`ma-hover-lift`, `ma-press`), and continuous animations (`ma-pulse`, `ma-float`, `ma-spin`, `ma-blink`, `ma-shimmer`).
+
+**UI Kit:** `ui_kits/personal_site/index.html` — interactive site prototype: light theme, split hero with dot-matrix WebGL terminal, agent CLI typewriter, Home/Work/Contact screens.
+
+**Social links:** LinkedIn: manoj-manages/ · X: x_achari · GitHub: manojacharix

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../animations.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F0FBFE;padding:20px;display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;}
+
+.label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#A6CEDF;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+
+.glow-card{
+  width:200px;background:#fff;border:1px solid rgba(38,192,248,0.2);
+  border-radius:10px;padding:18px;
+  box-shadow:0 1px 4px rgba(5,103,138,0.06),0 4px 16px rgba(5,103,138,0.04);
+  transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s cubic-bezier(0,0,0.2,1);
+  border-top:2px solid #F18F01;
+}
+.glow-card:hover{border-color:rgba(38,192,248,0.4);box-shadow:0 4px 24px rgba(5,103,138,0.1);transform:translateY(-3px);}
+.card-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#26C0F8;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.card-tag::before{content:'';width:12px;height:1px;background:#26C0F8;}
+.card-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:#010D14;margin-bottom:5px;letter-spacing:-0.02em;}
+.card-body{font-size:12px;color:#A6CEDF;line-height:1.5;margin-bottom:12px;}
+.card-footer{display:flex;justify-content:space-between;align-items:center;}
+.card-cta{font-family:'JetBrains Mono',monospace;font-size:10px;color:#F18F01;}
+
+.stat-card{
+  width:140px;background:#fff;border:1px solid rgba(38,192,248,0.15);
+  border-radius:10px;padding:16px;
+  box-shadow:0 1px 4px rgba(5,103,138,0.06);
+}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;letter-spacing:-0.06em;line-height:1;
+  background:linear-gradient(135deg,#010D14,#05678A);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-accent{color:#26C0F8!important;-webkit-text-fill-color:#26C0F8;}
+.stat-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#A6CEDF;margin-top:8px;}
+
+.proj-card{
+  width:200px;background:#fff;border:1px solid rgba(38,192,248,0.15);
+  border-radius:10px;overflow:hidden;
+  box-shadow:0 1px 4px rgba(5,103,138,0.06);
+  transition:border-color 0.2s,transform 0.2s cubic-bezier(0,0,0.2,1);
+}
+.proj-card:hover{border-color:rgba(38,192,248,0.35);transform:translateY(-2px);}
+.proj-thumb{height:90px;background:linear-gradient(135deg,#E1F6FE,#A6E5FC,#6DD5FA);display:flex;align-items:center;justify-content:center;}
+.proj-body{padding:14px;}
+.proj-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#26C0F8;margin-bottom:5px;}
+.proj-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#010D14;letter-spacing:-0.01em;}
+.proj-meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;}
+.proj-year{font-family:'JetBrains Mono',monospace;font-size:9px;color:#A6CEDF;}
+</style>
+</head><body>
+<div class="ma-fade-up">
+  <div class="label">// Featured</div>
+  <div class="glow-card">
+    <div class="card-tag">AI Product</div>
+    <div class="card-title">Zero-to-shipped</div>
+    <div class="card-body">Strategy, design, build and launch - all in one tight loop.</div>
+    <div class="card-footer"><span class="card-cta">Read -></span><i class="ph-bold ph-rocket-launch" style="font-size:14px;color:#F18F01"></i></div>
+  </div>
+</div>
+<div class="ma-fade-up ma-delay-1">
+  <div class="label">// Stat</div>
+  <div class="stat-card">
+    <div class="stat-num">12<span class="stat-accent">+</span></div>
+    <div class="stat-label">Products launched</div>
+  </div>
+</div>
+<div class="ma-fade-up ma-delay-2">
+  <div class="label">// Project</div>
+  <div class="proj-card">
+    <div class="proj-thumb"><i class="ph-thin ph-brain" style="font-size:36px;color:rgba(5,103,138,0.3)"></i></div>
+    <div class="proj-body">
+      <div class="proj-tag">AI - 2024</div>
+      <div class="proj-title">Doc Intelligence</div>
+      <div class="proj-meta"><span class="proj-year">indexed 2h ago</span><i class="ph-bold ph-arrow-right" style="font-size:12px;color:#26C0F8"></i></div>
+    </div>
+  </div>
+</div>
+</body></html>

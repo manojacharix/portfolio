@@ -1,0 +1,96 @@
+/* ============================================================
+   MANOJ ACHARI — Animation Tokens + Keyframes
+   animations.css  (import after colors_and_type.css)
+   ============================================================ */
+
+/* ── KEYFRAMES ── */
+
+@keyframes ma-fade-up {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes ma-fade-in {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes ma-fade-down {
+  from { opacity:0; transform:translateY(-12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes ma-scale-in {
+  from { opacity:0; transform:scale(0.94); }
+  to   { opacity:1; transform:scale(1); }
+}
+@keyframes ma-slide-right {
+  from { opacity:0; transform:translateX(-24px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes ma-slide-left {
+  from { opacity:0; transform:translateX(24px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes ma-pulse-dot {
+  0%,100% { opacity:1; box-shadow:0 0 0 0 rgba(38,192,248,0.4); }
+  50%     { opacity:0.5; box-shadow:0 0 0 6px rgba(38,192,248,0); }
+}
+@keyframes ma-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes ma-blink {
+  0%,100% { opacity:1; }
+  50%     { opacity:0; }
+}
+@keyframes ma-spin {
+  from { transform:rotate(0deg); }
+  to   { transform:rotate(360deg); }
+}
+@keyframes ma-float {
+  0%,100% { transform:translateY(0px); }
+  50%     { transform:translateY(-6px); }
+}
+
+/* ── UTILITY CLASSES ── */
+
+/* Entrances */
+.ma-fade-up   { animation: ma-fade-up   var(--dur-enter,500ms) var(--ease-default,cubic-bezier(0.16,1,0.3,1)) both; }
+.ma-fade-in   { animation: ma-fade-in   var(--dur-medium,300ms) var(--ease-out) both; }
+.ma-fade-down { animation: ma-fade-down var(--dur-enter,500ms) var(--ease-default) both; }
+.ma-scale-in  { animation: ma-scale-in  var(--dur-enter,500ms) var(--ease-spring,cubic-bezier(0.34,1.56,0.64,1)) both; }
+.ma-slide-right { animation: ma-slide-right var(--dur-enter,500ms) var(--ease-default) both; }
+.ma-slide-left  { animation: ma-slide-left  var(--dur-enter,500ms) var(--ease-default) both; }
+
+/* Stagger delays */
+.ma-delay-1 { animation-delay: 60ms; }
+.ma-delay-2 { animation-delay: 120ms; }
+.ma-delay-3 { animation-delay: 180ms; }
+.ma-delay-4 { animation-delay: 240ms; }
+.ma-delay-5 { animation-delay: 300ms; }
+.ma-delay-6 { animation-delay: 360ms; }
+
+/* Micro-interactions */
+.ma-hover-lift { transition: transform var(--dur-default,200ms) var(--ease-out), box-shadow var(--dur-default) var(--ease-out); }
+.ma-hover-lift:hover { transform: translateY(-3px); }
+
+.ma-hover-bright { transition: filter var(--dur-fast,150ms) var(--ease-out); }
+.ma-hover-bright:hover { filter: brightness(1.08); }
+
+.ma-press { transition: transform var(--dur-instant,80ms) var(--ease-in); }
+.ma-press:active { transform: scale(0.97); }
+
+/* Continuous */
+.ma-pulse { animation: ma-pulse-dot 2s ease-in-out infinite; }
+.ma-float { animation: ma-float 3s ease-in-out infinite; }
+.ma-spin  { animation: ma-spin 1.2s linear infinite; }
+.ma-blink { animation: ma-blink 1s step-end infinite; }
+
+/* Shimmer skeleton */
+.ma-shimmer {
+  background: linear-gradient(90deg,
+    rgba(38,192,248,0.06) 0%,
+    rgba(38,192,248,0.14) 40%,
+    rgba(38,192,248,0.06) 80%
+  );
+  background-size: 200% 100%;
+  animation: ma-shimmer 1.6s linear infinite;
+}

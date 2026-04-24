@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--color-grey-950); font-family: var(--font-body); padding: 20px; }
+.row { display:flex; gap:2px; }
+.swatch { flex:1; height:64px; display:flex; align-items:flex-end; padding:4px 6px; }
+.swatch span { font-size:10px; font-weight:600; letter-spacing:0.04em; line-height:1; }
+.label { font-size:11px; color: var(--fg-muted); font-family: var(--font-body); margin-bottom:8px; letter-spacing:0.08em; text-transform:uppercase; }
+.hero { display:flex; align-items:center; gap:16px; margin-bottom:12px; }
+.hero-swatch { width:56px; height:56px; border-radius:8px; background:#F18F01; }
+.hero-info { }
+.hero-name { font-size:16px; font-weight:700; color:#F18F01; font-family: var(--font-display); }
+.hero-hex { font-size:12px; color: var(--fg-muted); }
+</style>
+</head><body>
+<div class="hero">
+  <div class="hero-swatch"></div>
+  <div class="hero-info">
+    <div class="hero-name">Yellow — Secondary Accent</div>
+    <div class="hero-hex">500 · #F18F01 · Energy, wit, warmth</div>
+  </div>
+</div>
+<div class="row">
+  <div class="swatch" style="background:#190F00"><span style="color:#613A00">950</span></div>
+  <div class="swatch" style="background:#331F00"><span style="color:#935901">900</span></div>
+  <div class="swatch" style="background:#613A00"><span style="color:#FEA92A">800</span></div>
+  <div class="swatch" style="background:#935901"><span style="color:#FEC062">700</span></div>
+  <div class="swatch" style="background:#C17401"><span style="color:#FFF5E6">600</span></div>
+  <div class="swatch" style="background:#F18F01"><span style="color:#190F00">500</span></div>
+  <div class="swatch" style="background:#FEA92A"><span style="color:#331F00">400</span></div>
+  <div class="swatch" style="background:#FEC062"><span style="color:#613A00">300</span></div>
+  <div class="swatch" style="background:#FFD494"><span style="color:#935901">200</span></div>
+  <div class="swatch" style="background:#FFEBCC"><span style="color:#935901">100</span></div>
+  <div class="swatch" style="background:#FFF5E6"><span style="color:#C17401">50</span></div>
+</div>
+</body></html>

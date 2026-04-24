@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../animations.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F0FBFE;padding:20px;display:flex;flex-direction:column;gap:14px;}
+.label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#A6CEDF;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+
+/* Semantic chips */
+.chip{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:5px;background:#fff;border:1px solid rgba(38,192,248,0.15);box-shadow:0 1px 4px rgba(5,103,138,0.04);}
+.dot{width:18px;height:18px;border-radius:3px;flex-shrink:0;}
+.chip-name{font-size:11px;color:#010D14;font-family:'Space Grotesk',sans-serif;font-weight:600;}
+.chip-token{font-size:9px;color:#A6CEDF;font-family:'JetBrains Mono',monospace;}
+</style>
+</head><body>
+<div class="label">// Semantic tokens</div>
+<div class="row ma-fade-up">
+  <div class="chip"><div class="dot" style="background:#F0FBFE;border:1.5px solid rgba(38,192,248,0.2)"></div><div><div class="chip-name">bg</div><div class="chip-token">lightblue-50 · #F0FBFE</div></div></div>
+  <div class="chip"><div class="dot" style="background:#fff;border:1.5px solid rgba(38,192,248,0.15)"></div><div><div class="chip-name">surface</div><div class="chip-token">white · #FFFFFF</div></div></div>
+  <div class="chip"><div class="dot" style="background:#E1F6FE;border:1px solid rgba(38,192,248,0.15)"></div><div><div class="chip-name">surface-2</div><div class="chip-token">lightblue-100</div></div></div>
+</div>
+<div class="row ma-fade-up ma-delay-1">
+  <div class="chip"><div class="dot" style="background:#010D14"></div><div><div class="chip-name">text-1</div><div class="chip-token">#010D14</div></div></div>
+  <div class="chip"><div class="dot" style="background:#05678A"></div><div><div class="chip-name">text-2</div><div class="chip-token">cyan-800</div></div></div>
+  <div class="chip"><div class="dot" style="background:#A6CEDF"></div><div><div class="chip-name">text-muted</div><div class="chip-token">cyan-200</div></div></div>
+</div>
+<div class="row ma-fade-up ma-delay-2">
+  <div class="chip"><div class="dot" style="background:#26C0F8"></div><div><div class="chip-name">accent-primary</div><div class="chip-token">lightblue-600</div></div></div>
+  <div class="chip"><div class="dot" style="background:#F18F01"></div><div><div class="chip-name">accent-yellow</div><div class="chip-token">yellow-500</div></div></div>
+  <div class="chip"><div class="dot" style="background:#2980B9"></div><div><div class="chip-name">accent-deep</div><div class="chip-token">blue-500</div></div></div>
+</div>
+<div class="row ma-fade-up ma-delay-3">
+  <div class="chip"><div class="dot" style="background:rgba(38,192,248,0.15);border:1.5px solid rgba(38,192,248,0.15)"></div><div><div class="chip-name">border</div><div class="chip-token">cyan/15%</div></div></div>
+  <div class="chip"><div class="dot" style="background:rgba(38,192,248,0.3);border:1.5px solid rgba(38,192,248,0.3)"></div><div><div class="chip-name">border-md</div><div class="chip-token">cyan/30%</div></div></div>
+</div>
+</body></html>

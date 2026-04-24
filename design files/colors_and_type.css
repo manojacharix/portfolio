@@ -151,13 +151,62 @@
   --radius-pill: 999px;
 
   /* ============================================================
-     SHADOWS / ELEVATION
+     SHADOWS / ELEVATION — dark theme
      ============================================================ */
   --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
   --shadow-md:  0 4px 16px rgba(0,0,0,0.5);
   --shadow-lg:  0 12px 40px rgba(0,0,0,0.6);
   --shadow-accent: 0 0 24px rgba(241,143,1,0.25);
   --shadow-blue:   0 0 24px rgba(38,192,248,0.2);
+
+  /* ============================================================
+     SHADOWS / ELEVATION — light theme
+     ============================================================ */
+  --shadow-light-sm: 0 1px 4px rgba(5,103,138,0.06), 0 4px 16px rgba(5,103,138,0.04);
+  --shadow-light-md: 0 4px 24px rgba(5,103,138,0.10), 0 1px 4px rgba(5,103,138,0.06);
+  --shadow-light-lg: 0 12px 48px rgba(5,103,138,0.14), 0 4px 12px rgba(5,103,138,0.08);
+  --shadow-light-cyan: 0 0 32px rgba(38,192,248,0.18);
+
+  /* ============================================================
+     LIGHT THEME SEMANTIC TOKENS
+     ============================================================ */
+  --light-bg:        #F0FBFE;  /* lightblue-50 */
+  --light-surface:   #FFFFFF;
+  --light-surface2:  #E1F6FE;  /* lightblue-100 */
+  --light-border:    rgba(38,192,248,0.15);
+  --light-border-md: rgba(38,192,248,0.30);
+  --light-text-1:    #010D14;
+  --light-text-2:    #05678A;
+  --light-text-muted:#A6CEDF;
+
+  /* ============================================================
+     ANIMATION TOKENS
+     ============================================================ */
+
+  /* Durations */
+  --dur-instant:  80ms;
+  --dur-fast:     150ms;
+  --dur-default:  200ms;
+  --dur-medium:   300ms;
+  --dur-slow:     400ms;
+  --dur-enter:    500ms;
+  --dur-page:     600ms;
+
+  /* Easings */
+  --ease-default:  cubic-bezier(0.16, 1, 0.3, 1);     /* snappy overshoot */
+  --ease-out:      cubic-bezier(0.0,  0, 0.2, 1);      /* decelerate */
+  --ease-in:       cubic-bezier(0.4,  0, 1,   1);      /* accelerate */
+  --ease-in-out:   cubic-bezier(0.4,  0, 0.2, 1);      /* standard */
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);  /* spring bounce */
+  --ease-linear:   linear;
+
+  /* Keyframe delays — stagger utilities */
+  --stagger-1: 0ms;
+  --stagger-2: 60ms;
+  --stagger-3: 120ms;
+  --stagger-4: 180ms;
+  --stagger-5: 240ms;
+  --stagger-6: 300ms;
 }
 
 /* ============================================================

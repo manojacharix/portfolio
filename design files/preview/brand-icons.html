@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../animations.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F0FBFE;padding:20px;}
+.label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#A6CEDF;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
+.grid{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
+.icon-cell{width:48px;height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:6px;background:#fff;border:1px solid rgba(38,192,248,0.15);box-shadow:0 1px 4px rgba(5,103,138,0.04);transition:border-color 0.15s,transform 0.15s cubic-bezier(0,0,0.2,1);}
+.icon-cell:hover{border-color:rgba(38,192,248,0.4);transform:translateY(-2px);}
+.icon-cell i{font-size:20px;color:#05678A;}
+.icon-cell.accent i{color:#F18F01;}
+.icon-cell.cyan i{color:#26C0F8;}
+
+.weight-row{display:flex;gap:16px;align-items:center;margin-top:4px;}
+.w-label{font-size:10px;color:#A6CEDF;width:56px;font-family:'JetBrains Mono',monospace;}
+.w-icons{display:flex;gap:12px;}
+.w-icons i{font-size:22px;color:#05678A;}
+</style>
+</head><body>
+<div class="label">// Phosphor Icons - Bold (default)</div>
+<div class="grid ma-fade-up">
+  <div class="icon-cell accent"><i class="ph-bold ph-rocket-launch"></i></div>
+  <div class="icon-cell"><i class="ph-bold ph-brain"></i></div>
+  <div class="icon-cell cyan"><i class="ph-bold ph-code"></i></div>
+  <div class="icon-cell"><i class="ph-bold ph-layout"></i></div>
+  <div class="icon-cell"><i class="ph-bold ph-chart-line-up"></i></div>
+  <div class="icon-cell accent"><i class="ph-bold ph-lightning"></i></div>
+  <div class="icon-cell cyan"><i class="ph-bold ph-cloud"></i></div>
+  <div class="icon-cell"><i class="ph-bold ph-cube"></i></div>
+  <div class="icon-cell"><i class="ph-bold ph-gear"></i></div>
+  <div class="icon-cell cyan"><i class="ph-bold ph-arrow-right"></i></div>
+  <div class="icon-cell"><i class="ph-bold ph-check-circle"></i></div>
+  <div class="icon-cell accent"><i class="ph-bold ph-star"></i></div>
+</div>
+<div class="label">// Weight variants</div>
+<div class="weight-row ma-fade-up ma-delay-1">
+  <div class="w-label">Thin</div>
+  <div class="w-icons"><i class="ph-thin ph-rocket-launch"></i><i class="ph-thin ph-brain"></i><i class="ph-thin ph-code"></i></div>
+</div>
+<div class="weight-row ma-fade-up ma-delay-2">
+  <div class="w-label">Regular</div>
+  <div class="w-icons"><i class="ph ph-rocket-launch"></i><i class="ph ph-brain"></i><i class="ph ph-code"></i></div>
+</div>
+<div class="weight-row ma-fade-up ma-delay-3">
+  <div class="w-label">Bold</div>
+  <div class="w-icons"><i class="ph-bold ph-rocket-launch" style="color:#26C0F8"></i><i class="ph-bold ph-brain" style="color:#26C0F8"></i><i class="ph-bold ph-code" style="color:#26C0F8"></i></div>
+</div>
+</body></html>

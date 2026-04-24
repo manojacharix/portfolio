@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../animations.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F0FBFE;padding:20px;display:flex;flex-direction:column;gap:14px;}
+.label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#A6CEDF;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+
+.badge{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;padding:3px 10px;border-radius:999px;letter-spacing:0.04em;text-transform:uppercase;}
+.badge-cyan  {background:rgba(38,192,248,0.1);color:#079ACF;border:1px solid rgba(38,192,248,0.25);}
+.badge-yellow{background:rgba(241,143,1,0.1);color:#C17401;border:1px solid rgba(241,143,1,0.25);}
+.badge-grey  {background:rgba(1,13,20,0.05);color:#A6CEDF;border:1px solid rgba(1,13,20,0.1);}
+.badge-green {background:rgba(52,211,153,0.1);color:#059669;border:1px solid rgba(52,211,153,0.25);}
+.badge-solid-c{background:#26C0F8;color:#010D14;}
+.badge-solid-y{background:#F18F01;color:#fff;}
+
+.tag-chip{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;padding:4px 12px;border-radius:4px;}
+.tag-default{background:#fff;color:#05678A;border:1px solid rgba(38,192,248,0.2);}
+.tag-accent {background:rgba(38,192,248,0.08);color:#26C0F8;border:1px solid rgba(38,192,248,0.25);}
+</style>
+</head><body>
+<div class="ma-fade-up">
+  <div class="label">// Badges - subtle</div>
+  <div class="row">
+    <span class="badge badge-cyan">AI/ML</span>
+    <span class="badge badge-yellow">Product</span>
+    <span class="badge badge-grey">Strategy</span>
+    <span class="badge badge-green">Shipped</span>
+  </div>
+</div>
+<div class="ma-fade-up ma-delay-1">
+  <div class="label">// Badges - solid</div>
+  <div class="row">
+    <span class="badge badge-solid-c">Live</span>
+    <span class="badge badge-solid-y">New</span>
+  </div>
+</div>
+<div class="ma-fade-up ma-delay-2">
+  <div class="label">// Tags</div>
+  <div class="row">
+    <span class="tag-chip tag-default">Branding</span>
+    <span class="tag-chip tag-default">Prototyping</span>
+    <span class="tag-chip tag-accent">Featured</span>
+    <span class="tag-chip tag-default">Deployment</span>
+    <span class="tag-chip tag-default">Design Systems</span>
+  </div>
+</div>
+</body></html>

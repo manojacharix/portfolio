@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../animations.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F0FBFE;padding:28px 32px 24px;display:flex;flex-direction:column;gap:22px;}
+
+.meta{display:flex;align-items:center;gap:10px;margin-bottom:5px;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(38,192,248,0.6);padding:2px 7px;border:1px solid rgba(38,192,248,0.2);border-radius:2px;background:rgba(38,192,248,0.04);}
+.glow-line{width:40px;height:1.5px;background:linear-gradient(90deg,#26C0F8,transparent);margin-bottom:5px;}
+
+.d1{font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;line-height:1.0;letter-spacing:-0.05em;
+  background:linear-gradient(90deg,#010D14 0%,#05678A 50%,#26C0F8 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.d1 em{background:linear-gradient(90deg,#F18F01,#FEA92A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;}
+
+.d2{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:600;line-height:1.1;letter-spacing:-0.04em;color:#010D14;}
+.d2 span{color:#26C0F8;}
+
+.d3{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.03em;color:#05678A;}
+.d3 mark{background:none;-webkit-text-fill-color:#F18F01;color:#F18F01;}
+</style>
+</head><body>
+<div class="ma-fade-up">
+  <div class="glow-line"></div>
+  <div class="meta"><span class="tag">Space Grotesk · 700 · 60px</span><span class="tag">Display</span></div>
+  <div class="d1">Build. Ship. <em>Repeat.</em></div>
+</div>
+<div class="ma-fade-up ma-delay-1">
+  <div class="meta"><span class="tag">600 · 40px</span><span class="tag">Heading</span></div>
+  <div class="d2">AI-native <span>product thinking</span></div>
+</div>
+<div class="ma-fade-up ma-delay-2">
+  <div class="meta"><span class="tag">600 · 28px</span><span class="tag">Subheading</span></div>
+  <div class="d3">Zero to shipped - <mark>fast.</mark></div>
+</div>
+</body></html>

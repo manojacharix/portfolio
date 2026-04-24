@@ -47,7 +47,7 @@ export default function Nav() {
           {[
             { href: "/", label: "Home" },
             { href: "/work", label: "Work" },
-            { href: "/about", label: "About" },
+            { href: "/contact", label: "Contact" },
           ].map(({ href, label }) => (
             <Link key={href} href={href} style={{
               fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 400,

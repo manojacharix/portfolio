@@ -93,10 +93,10 @@ export default function Home() {
         borderTop: "1px solid var(--border)",
       }}>
         {[
+          { num: "12+",  label: "Products launched" },
           { num: "0→1",  label: "Full-stack process" },
-          { num: "89%",  label: "Efficiency gain, Litscreen" },
-          { num: "20%",  label: "Engagement uplift, Zataak Se" },
-          { num: "AI",   label: "Every product decision" },
+          { num: "AI",   label: "Every decision" },
+          { num: "1×",   label: "No agency overhead" },
         ].map((s, i) => (
           <div key={i} style={{
             padding: "28px 0",

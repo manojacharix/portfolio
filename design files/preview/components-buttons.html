@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F4FAFE;padding:24px;display:flex;flex-direction:column;gap:20px;font-family:'JetBrains Mono',monospace;}
+
+.label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#A6CEDF;margin-bottom:10px;}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+
+/* Solid cyan — primary */
+.btn-cy{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;letter-spacing:-0.01em;
+  padding:11px 22px;border-radius:6px;border:none;cursor:pointer;
+  background:#26C0F8;color:#010D14;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background 0.15s,transform 0.1s;
+}
+.btn-cy:hover{background:#079ACF;transform:translateY(-1px);}
+.btn-cy:active{transform:translateY(0);background:#05678A;}
+
+/* Solid yellow */
+.btn-yw{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;letter-spacing:-0.01em;
+  padding:11px 22px;border-radius:6px;border:none;cursor:pointer;
+  background:#F18F01;color:#fff;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background 0.15s,transform 0.1s;
+}
+.btn-yw:hover{background:#C17401;transform:translateY(-1px);}
+
+/* Outline */
+.btn-ol{
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;
+  padding:10px 20px;border-radius:6px;cursor:pointer;
+  background:transparent;color:#079ACF;
+  border:1.5px solid rgba(38,192,248,0.35);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all 0.15s;
+}
+.btn-ol:hover{background:rgba(38,192,248,0.06);border-color:#26C0F8;}
+
+/* Ghost */
+.btn-gh{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
+  padding:10px 20px;border-radius:6px;cursor:pointer;
+  background:transparent;color:#A6CEDF;
+  border:1.5px solid rgba(166,206,223,0.3);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all 0.15s;
+}
+.btn-gh:hover{color:#05678A;border-color:rgba(5,103,138,0.3);}
+
+/* Dark */
+.btn-dk{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;
+  padding:11px 22px;border-radius:6px;border:none;cursor:pointer;
+  background:#010D14;color:#fff;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background 0.15s,transform 0.1s;
+}
+.btn-dk:hover{background:#023345;transform:translateY(-1px);}
+
+/* Disabled */
+.btn-dis{opacity:0.35;pointer-events:none;}
+
+/* Sizes */
+.btn-sm{padding:7px 14px!important;font-size:11px!important;border-radius:4px!important;}
+.btn-lg{padding:14px 30px!important;font-size:15px!important;border-radius:8px!important;}
+.btn-pill{border-radius:999px!important;}
+</style>
+</head><body>
+
+<div>
+  <div class="label">// Variants</div>
+  <div class="row">
+    <button class="btn-cy"><i class="ph-bold ph-rocket-launch" style="font-size:15px"></i>Launch it</button>
+    <button class="btn-yw"><i class="ph-bold ph-lightning" style="font-size:15px"></i>Ship now</button>
+    <button class="btn-ol"><i class="ph-bold ph-code" style="font-size:14px"></i>View source</button>
+    <button class="btn-gh">Ghost</button>
+    <button class="btn-dk"><i class="ph-bold ph-brain" style="font-size:14px"></i>Build with AI</button>
+  </div>
+</div>
+
+<div>
+  <div class="label">// Sizes</div>
+  <div class="row">
+    <button class="btn-cy btn-sm"><i class="ph-bold ph-check" style="font-size:12px"></i>Small</button>
+    <button class="btn-cy"><i class="ph-bold ph-arrow-right" style="font-size:14px"></i>Default</button>
+    <button class="btn-cy btn-lg"><i class="ph-bold ph-paper-plane-tilt" style="font-size:17px"></i>Large</button>
+    <button class="btn-yw btn-pill">Pill shape</button>
+    <button class="btn-cy btn-sm btn-dis">Disabled</button>
+  </div>
+</div>
+
+<div>
+  <div class="label">// Text only</div>
+  <div class="row">
+    <button class="btn-cy">Primary CTA</button>
+    <button class="btn-ol">Secondary</button>
+    <button class="btn-gh">Tertiary</button>
+  </div>
+</div>
+</body></html>
