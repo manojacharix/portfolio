@@ -21,7 +21,7 @@ export default function About() {
 
       <div style={{ display: "grid", gridTemplateColumns: "3fr 2fr", gap: 80, alignItems: "start" }}>
 
-        {/* Left col */}
+        {/* Left */}
         <div>
           <p style={{ fontSize: 16, lineHeight: 1.8, color: "var(--cyan-800)", opacity: 0.75, marginBottom: 48 }}>
             {about.philosophy}
@@ -32,7 +32,7 @@ export default function About() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ color: "var(--cyan-200)" }}>//</span> Experience
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            <div style={{ display: "flex", flexDirection: "column" }}>
               {about.experience.map((exp, i) => (
                 <div key={exp.company} style={{
                   display: "flex", gap: 24,
@@ -53,12 +53,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* CTA */}
-          <div style={{
-            padding: 28, border: "1px solid var(--border-md)",
-            borderRadius: 12, background: "var(--surface)",
-            boxShadow: "var(--shadow-sm)",
-          }}>
+          {/* Open to roles CTA */}
+          <div style={{ padding: 28, border: "1px solid var(--border-md)", borderRadius: 12, background: "var(--surface)", boxShadow: "var(--shadow-sm)" }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
               <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan-600)", boxShadow: "0 0 6px var(--cyan-600)", animation: "pulse 2s ease-in-out infinite" }} />
               Open to roles
@@ -89,8 +85,8 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right col */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+        {/* Right */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
 
           {/* Skills */}
           <div style={{ padding: 24, border: "1px solid var(--border)", borderRadius: 12, background: "var(--surface)" }}>
@@ -100,10 +96,9 @@ export default function About() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
               {about.skills.map(s => (
                 <span key={s} style={{
-                  fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.07em",
+                  fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.07em", textTransform: "uppercase",
                   padding: "5px 12px", borderRadius: 3,
-                  border: "1px solid var(--border-md)", color: "var(--cyan-700)",
-                  background: "var(--cyan-100)",
+                  border: "1px solid var(--border-md)", color: "var(--cyan-700)", background: "var(--cyan-100)",
                 }}>
                   {s}
                 </span>
@@ -119,10 +114,9 @@ export default function About() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
               {about.tools.map(t => (
                 <span key={t} style={{
-                  fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.07em",
+                  fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.07em", textTransform: "uppercase",
                   padding: "5px 12px", borderRadius: 3,
-                  border: "1px solid var(--border)", color: "var(--cyan-800)",
-                  background: "transparent",
+                  border: "1px solid var(--border)", color: "var(--cyan-800)", background: "transparent",
                 }}>
                   {t}
                 </span>
@@ -135,6 +129,7 @@ export default function About() {
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "20px 24px", border: "1px solid var(--border)",
             borderRadius: 12, background: "var(--surface)", textDecoration: "none",
+            transition: "border-color 0.15s, box-shadow 0.15s",
           }}>
             <div>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 600, color: "var(--text-1)", marginBottom: 4 }}>Resume</div>
@@ -143,6 +138,7 @@ export default function About() {
             <i className="ph-bold ph-file-pdf" style={{ fontSize: 24, color: "var(--cyan-400)" }} />
           </a>
         </div>
+
       </div>
     </div>
   )

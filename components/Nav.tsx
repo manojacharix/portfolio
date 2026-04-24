@@ -30,7 +30,7 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* Nav */}
+      {/* Main nav */}
       <nav style={{
         position: "fixed", top: 28, left: 0, right: 0, zIndex: 100,
         display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -43,10 +43,11 @@ export default function Nav() {
         <Link href="/" style={{ display: "flex", alignItems: "center" }}>
           <Image src="/manoj_logo_full.svg" alt={meta.name} width={120} height={20} style={{ filter: "brightness(0)" }} />
         </Link>
+
         <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
           {[
-            { href: "/", label: "Home" },
-            { href: "/work", label: "Work" },
+            { href: "/",        label: "Home" },
+            { href: "/work",    label: "Work" },
             { href: "/contact", label: "Contact" },
           ].map(({ href, label }) => (
             <Link key={href} href={href} style={{
@@ -61,6 +62,7 @@ export default function Nav() {
             </Link>
           ))}
         </div>
+
         <Link href="/contact" style={{
           fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
           letterSpacing: "0.08em", textTransform: "uppercase",

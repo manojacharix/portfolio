@@ -1,0 +1,114 @@
+[2026-04-23 01:11:36] Digiman watcher started. Watching: /Users/manojachari/Sites/portfolio/content
+[2026-04-23 01:11:36] Digiman watcher started. Watching: /Users/manojachari/Sites/portfolio/content
+[2026-04-23 01:11:41] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-23 01:11:41] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-23 01:11:41] Running Digiman audit...
+[2026-04-23 01:11:41] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1833ms
+  Running TypeScript ...
+  Finished TypeScript in 1307ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 166ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/shopx
+  └ [+2 more paths]
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-23 ===
+Traceback (most recent call last):
+  File "<stdin>", line 15, in <module>
+AttributeError: 'str' object has no attribute 'get'
+
+=== AUDIT COMPLETE ===
+[2026-04-23 01:12:15] Audit complete.
+[2026-04-23 01:12:15] Audit complete.
+[2026-04-23 01:12:33] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-23 01:12:33] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-23 01:12:33] Running Digiman audit...
+[2026-04-23 01:12:33] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1558ms
+  Running TypeScript ...
+  Finished TypeScript in 1282ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 131ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/shopx
+  └ [+2 more paths]
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-23 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se, ShopX
+Ecommerce          ✓            Zataak Se, ShopX
+Travel             ✓            Zataak Se, ShopX
+AI/LLM             ✓            Litscreen, ShopX
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-23 01:12:38] Audit complete.
+[2026-04-23 01:12:38] Audit complete.

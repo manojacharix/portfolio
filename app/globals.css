@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg:         #F4FAFE;
+  --bg:         #F0FBFE;
   --bg-alt:     #FFFFFF;
+  --bg-tint:    #E1F6FE;
   --surface:    #FFFFFF;
   --surface2:   #EFF9FE;
 
   --text-1:     #010D14;
   --text-2:     #05678A;
+  --text-3:     #079ACF;
   --text-muted: #A6CEDF;
 
   --cyan-900:   #023345;
@@ -21,6 +23,7 @@
 
   --yellow:     #F18F01;
   --yellow-l:   #FEA92A;
+  --yellow-d:   #C17401;
   --navy:       #011A23;
 
   --font-display: 'Space Grotesk', sans-serif;
@@ -28,10 +31,14 @@
   --font-mono:    'JetBrains Mono', monospace;
 
   --border:     rgba(38,192,248,0.15);
-  --border-md:  rgba(38,192,248,0.3);
-  --shadow-sm:  0 1px 4px rgba(5,103,138,0.06), 0 4px 16px rgba(5,103,138,0.04);
-  --shadow-md:  0 4px 24px rgba(5,103,138,0.1), 0 1px 4px rgba(5,103,138,0.06);
-  --shadow-cyan: 0 0 32px rgba(38,192,248,0.2);
+  --border-md:  rgba(38,192,248,0.30);
+  --border-str: rgba(38,192,248,0.50);
+
+  --shadow-sm:   0 1px 4px rgba(5,103,138,0.06), 0 4px 16px rgba(5,103,138,0.04);
+  --shadow-md:   0 4px 24px rgba(5,103,138,0.10), 0 1px 4px rgba(5,103,138,0.06);
+  --shadow-lg:   0 12px 48px rgba(5,103,138,0.14), 0 4px 12px rgba(5,103,138,0.08);
+  --shadow-cyan: 0 0 32px rgba(38,192,248,0.18);
+  --shadow-yellow: 0 4px 20px rgba(241,143,1,0.25);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -46,14 +53,16 @@ body {
   overflow-x: hidden;
 }
 
+/* Dot grid overlay */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: 1; pointer-events: none;
-  background-image: radial-gradient(circle, rgba(38,192,248,0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(38,192,248,0.14) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+@keyframes pulse  { 0%,100%{opacity:1} 50%{opacity:0.35} }
 @keyframes blink  { 0%,100%{opacity:1} 50%{opacity:0} }
 @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }

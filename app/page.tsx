@@ -1,25 +1,81 @@
 import Link from "next/link"
+import HeroTerminal from "@/components/HeroTerminal"
 import meta from "@/content/meta.json"
-import work from "@/content/work.json"
-import HeroMac from "@/components/HeroTerminal"
+
+const PLACEHOLDER_PROJECTS = [
+  {
+    tag: "AI Product",
+    title: "Intelligent Doc Assistant",
+    desc: "LLM-powered Q&A with citations. UX, backend, deploy.",
+    year: "2024",
+    icon: "ph-brain",
+    grad: "linear-gradient(135deg,#E1F6FE,#A6E5FC,#6DD5FA)",
+    ago: "2h ago",
+  },
+  {
+    tag: "SaaS",
+    title: "Growth Analytics Platform",
+    desc: "Real-time metrics for indie SaaS. Wireframe to live in 3 weeks.",
+    year: "2024",
+    icon: "ph-chart-line-up",
+    grad: "linear-gradient(135deg,#FFF5E6,#FFD494,#FEA92A)",
+    ago: "5h ago",
+  },
+  {
+    tag: "Design System",
+    title: "Brand OS",
+    desc: "Full design system + component library for a B2B startup.",
+    year: "2023",
+    icon: "ph-cube",
+    grad: "linear-gradient(135deg,#E1F6FE,#C4EEFD,#26C0F8)",
+    ago: "1d ago",
+  },
+]
+
+const ABOUT_CARDS = [
+  {
+    icon: "ph-brain",
+    title: "AI-native thinking",
+    desc: "Every product decision starts with: what does the model know, and where does the human loop in?",
+  },
+  {
+    icon: "ph-rocket-launch",
+    title: "Ship-first philosophy",
+    desc: "Perfect is the enemy of live. I bias toward shipping, measuring, iterating.",
+  },
+  {
+    icon: "ph-layout",
+    title: "Design that converts",
+    desc: "Interfaces that feel right and perform better. Systems that don't fall apart at page two.",
+  },
+]
+
+const SKILLS = ["AI/ML Products", "Product Strategy", "Design Systems", "LLM Pipelines", "0-to-1 Builds", "Payments & Fintech"]
+
+const STATS = [
+  { num: "12", accent: "+", label: "Products launched" },
+  { num: "0",  accent: "→1", label: "Full-stack process" },
+  { num: "AI", accent: "-first", label: "Every decision" },
+  { num: "1",  accent: "×", label: "No agency overhead" },
+]
 
 export default function Home() {
-  const featured = work.slice(0, 3)
-
   return (
     <div>
+
       {/* ── HERO ── */}
       <section style={{
         maxWidth: 1400, margin: "0 auto",
         padding: "80px 80px 60px",
         display: "grid",
-        gridTemplateColumns: "1fr 460px",
-        gap: 56,
+        gridTemplateColumns: "1fr 480px",
+        gap: 48,
         alignItems: "center",
         minHeight: "calc(100vh - 88px)",
       }}>
-        {/* Left: text */}
+        {/* Left */}
         <div style={{ display: "flex", flexDirection: "column" }}>
+
           <div style={{
             display: "flex", alignItems: "center", gap: 10,
             fontFamily: "var(--font-mono)", fontSize: 11,
@@ -33,10 +89,10 @@ export default function Home() {
 
           <h1 style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(48px, 5.5vw, 88px)",
+            fontSize: "clamp(52px, 6.5vw, 96px)",
             fontWeight: 700, lineHeight: 0.96,
             letterSpacing: "-0.05em", color: "var(--text-1)",
-            marginBottom: 28,
+            maxWidth: 860, marginBottom: 30,
             animation: "fadeUp 0.5s 0.1s ease both",
           }}>
             <span style={{ color: "rgba(1,13,20,0.22)" }}>I build</span><br />
@@ -49,7 +105,7 @@ export default function Home() {
 
           <p style={{
             fontSize: 17, lineHeight: 1.7, color: "var(--cyan-800)",
-            maxWidth: 460, marginBottom: 44, opacity: 0.8,
+            maxWidth: 480, marginBottom: 48, opacity: 0.8,
             animation: "fadeUp 0.5s 0.2s ease both",
           }}>
             {meta.subheadline}
@@ -59,53 +115,52 @@ export default function Home() {
             <Link href="/work" style={{
               fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12,
               letterSpacing: "0.08em", textTransform: "uppercase",
-              padding: "13px 26px", borderRadius: 5, cursor: "pointer",
+              padding: "13px 26px", borderRadius: 5,
               background: "var(--cyan-600)", color: "#fff", textDecoration: "none",
               boxShadow: "0 4px 20px rgba(38,192,248,0.3)",
               display: "inline-flex", alignItems: "center", gap: 10,
+              transition: "all 0.2s",
             }}>
-              See the work →
+              <i className="ph-bold ph-briefcase" style={{ fontSize: 14 }} />
+              See the work
             </Link>
             <Link href="/contact" style={{
               fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12,
               letterSpacing: "0.08em", textTransform: "uppercase",
-              padding: "13px 26px", borderRadius: 5, cursor: "pointer",
+              padding: "13px 26px", borderRadius: 5,
               background: "transparent", color: "var(--cyan-700)", textDecoration: "none",
               border: "1.5px solid var(--border-md)",
               display: "inline-flex", alignItems: "center", gap: 10,
+              transition: "all 0.2s",
             }}>
               Init contact
+              <i className="ph-bold ph-arrow-right" style={{ fontSize: 14 }} />
             </Link>
           </div>
         </div>
 
-        {/* Right: Mac WebGL */}
-        <div style={{ height: 500, position: "relative" }}>
-          <HeroMac />
+        {/* Right: terminal */}
+        <div style={{ height: 460, flexShrink: 0 }}>
+          <HeroTerminal />
         </div>
       </section>
 
       {/* ── STATS ── */}
       <div style={{
         maxWidth: 1400, margin: "0 auto",
-        padding: "0 80px 80px",
+        padding: "0 80px",
         display: "grid", gridTemplateColumns: "repeat(4,1fr)",
         borderTop: "1px solid var(--border)",
       }}>
-        {[
-          { num: "12+",  label: "Products launched" },
-          { num: "0→1",  label: "Full-stack process" },
-          { num: "AI",   label: "Every decision" },
-          { num: "1×",   label: "No agency overhead" },
-        ].map((s, i) => (
+        {STATS.map((s, i) => (
           <div key={i} style={{
             padding: "28px 0",
             borderRight: i < 3 ? "1px solid var(--border)" : "none",
             paddingRight: i < 3 ? 32 : 0,
             paddingLeft: i > 0 ? 32 : 0,
           }}>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 700, letterSpacing: "-0.05em", color: "var(--text-1)", marginBottom: 5 }}>
-              {s.num}
+            <div style={{ fontFamily: "var(--font-display)", fontSize: 38, fontWeight: 700, letterSpacing: "-0.05em", lineHeight: 1, color: "var(--text-1)", marginBottom: 6 }}>
+              {s.num}<span style={{ color: "var(--cyan-600)" }}>{s.accent}</span>
             </div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan-800)", opacity: 0.5 }}>
               {s.label}
@@ -115,8 +170,9 @@ export default function Home() {
       </div>
 
       {/* ── ABOUT STRIP ── */}
-      <div style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+      <div style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", marginTop: 40 }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", padding: "80px 80px", display: "grid", gridTemplateColumns: "5fr 4fr", gap: 80, alignItems: "start" }}>
+
           <div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 18, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ color: "var(--cyan-200)" }}>//</span> About
@@ -131,7 +187,7 @@ export default function Home() {
               No hand-waving. No &quot;we&apos;ll figure out engineering later.&quot; Just product thinking with the receipts to back it up.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 22 }}>
-              {["AI/ML Products","Product Strategy","Design Systems","LLM Pipelines","0-to-1 Builds","Payments & Fintech"].map(s => (
+              {SKILLS.map(s => (
                 <span key={s} style={{
                   fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase",
                   padding: "5px 12px", borderRadius: 3,
@@ -142,13 +198,15 @@ export default function Home() {
               ))}
             </div>
           </div>
+
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {[
-              { icon: "ph-brain",         title: "AI-native thinking",    desc: "Every product decision starts with: what does the model know, and where does the human loop in?" },
-              { icon: "ph-rocket-launch", title: "Ship-first philosophy", desc: "Perfect is the enemy of live. I bias toward shipping, measuring, iterating." },
-              { icon: "ph-layout",        title: "Design that converts",  desc: "Interfaces that feel right and perform better. Systems that don't fall apart at page two." },
-            ].map(c => (
-              <div key={c.title} style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 8, padding: "18px 20px", display: "flex", gap: 14, alignItems: "flex-start" }}>
+            {ABOUT_CARDS.map(c => (
+              <div key={c.title} style={{
+                background: "var(--bg)", border: "1px solid var(--border)",
+                borderRadius: 8, padding: "18px 20px",
+                display: "flex", gap: 14, alignItems: "flex-start",
+                transition: "border-color 0.2s, box-shadow 0.2s",
+              }}>
                 <div style={{ width: 34, height: 34, borderRadius: 6, background: "var(--cyan-100)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <i className={`ph-bold ${c.icon}`} style={{ fontSize: 16, color: "var(--cyan-600)" }} />
                 </div>
@@ -159,6 +217,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
 
@@ -169,41 +228,50 @@ export default function Home() {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ color: "var(--cyan-200)" }}>//</span> Selected Work
             </div>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--text-1)" }}>Things I&apos;ve shipped</div>
+            <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--text-1)" }}>
+              Things I&apos;ve shipped
+            </div>
           </div>
-          <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan-600)", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
-            All projects →
+          <Link href="/work" style={{
+            fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase",
+            color: "var(--cyan-600)", textDecoration: "none",
+            display: "flex", alignItems: "center", gap: 6,
+            transition: "gap 0.15s",
+          }}>
+            All projects <i className="ph-bold ph-arrow-right" style={{ fontSize: 12 }} />
           </Link>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
-          {featured.map((item, i) => {
-            const grads = [
-              "linear-gradient(135deg,#E1F6FE,#A6E5FC,#6DD5FA)",
-              "linear-gradient(135deg,#FFF5E6,#FFD494,#FEA92A)",
-              "linear-gradient(135deg,#E1F6FE,#C4EEFD,#26C0F8)",
-            ]
-            return (
-              <Link key={item.slug} href={`/work/${item.slug}`} style={{ textDecoration: "none" }}>
-                <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden", cursor: "pointer", boxShadow: "var(--shadow-sm)", transition: "all 0.2s" }}>
-                  <div style={{ height: 160, background: grads[i % 3], display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <i className="ph-thin ph-brain" style={{ fontSize: 56, color: "rgba(5,103,138,0.2)" }} />
-                  </div>
-                  <div style={{ padding: 18 }}>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 8 }}>{item.category}</div>
-                    <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--text-1)", marginBottom: 6, letterSpacing: "-0.01em" }}>{item.title}</div>
-                    <div style={{ fontSize: 12, color: "var(--cyan-800)", opacity: 0.7, lineHeight: 1.5, marginBottom: 14 }}>{item.headline}</div>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-muted)" }}>2024</span>
-                      <span style={{ fontSize: 14, color: "var(--cyan-200)" }}>→</span>
-                    </div>
+          {PLACEHOLDER_PROJECTS.map((p, i) => (
+            <Link key={i} href="/work" style={{ textDecoration: "none" }}>
+              <div style={{
+                background: "var(--surface)", border: "1px solid var(--border)",
+                borderRadius: 10, overflow: "hidden",
+                boxShadow: "var(--shadow-sm)",
+                transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s",
+              }}>
+                <div style={{ height: 160, background: p.grad, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <i className={`ph-thin ${p.icon}`} style={{ fontSize: 56, color: "rgba(5,103,138,0.2)" }} />
+                </div>
+                <div style={{ padding: 18 }}>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 8 }}>{p.tag}</div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--text-1)", marginBottom: 6, letterSpacing: "-0.01em" }}>{p.title}</div>
+                  <div style={{ fontSize: 12, color: "var(--cyan-800)", opacity: 0.7, lineHeight: 1.5, marginBottom: 14 }}>{p.desc}</div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: 12 }}>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 4 }}>
+                      <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--cyan-600)", display: "inline-block" }} />
+                      indexed {p.ago}
+                    </span>
+                    <i className="ph-bold ph-arrow-right" style={{ fontSize: 13, color: "var(--cyan-200)" }} />
                   </div>
                 </div>
-              </Link>
-            )
-          })}
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
+
     </div>
   )
 }

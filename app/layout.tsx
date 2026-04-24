@@ -4,7 +4,6 @@ import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
 import AuroraBackground from "@/components/AuroraBackground"
 import meta from "@/content/meta.json"
-// Fonts are loaded via Google Fonts CDN — no next/font needed
 
 export const metadata: Metadata = {
   title: `${meta.name} — ${meta.title}`,
