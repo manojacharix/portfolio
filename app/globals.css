@@ -262,6 +262,11 @@ body::before {
    (inline style props can't express :hover)
    ════════════════════════════════════════════ */
 
+/* Nav desktop links container */
+.nav-desktop-links {
+  display: flex;
+}
+
 /* Nav links */
 .nav-link-item {
   transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
