@@ -90,20 +90,24 @@
   --text-3:     #079ACF;
   --text-muted: #A6CEDF;
 
-  --border:     rgba(38,192,248,0.15);
-  --border-md:  rgba(38,192,248,0.30);
-  --border-str: rgba(38,192,248,0.50);
+  /* Keep yellow/cyan as-is — they work on light too */
+
+  --border:     rgba(38,192,248,0.18);
+  --border-md:  rgba(38,192,248,0.35);
+  --border-str: rgba(38,192,248,0.55);
 
   --shadow-sm:     0 1px 4px rgba(5,103,138,0.06), 0 4px 16px rgba(5,103,138,0.04);
   --shadow-md:     0 4px 24px rgba(5,103,138,0.10), 0 1px 4px rgba(5,103,138,0.06);
   --shadow-lg:     0 12px 48px rgba(5,103,138,0.14), 0 4px 12px rgba(5,103,138,0.08);
+  --shadow-yellow: 0 0 20px rgba(241,143,1,0.20);
   --shadow-cyan:   0 0 32px rgba(38,192,248,0.18);
 
-  --nav-bg:     rgba(255,255,255,0.90);
-  --nav-bar-bg: rgba(255,255,255,0.95);
+  --nav-bg:     rgba(240,251,254,0.92);
+  --nav-bar-bg: rgba(240,251,254,0.97);
 
   --cyan-100:   #E1F6FE;
   --cyan-200:   #C4EEFD;
+  --cyan-400:   #6DD5FA;
 }
 
 /* ════════════════════════════════════════════

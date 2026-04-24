@@ -23,13 +23,13 @@ export default function Nav() {
         padding: "0 24px",
         transition: "background 0.25s ease, border-color 0.25s ease",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-3)", letterSpacing: "0.05em" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-2)", letterSpacing: "0.05em" }}>
           <div className="ma-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", boxShadow: "0 0 6px var(--cyan)", flexShrink: 0 }} />
           <span style={{ color: "var(--cyan)", fontWeight: 500 }}>AGENT ONLINE</span>
           <span style={{ opacity: 0.4 }}>·</span>
           <span>Monitoring Manoj&apos;s work</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-3)", letterSpacing: "0.05em" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-2)", letterSpacing: "0.05em" }}>
           <span>sys.status: <span style={{ color: "var(--cyan)", fontWeight: 500 }}>NOMINAL</span></span>
         </div>
       </div>
@@ -51,7 +51,10 @@ export default function Nav() {
             src="/manoj_logo_full.svg"
             alt={meta.name}
             width={120} height={20}
-            style={{ filter: "brightness(0) invert(1)", transition: "filter 0.25s ease" }}
+            style={{
+              filter: isDark ? "brightness(0) invert(1)" : "brightness(0)",
+              transition: "filter 0.25s ease",
+            }}
           />
         </Link>
 
@@ -67,8 +70,8 @@ export default function Nav() {
               <Link key={href} href={href} style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 400,
                 letterSpacing: "0.08em", textTransform: "uppercase",
-                color: active ? "var(--cyan)" : "var(--text-3)",
-                background: active ? "rgba(38,192,248,0.1)" : "none",
+                color: active ? "var(--cyan)" : "var(--text-2)",
+                background: active ? (isDark ? "rgba(38,192,248,0.1)" : "rgba(38,192,248,0.12)") : "none",
                 padding: "6px 14px", borderRadius: 4, textDecoration: "none",
                 transition: "all 0.15s",
               }}>
@@ -83,7 +86,7 @@ export default function Nav() {
           {/* Theme icon */}
           <i
             className={`ph-bold ${isDark ? "ph-moon" : "ph-sun"}`}
-            style={{ fontSize: 13, color: "var(--text-muted)", transition: "color 0.2s" }}
+            style={{ fontSize: 13, color: isDark ? "var(--text-muted)" : "var(--cyan-800)", transition: "color 0.2s" }}
           />
           {/* Pill toggle */}
           <button
