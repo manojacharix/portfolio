@@ -527,11 +527,31 @@ body::before {
   padding-right: 56px;
 }
 
+.nav-logo {
+  width: 120px;
+  height: 20px;
+}
+
+.nav-theme-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* ── Mobile breakpoint ── */
 @media (max-width: 768px) {
   .nav-main {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .nav-logo {
+    width: 160px;
+    height: 27px;
+  }
+
+  .nav-theme-controls {
+    display: none;
   }
   .page-wrap {
     padding-left: 20px;

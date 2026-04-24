@@ -51,7 +51,7 @@ export default function Home() {
               <i className="ph-bold ph-briefcase" style={{ fontSize: 14 }} /> See the work
             </Link>
             <Link href="/contact" className="btn-outline" style={{ fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", padding: "13px 26px", borderRadius: "var(--radius-md)", background: "transparent", color: "var(--cyan-700)", textDecoration: "none", border: "1.5px solid var(--border-md)", display: "inline-flex", alignItems: "center", gap: 10 }}>
-              Init contact <i className="ph-bold ph-arrow-right" style={{ fontSize: 14 }} />
+              Contact <i className="ph-bold ph-arrow-right" style={{ fontSize: 14 }} />
             </Link>
           </div>
         </div>

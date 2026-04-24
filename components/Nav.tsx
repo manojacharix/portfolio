@@ -59,6 +59,7 @@ export default function Nav() {
             src="/manoj_logo_full.svg"
             alt={meta.name}
             width={120} height={20}
+            className="nav-logo"
             style={{
               filter: isDark ? "brightness(0) invert(1)" : "brightness(0)",
               transition: "filter 0.25s ease",
@@ -85,33 +86,32 @@ export default function Nav() {
           })}
         </div>
 
-        {/* Right: toggle pill + CTA (desktop) + hamburger (mobile) */}
+        {/* Right */}
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          {/* Theme icon */}
-          <i
-            className={`ph-bold ${isDark ? "ph-moon" : "ph-sun"}`}
-            style={{ fontSize: 13, color: isDark ? "var(--text-muted)" : "var(--cyan-800)", transition: "color 0.2s" }}
-          />
-          {/* Pill toggle */}
-          <button
-            onClick={toggle}
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            className="theme-toggle"
-          >
-            <div className="theme-toggle-thumb" />
-          </button>
-
-          {/* Primary CTA (desktop only) */}
-          <Link href="/contact" className="nav-cta-btn nav-desktop-cta" style={{
-            fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
-            letterSpacing: "0.08em", textTransform: "uppercase",
-            background: "var(--cyan)", color: "#fff",
-            padding: "8px 18px", borderRadius: "var(--radius-md)", textDecoration: "none",
-            boxShadow: "0 0 16px rgba(38,192,248,0.25)",
-            transition: "all 0.15s",
-          }}>
-            Contact
-          </Link>
+          {/* Theme controls (hidden on mobile) */}
+          <div className="nav-theme-controls">
+            <i
+              className={`ph-bold ${isDark ? "ph-moon" : "ph-sun"}`}
+              style={{ fontSize: 13, color: isDark ? "var(--text-muted)" : "var(--cyan-800)", transition: "color 0.2s" }}
+            />
+            <button
+              onClick={toggle}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              className="theme-toggle"
+            >
+              <div className="theme-toggle-thumb" />
+            </button>
+            <Link href="/contact" className="nav-cta-btn nav-desktop-cta" style={{
+              fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
+              letterSpacing: "0.08em", textTransform: "uppercase",
+              background: "var(--cyan)", color: "#fff",
+              padding: "8px 18px", borderRadius: "var(--radius-md)", textDecoration: "none",
+              boxShadow: "0 0 16px rgba(38,192,248,0.25)",
+              transition: "all 0.15s",
+            }}>
+              Contact
+            </Link>
+          </div>
 
           {/* Hamburger (mobile only) */}
           <button
@@ -139,9 +139,19 @@ export default function Nav() {
             {label}
           </Link>
         ))}
-        <Link href="/contact" className="nav-mobile-cta" onClick={() => setMenuOpen(false)}>
-          Contact
-        </Link>
+        {/* Theme toggle row */}
+        <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 16px", marginTop: 4, borderTop: "1px solid var(--border)" }}>
+          <i
+            className={`ph-bold ${isDark ? "ph-moon" : "ph-sun"}`}
+            style={{ fontSize: 14, color: isDark ? "var(--text-muted)" : "var(--cyan-800)" }}
+          />
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--text-muted)", flex: 1 }}>
+            {isDark ? "Dark mode" : "Light mode"}
+          </span>
+          <button onClick={toggle} aria-label="Toggle theme" className="theme-toggle">
+            <div className="theme-toggle-thumb" />
+          </button>
+        </div>
       </div>
     </>
   )

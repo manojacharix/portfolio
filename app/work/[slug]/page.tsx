@@ -101,7 +101,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           background: "var(--cyan)", color: "#fff", textDecoration: "none",
           boxShadow: "0 4px 20px rgba(38,192,248,0.3)",
         }}>
-          Init contact
+          Contact
         </Link>
       </div>
 
