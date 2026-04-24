@@ -1,4 +1,22 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="8" fill="#010D14"/>
-  <text x="16" y="23" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#26C0F8">M</text>
+  <rect width="32" height="32" rx="7" fill="#010D14"/>
+  <!--
+    Logo shape: a wide rectangle with 45° cut corners (like a wide octagon/diamond-rect),
+    and a horizontal through-slot in the centre.
+    Original: 400w × 143h, corner cuts ~71px = 50% of height → effectively diamond-pointed ends.
+    At 26×26 square: the shape becomes a hexagon (pointed left & right tips).
+    The inner horizontal slot runs across the full width at mid-height.
+  -->
+  <g transform="translate(3, 3)">
+    <!-- Outer shape: rectangle with diamond-cut left and right ends -->
+    <!-- Points: top-left, top-right, right-tip, bottom-right, bottom-left, left-tip -->
+    <path d="M7 0 L19 0 L26 13 L19 26 L7 26 L0 13 Z" fill="#26C0F8"/>
+    <!-- Inner horizontal bar cutout (the slot through the middle of the logo) -->
+    <!-- Full-width slot at centre, height ~6px, left/right ends match the outer shape edges -->
+    <path d="M4 10 L22 10 L22 16 L4 16 Z" fill="#010D14"/>
+    <!-- Left stub (the small wings that reconnect at left side of slot) -->
+    <path d="M0 13 L4 10 L4 16 Z" fill="#26C0F8"/>
+    <!-- Right stub -->
+    <path d="M26 13 L22 10 L22 16 Z" fill="#26C0F8"/>
+  </g>
 </svg>
