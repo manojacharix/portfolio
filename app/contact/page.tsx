@@ -89,8 +89,8 @@ export default function Contact() {
               fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12,
               letterSpacing: "0.08em", textTransform: "uppercase",
               padding: "13px 28px", borderRadius: "var(--radius-md)", cursor: "pointer", border: "none",
-              background: "var(--yellow)", color: "#fff",
-              boxShadow: "var(--shadow-yellow)",
+              background: "var(--cyan)", color: "#fff",
+              boxShadow: "0 4px 20px rgba(38,192,248,0.3)",
               display: "inline-flex", alignItems: "center", gap: 10,
               transition: "all 0.2s",
             }}>

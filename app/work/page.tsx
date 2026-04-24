@@ -55,8 +55,8 @@ export default function WorkIndex() {
               style={{
                 fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase",
                 padding: "7px 16px", borderRadius: "var(--radius-md)", cursor: "pointer", transition: "all 0.15s",
-                background: active === f.key ? "var(--yellow)" : "transparent",
-                border: active === f.key ? "1.5px solid var(--yellow)" : "1.5px solid var(--border-md)",
+                background: active === f.key ? "var(--cyan)" : "transparent",
+                border: active === f.key ? "1.5px solid var(--cyan)" : "1.5px solid var(--border-md)",
                 color: active === f.key ? "#fff" : "var(--text-2)",
               }}
             >
@@ -80,7 +80,7 @@ export default function WorkIndex() {
               <i className={`ph-thin ${p.icon}`} style={{ fontSize: 64, color: "rgba(5,103,138,0.2)" }} />
             </div>
             <div style={{ padding: 20 }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--yellow)", marginBottom: 8 }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8 }}>
                 {p.tag}
               </div>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 600, color: "var(--text-1)", marginBottom: 8, letterSpacing: "-0.01em" }}>

@@ -6,16 +6,16 @@
    ════════════════════════════════════════════ */
 
 :root {
-  /* ── Dark theme (default) ── */
-  --bg:         #030303;
-  --bg-alt:     #050505;
-  --surface:    #080808;
-  --surface2:   #141414;
+  /* ── Dark theme (default) — navy base matching design spec ── */
+  --bg:         #010D14;
+  --bg-alt:     #011A23;
+  --surface:    #011A23;
+  --surface2:   #023345;
 
   --text-1:     #FFFFFF;
-  --text-2:     #D1D1D1;
-  --text-3:     #A1A1A1;
-  --text-muted: #737373;
+  --text-2:     #A6E5FC;
+  --text-3:     #6DD5FA;
+  --text-muted: #05678A;
 
   --yellow:     #F18F01;
   --yellow-l:   #FEA92A;
@@ -34,18 +34,22 @@
   --blue:       #2980B9;
   --blue-700:   #194E71;
 
-  --border:     #141414;
-  --border-md:  #424242;
-  --border-str: #737373;
+  --border:     rgba(38,192,248,0.12);
+  --border-md:  rgba(38,192,248,0.28);
+  --border-str: rgba(38,192,248,0.50);
 
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.4);
-  --shadow-md:     0 4px 16px rgba(0,0,0,0.5);
+  --shadow-sm:     0 1px 4px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-md:     0 4px 24px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);
   --shadow-lg:     0 12px 40px rgba(0,0,0,0.6);
   --shadow-yellow: 0 0 24px rgba(241,143,1,0.25);
-  --shadow-cyan:   0 0 24px rgba(38,192,248,0.2);
+  --shadow-cyan:   0 0 32px rgba(38,192,248,0.20);
 
-  --nav-bg:     rgba(3,3,3,0.92);
-  --nav-bar-bg: rgba(3,3,3,0.96);
+  /* cyan-100 in dark = very subtle tint */
+  --cyan-100:   rgba(38,192,248,0.08);
+  --cyan-200:   rgba(38,192,248,0.14);
+
+  --nav-bg:     rgba(1,13,20,0.88);
+  --nav-bar-bg: rgba(1,13,20,0.95);
 
   /* Typography */
   --font-display: 'Space Grotesk', sans-serif;

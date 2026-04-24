@@ -42,20 +42,20 @@ export default function AuroraBackground() {
         float n2 = fbm(uv * 1.5 + vec2(-t * .3, t * .15) + n1 * .5);
         float aurora = n1 * n2;
 
-        /* ── Dark palette (default) ── */
-        vec3 d_base  = vec3(0.012, 0.012, 0.012);  /* #030303 */
-        vec3 d_tint1 = vec3(0.008, 0.10, 0.165);
-        vec3 d_tint2 = vec3(0.020, 0.25, 0.42);
-        vec3 d_tint3 = vec3(0.050, 0.42, 0.65);
+        /* ── Dark palette — #010D14 navy base (matches design spec) ── */
+        vec3 d_base  = vec3(0.004, 0.051, 0.078);  /* #010D14 */
+        vec3 d_tint1 = vec3(0.008, 0.10,  0.165);
+        vec3 d_tint2 = vec3(0.020, 0.25,  0.42);
+        vec3 d_tint3 = vec3(0.050, 0.42,  0.65);
 
         vec3 d_col = d_base;
         d_col = mix(d_col, d_tint1, smoothstep(0.30, 0.55, n1));
         d_col = mix(d_col, d_tint2, smoothstep(0.45, 0.65, aurora));
         d_col = mix(d_col, d_tint3, smoothstep(0.60, 0.80, n2) * 0.45);
-        /* vignette on dark */
+        /* vignette */
         vec2 vig = uv * (1. - uv.yx);
         float vign = pow(clamp(vig.x * vig.y * 15., 0., 1.), 0.28);
-        d_col = mix(d_col, d_col * vign, 1.0);
+        d_col = mix(d_col, d_col * vign, u_dark);
 
         /* ── Light palette ── */
         vec3 l_base  = vec3(0.941, 0.984, 0.996);

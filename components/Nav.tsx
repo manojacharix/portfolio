@@ -101,9 +101,9 @@ export default function Nav() {
           <Link href="/contact" style={{
             fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
             letterSpacing: "0.08em", textTransform: "uppercase",
-            background: "var(--yellow)", color: "#fff",
+            background: "var(--cyan)", color: "#fff",
             padding: "8px 18px", borderRadius: "var(--radius-md)", textDecoration: "none",
-            boxShadow: "var(--shadow-yellow)",
+            boxShadow: "0 0 16px rgba(38,192,248,0.25)",
             transition: "all 0.15s",
           }}>
             Init contact
