@@ -1,17 +1,9 @@
 "use client"
 import { useEffect, useRef } from "react"
-import { useTheme } from "./ThemeProvider"
 
 export default function AuroraBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const rafRef    = useRef<number>(0)
-  const darkRef   = useRef<number>(0)   // 0 = light, 1 = dark — smoothly animated
-  const { theme } = useTheme()
-
-  // Push theme target into ref so the render loop can access it without re-mounting
-  useEffect(() => {
-    // darkRef.current is the target; the render loop lerps toward it
-  }, [theme])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -24,7 +16,7 @@ export default function AuroraBackground() {
       precision mediump float;
       uniform float u_time;
       uniform vec2  u_res;
-      uniform float u_dark;   /* 0 = light, 1 = dark — lerp between themes */
+      uniform float u_dark;   /* 1 = dark (default), 0 = light */
 
       float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5); }
       float noise(vec2 p){
@@ -44,14 +36,29 @@ export default function AuroraBackground() {
 
       void main(){
         vec2 uv = gl_FragCoord.xy / u_res;
-        float t = u_time * 0.07;
+        float t = u_time * 0.08;
 
         float n1 = fbm(uv * 2.0 + vec2(t * .4, t * .2));
         float n2 = fbm(uv * 1.5 + vec2(-t * .3, t * .15) + n1 * .5);
         float aurora = n1 * n2;
 
+        /* ── Dark palette (default) ── */
+        vec3 d_base  = vec3(0.012, 0.012, 0.012);  /* #030303 */
+        vec3 d_tint1 = vec3(0.008, 0.10, 0.165);
+        vec3 d_tint2 = vec3(0.020, 0.25, 0.42);
+        vec3 d_tint3 = vec3(0.050, 0.42, 0.65);
+
+        vec3 d_col = d_base;
+        d_col = mix(d_col, d_tint1, smoothstep(0.30, 0.55, n1));
+        d_col = mix(d_col, d_tint2, smoothstep(0.45, 0.65, aurora));
+        d_col = mix(d_col, d_tint3, smoothstep(0.60, 0.80, n2) * 0.45);
+        /* vignette on dark */
+        vec2 vig = uv * (1. - uv.yx);
+        float vign = pow(clamp(vig.x * vig.y * 15., 0., 1.), 0.28);
+        d_col = mix(d_col, d_col * vign, 1.0);
+
         /* ── Light palette ── */
-        vec3 l_base  = vec3(0.957, 0.984, 0.996);  /* #F4FAFE */
+        vec3 l_base  = vec3(0.941, 0.984, 0.996);
         vec3 l_tint1 = vec3(0.882, 0.965, 0.992);
         vec3 l_tint2 = vec3(0.773, 0.933, 0.984);
         vec3 l_tint3 = vec3(0.600, 0.880, 0.970);
@@ -60,23 +67,8 @@ export default function AuroraBackground() {
         l_col = mix(l_col, l_tint1, smoothstep(0.30, 0.55, n1));
         l_col = mix(l_col, l_tint2, smoothstep(0.45, 0.65, aurora));
         l_col = mix(l_col, l_tint3, smoothstep(0.60, 0.80, n2) * 0.5);
-        float l_warm = 1. - length(uv - vec2(0.85, 0.15)) * 1.2;
-        l_col = mix(l_col, vec3(1., 0.97, 0.93), clamp(l_warm, 0., 1.) * 0.15);
 
-        /* ── Dark palette ── */
-        vec3 d_base  = vec3(0.004, 0.051, 0.078);  /* #010D14 */
-        vec3 d_tint1 = vec3(0.006, 0.080, 0.120);
-        vec3 d_tint2 = vec3(0.010, 0.110, 0.168);
-        vec3 d_tint3 = vec3(0.024, 0.180, 0.260);
-
-        vec3 d_col = d_base;
-        d_col = mix(d_col, d_tint1, smoothstep(0.30, 0.55, n1));
-        d_col = mix(d_col, d_tint2, smoothstep(0.45, 0.68, aurora));
-        d_col = mix(d_col, d_tint3, smoothstep(0.60, 0.80, n2) * 0.45);
-        float d_warm = 1. - length(uv - vec2(0.90, 0.08)) * 2.5;
-        d_col += vec3(0.06, 0.03, 0.0) * clamp(d_warm, 0., 1.) * 0.3;
-
-        /* Interpolate between themes */
+        /* Interpolate: u_dark=1 → dark, u_dark=0 → light */
         vec3 col = mix(l_col, d_col, u_dark);
         gl_FragColor = vec4(col, 1.);
       }
@@ -110,13 +102,13 @@ export default function AuroraBackground() {
     resize()
     window.addEventListener("resize", resize)
 
-    let currentDark = 0
+    let currentDark = 1  // start dark
     const start = performance.now()
 
     const render = (now: number) => {
-      // Lerp toward target (read from DOM attribute so no re-mount needed)
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark" ? 1 : 0
-      currentDark += (isDark - currentDark) * 0.05
+      const theme = document.documentElement.getAttribute("data-theme")
+      const target = theme === "light" ? 0 : 1
+      currentDark += (target - currentDark) * 0.05
 
       gl.uniform1f(uTime, (now - start) / 1000)
       gl.uniform2f(uRes, canvas.width, canvas.height)
@@ -130,7 +122,7 @@ export default function AuroraBackground() {
       cancelAnimationFrame(rafRef.current)
       window.removeEventListener("resize", resize)
     }
-  }, [])  // mount once — reads DOM attribute each frame
+  }, [])
 
   return (
     <canvas

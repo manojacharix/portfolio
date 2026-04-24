@@ -17,8 +17,8 @@ export default function Contact() {
   const inputStyle = {
     width: "100%",
     background: "var(--surface2)",
-    border: "1.5px solid var(--border)",
-    borderRadius: 5, padding: "13px 16px",
+    border: "1.5px solid var(--border-md)",
+    borderRadius: "var(--radius-md)", padding: "13px 16px",
     fontFamily: "var(--font-body)", fontSize: 15,
     color: "var(--text-1)", outline: "none",
     transition: "border-color 0.15s, box-shadow 0.15s",
@@ -27,32 +27,32 @@ export default function Contact() {
   const labelStyle = {
     fontFamily: "var(--font-mono)", fontSize: 10,
     letterSpacing: "0.12em", textTransform: "uppercase" as const,
-    color: "var(--text-3)", display: "block", marginBottom: 8,
+    color: "var(--text-muted)", display: "block", marginBottom: 8,
   }
 
   return (
     <div style={{ maxWidth: 760, margin: "0 auto", padding: "60px 80px" }}>
 
-      <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+      <div className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
         <span style={{ opacity: 0.4 }}>//</span> Contact
       </div>
 
-      <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px,5vw,64px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 16 }}>
+      <h1 className="ma-fade-up ma-delay-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px,5vw,64px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 16 }}>
         Got something<br />to <span style={{ color: "var(--cyan)" }}>build?</span>
       </h1>
 
-      <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--text-2)", maxWidth: 480, marginBottom: 48 }}>
+      <p className="ma-fade-up ma-delay-2" style={{ fontSize: 16, lineHeight: 1.65, color: "var(--text-2)", maxWidth: 480, marginBottom: 48 }}>
         No sales funnel, no 5-step form, no &quot;our team will get back to you.&quot; Just me — and I&apos;m actually fast.
       </p>
 
       {sent ? (
-        <div style={{ textAlign: "center", padding: "60px 0" }}>
-          <i className="ph-bold ph-check-circle" style={{ fontSize: 56, color: "var(--cyan)", display: "block", marginBottom: 20 }} />
+        <div className="ma-scale-in" style={{ textAlign: "center", padding: "60px 0" }}>
+          <i className="ph-bold ph-check-circle" style={{ fontSize: 56, color: "var(--yellow)", display: "block", marginBottom: 20 }} />
           <div style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 600, color: "var(--text-1)", marginBottom: 10 }}>Transmitted.</div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--cyan)", letterSpacing: "0.06em" }}>Agent received it. I&apos;ll be in touch.</div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form className="ma-fade-up ma-delay-3" onSubmit={handleSubmit}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 20 }}>
             {[
               { label: "Name",  key: "name",  type: "text",  placeholder: "Your name" },
@@ -85,12 +85,12 @@ export default function Contact() {
           </div>
 
           <div style={{ marginTop: 20 }}>
-            <button type="submit" style={{
+            <button type="submit" className="ma-press" style={{
               fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12,
               letterSpacing: "0.08em", textTransform: "uppercase",
-              padding: "13px 28px", borderRadius: 5, cursor: "pointer", border: "none",
-              background: "var(--cyan)", color: "#fff",
-              boxShadow: "var(--shadow-cyan)",
+              padding: "13px 28px", borderRadius: "var(--radius-md)", cursor: "pointer", border: "none",
+              background: "var(--yellow)", color: "#fff",
+              boxShadow: "var(--shadow-yellow)",
               display: "inline-flex", alignItems: "center", gap: 10,
               transition: "all 0.2s",
             }}>
@@ -109,7 +109,7 @@ export default function Contact() {
         ].map(s => (
           <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{
             display: "flex", alignItems: "center", gap: 8,
-            padding: "10px 18px", border: "1.5px solid var(--border-md)", borderRadius: 5,
+            padding: "10px 18px", border: "1.5px solid var(--border-md)", borderRadius: "var(--radius-md)",
             color: "var(--text-2)", fontFamily: "var(--font-mono)", fontSize: 11,
             letterSpacing: "0.06em", textDecoration: "none",
             transition: "all 0.15s", background: "none",

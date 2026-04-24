@@ -11,7 +11,7 @@ const PROJECTS = [
 const ABOUT_CARDS = [
   { icon: "ph-brain",         title: "AI-native thinking",    desc: "Every product decision starts with: what does the model know, and where does the human loop in?" },
   { icon: "ph-rocket-launch", title: "Ship-first philosophy", desc: "Perfect is the enemy of live. I bias toward shipping, measuring, iterating." },
-  { icon: "ph-layout",        title: "Design that converts",  desc: "Interfaces that feel right and perform better. Systems that don't fall apart at page two." },
+  { icon: "ph-layout",        title: "Design that works",     desc: "Interfaces that feel right and convert better. Systems that don't fall apart at page two." },
 ]
 
 const SKILLS = ["AI/ML Products", "Product Strategy", "Design Systems", "LLM Pipelines", "0-to-1 Builds", "Payments & Fintech"]
@@ -37,32 +37,32 @@ export default function Home() {
       }}>
         <div style={{ display: "flex", flexDirection: "column" }}>
 
-          <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 28, animation: "fadeUp 0.5s ease both" }}>
+          <div className="ma-fade-up" style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 28 }}>
             <div style={{ width: 28, height: 1.5, background: "var(--cyan)" }} />
             AI Product Manager
           </div>
 
-          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px,6.5vw,96px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.05em", color: "var(--text-1)", maxWidth: 860, marginBottom: 30, animation: "fadeUp 0.5s 0.1s ease both" }}>
+          <h1 className="ma-fade-up ma-delay-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px,6.5vw,96px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.05em", color: "var(--text-1)", maxWidth: 860, marginBottom: 30 }}>
             <span style={{ color: "var(--text-muted)" }}>I build</span><br />
-            <span style={{ background: "linear-gradient(90deg, var(--cyan), var(--cyan-700))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>products.</span><br />
+            <span style={{ color: "var(--yellow)" }}>products.</span><br />
             Zero to shipped.
           </h1>
 
-          <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--text-2)", maxWidth: 480, marginBottom: 48, animation: "fadeUp 0.5s 0.2s ease both" }}>
+          <p className="ma-fade-up ma-delay-2" style={{ fontSize: 17, lineHeight: 1.7, color: "var(--text-2)", maxWidth: 480, marginBottom: 48 }}>
             {meta.subheadline}
           </p>
 
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", animation: "fadeUp 0.5s 0.3s ease both" }}>
-            <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", padding: "13px 26px", borderRadius: 5, background: "var(--cyan)", color: "#fff", textDecoration: "none", boxShadow: "var(--shadow-cyan)", display: "inline-flex", alignItems: "center", gap: 10, transition: "all 0.2s" }}>
+          <div className="ma-fade-up ma-delay-3" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", padding: "13px 26px", borderRadius: "var(--radius-md)", background: "var(--yellow)", color: "#fff", textDecoration: "none", boxShadow: "var(--shadow-yellow)", display: "inline-flex", alignItems: "center", gap: 10, transition: "all 0.2s" }}>
               <i className="ph-bold ph-briefcase" style={{ fontSize: 14 }} /> See the work
             </Link>
-            <Link href="/contact" style={{ fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", padding: "13px 26px", borderRadius: 5, background: "transparent", color: "var(--text-2)", textDecoration: "none", border: "1.5px solid var(--border-md)", display: "inline-flex", alignItems: "center", gap: 10, transition: "all 0.2s" }}>
+            <Link href="/contact" style={{ fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", padding: "13px 26px", borderRadius: "var(--radius-md)", background: "transparent", color: "var(--text-2)", textDecoration: "none", border: "1.5px solid var(--border-md)", display: "inline-flex", alignItems: "center", gap: 10, transition: "all 0.2s" }}>
               Init contact <i className="ph-bold ph-arrow-right" style={{ fontSize: 14 }} />
             </Link>
           </div>
         </div>
 
-        <div style={{ height: 460, flexShrink: 0 }}>
+        <div className="ma-fade-in ma-delay-3" style={{ height: 460, flexShrink: 0 }}>
           <HeroTerminal />
         </div>
       </section>
@@ -70,9 +70,9 @@ export default function Home() {
       {/* ── STATS ── */}
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 80px", display: "grid", gridTemplateColumns: "repeat(4,1fr)", borderTop: "1px solid var(--border)" }}>
         {STATS.map((s, i) => (
-          <div key={i} style={{ padding: "28px 0", borderRight: i < 3 ? "1px solid var(--border)" : "none", paddingRight: i < 3 ? 32 : 0, paddingLeft: i > 0 ? 32 : 0 }}>
+          <div key={i} className="ma-fade-up" style={{ animationDelay: `${i * 60}ms`, padding: "28px 0", borderRight: i < 3 ? `1px solid var(--border)` : "none", paddingRight: i < 3 ? 32 : 0, paddingLeft: i > 0 ? 32 : 0 }}>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 38, fontWeight: 700, letterSpacing: "-0.05em", lineHeight: 1, color: "var(--text-1)", marginBottom: 6 }}>
-              {s.num}<span style={{ color: "var(--cyan)" }}>{s.accent}</span>
+              {s.num}<span style={{ color: "var(--yellow)" }}>{s.accent}</span>
             </div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)" }}>
               {s.label}
@@ -82,7 +82,7 @@ export default function Home() {
       </div>
 
       {/* ── ABOUT ── */}
-      <div style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", marginTop: 40, transition: "background 0.3s ease" }}>
+      <div style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", marginTop: 40, transition: "background 0.25s ease" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 80px", display: "grid", gridTemplateColumns: "5fr 4fr", gap: 80, alignItems: "start" }}>
           <div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 18, display: "flex", alignItems: "center", gap: 8 }}>
@@ -99,17 +99,17 @@ export default function Home() {
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 22 }}>
               {SKILLS.map(s => (
-                <span key={s} style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 3, border: "1px solid var(--border-md)", color: "var(--text-3)", background: "var(--cyan-100)" }}>
+                <span key={s} style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", padding: "5px 12px", borderRadius: "var(--radius-sm)", border: "1px solid var(--border-md)", color: "var(--text-3)", background: "rgba(38,192,248,0.06)" }}>
                   {s}
                 </span>
               ))}
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {ABOUT_CARDS.map(c => (
-              <div key={c.title} style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 8, padding: "18px 20px", display: "flex", gap: 14, alignItems: "flex-start", transition: "border-color 0.2s" }}>
-                <div style={{ width: 34, height: 34, borderRadius: 6, background: "var(--cyan-100)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <i className={`ph-bold ${c.icon}`} style={{ fontSize: 16, color: "var(--cyan)" }} />
+            {ABOUT_CARDS.map((c, i) => (
+              <div key={c.title} className="ma-hover-lift" style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: "var(--radius-md)", padding: "18px 20px", display: "flex", gap: 14, alignItems: "flex-start", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}>
+                <div style={{ width: 34, height: 34, borderRadius: 6, background: "rgba(241,143,1,0.1)", border: "1px solid rgba(241,143,1,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <i className={`ph-bold ${c.icon}`} style={{ fontSize: 16, color: "var(--yellow)" }} />
                 </div>
                 <div>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 3 }}>{c.title}</div>
@@ -130,7 +130,7 @@ export default function Home() {
             </div>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--text-1)" }}>Things I&apos;ve shipped</div>
           </div>
-          <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan)", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+          <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan)", textDecoration: "none", display: "flex", alignItems: "center", gap: 6, transition: "gap 0.15s" }}>
             All projects <i className="ph-bold ph-arrow-right" style={{ fontSize: 12 }} />
           </Link>
         </div>
@@ -138,12 +138,12 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
           {PROJECTS.map((p, i) => (
             <Link key={i} href="/work" style={{ textDecoration: "none" }}>
-              <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden", boxShadow: "var(--shadow-sm)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}>
+              <div className="ma-hover-lift" style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-sm)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}>
                 <div style={{ height: 160, background: p.grad, display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <i className={`ph-thin ${p.icon}`} style={{ fontSize: 56, color: "rgba(5,103,138,0.2)" }} />
                 </div>
                 <div style={{ padding: 18 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8 }}>{p.tag}</div>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--yellow)", marginBottom: 8 }}>{p.tag}</div>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--text-1)", marginBottom: 6, letterSpacing: "-0.01em" }}>{p.title}</div>
                   <div style={{ fontSize: 12, color: "var(--text-2)", lineHeight: 1.5, marginBottom: 14 }}>{p.desc}</div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: 12 }}>
@@ -151,7 +151,7 @@ export default function Home() {
                       <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--cyan)", display: "inline-block", opacity: 0.7 }} />
                       indexed {p.ago}
                     </span>
-                    <i className="ph-bold ph-arrow-right" style={{ fontSize: 13, color: "var(--cyan)" }} />
+                    <i className="ph-bold ph-arrow-right" style={{ fontSize: 13, color: "var(--cyan)", transition: "color 0.15s, transform 0.15s" }} />
                   </div>
                 </div>
               </div>

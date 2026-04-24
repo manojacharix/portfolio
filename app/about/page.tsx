@@ -7,13 +7,13 @@ export default function About() {
     <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 80px" }}>
 
       <div style={{ marginBottom: 64 }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+        <div className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ opacity: 0.4 }}>//</span> About
         </div>
-        <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px,5vw,72px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 20 }}>
+        <h1 className="ma-fade-up ma-delay-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px,5vw,72px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 20 }}>
           Not just a PM.<br />A builder.
         </h1>
-        <p style={{ fontSize: 17, lineHeight: 1.75, color: "var(--text-2)", maxWidth: 560 }}>
+        <p className="ma-fade-up ma-delay-2" style={{ fontSize: 17, lineHeight: 1.75, color: "var(--text-2)", maxWidth: 560 }}>
           {about.bio}
         </p>
       </div>
@@ -42,7 +42,7 @@ export default function About() {
                   </div>
                   <div>
                     <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--text-1)", marginBottom: 3 }}>{exp.role}</div>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--cyan)", marginBottom: 10, letterSpacing: "0.06em" }}>{exp.company}</div>
+                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--yellow)", marginBottom: 10, letterSpacing: "0.06em" }}>{exp.company}</div>
                     <div style={{ fontSize: 14, color: "var(--text-2)", lineHeight: 1.65 }}>{exp.summary}</div>
                   </div>
                 </div>
@@ -51,30 +51,30 @@ export default function About() {
           </div>
 
           {/* Open to roles */}
-          <div style={{ padding: 28, border: "1px solid var(--border-md)", borderRadius: 12, background: "var(--surface)", boxShadow: "var(--shadow-md)" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", boxShadow: "var(--shadow-cyan)", animation: "pulse 2s ease-in-out infinite" }} />
+          <div style={{ padding: 28, border: "1px solid var(--border-md)", borderRadius: "var(--radius-lg)", background: "var(--surface)", boxShadow: "var(--shadow-yellow)" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--yellow)", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
+              <div className="ma-pulse-yellow" style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--yellow)", flexShrink: 0 }} />
               Open to roles
             </div>
             <p style={{ fontSize: 15, color: "var(--text-2)", marginBottom: 20, lineHeight: 1.6 }}>
               Actively looking for Product Manager and AI PM roles. If you&apos;re building something interesting, let&apos;s talk.
             </p>
             <div style={{ display: "flex", gap: 12 }}>
-              <a href={meta.calendly} target="_blank" rel="noopener noreferrer" style={{
+              <a href={meta.calendly} target="_blank" rel="noopener noreferrer" className="ma-press" style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
                 letterSpacing: "0.08em", textTransform: "uppercase",
-                padding: "11px 22px", borderRadius: 5,
-                background: "var(--cyan)", color: "#fff", textDecoration: "none",
-                boxShadow: "var(--shadow-cyan)",
+                padding: "11px 22px", borderRadius: "var(--radius-md)",
+                background: "var(--yellow)", color: "#fff", textDecoration: "none",
+                boxShadow: "var(--shadow-yellow)", transition: "all 0.15s",
               }}>
                 Schedule a call
               </a>
               <Link href="/contact" style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
                 letterSpacing: "0.08em", textTransform: "uppercase",
-                padding: "11px 22px", borderRadius: 5,
+                padding: "11px 22px", borderRadius: "var(--radius-md)",
                 background: "transparent", color: "var(--text-2)", textDecoration: "none",
-                border: "1.5px solid var(--border-md)",
+                border: "1.5px solid var(--border-md)", transition: "all 0.15s",
               }}>
                 Send a message
               </Link>
@@ -85,7 +85,7 @@ export default function About() {
         {/* Right */}
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
 
-          <div style={{ padding: 24, border: "1px solid var(--border)", borderRadius: 12, background: "var(--surface)" }}>
+          <div style={{ padding: 24, border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", background: "var(--surface)", transition: "border-color 0.25s ease" }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ opacity: 0.4 }}>//</span> Skills
             </div>
@@ -93,8 +93,8 @@ export default function About() {
               {about.skills.map(s => (
                 <span key={s} style={{
                   fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.07em", textTransform: "uppercase",
-                  padding: "5px 12px", borderRadius: 3,
-                  border: "1px solid var(--border-md)", color: "var(--text-3)",
+                  padding: "5px 12px", borderRadius: "var(--radius-sm)",
+                  border: "1px solid var(--border-md)", color: "var(--text-2)",
                   background: "rgba(38,192,248,0.06)",
                 }}>
                   {s}
@@ -103,7 +103,7 @@ export default function About() {
             </div>
           </div>
 
-          <div style={{ padding: 24, border: "1px solid var(--border)", borderRadius: 12, background: "var(--surface)" }}>
+          <div style={{ padding: 24, border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", background: "var(--surface)", transition: "border-color 0.25s ease" }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ opacity: 0.4 }}>//</span> Tools
             </div>
@@ -111,8 +111,8 @@ export default function About() {
               {about.tools.map(t => (
                 <span key={t} style={{
                   fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.07em", textTransform: "uppercase",
-                  padding: "5px 12px", borderRadius: 3,
-                  border: "1px solid var(--border)", color: "var(--text-2)",
+                  padding: "5px 12px", borderRadius: "var(--radius-sm)",
+                  border: "1px solid var(--border)", color: "var(--text-3)",
                   background: "transparent",
                 }}>
                   {t}
@@ -121,17 +121,17 @@ export default function About() {
             </div>
           </div>
 
-          <a href={meta.resume} target="_blank" rel="noopener noreferrer" style={{
+          <a href={meta.resume} target="_blank" rel="noopener noreferrer" className="ma-hover-lift" style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "20px 24px", border: "1px solid var(--border)",
-            borderRadius: 12, background: "var(--surface)", textDecoration: "none",
-            transition: "border-color 0.15s",
+            borderRadius: "var(--radius-lg)", background: "var(--surface)", textDecoration: "none",
+            transition: "border-color 0.15s, transform 0.2s, box-shadow 0.2s",
           }}>
             <div>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 600, color: "var(--text-1)", marginBottom: 4 }}>Resume</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--cyan)", letterSpacing: "0.06em" }}>VIEW PDF →</div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--yellow)", letterSpacing: "0.06em" }}>VIEW PDF →</div>
             </div>
-            <i className="ph-bold ph-file-pdf" style={{ fontSize: 24, color: "var(--cyan-dim, var(--cyan-700))" }} />
+            <i className="ph-bold ph-file-pdf" style={{ fontSize: 24, color: "var(--text-muted)" }} />
           </a>
 
         </div>

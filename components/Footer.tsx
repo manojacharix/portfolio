@@ -8,13 +8,13 @@ export default function Footer() {
       background: "var(--surface)",
       padding: "28px 80px",
       position: "relative", zIndex: 10,
-      transition: "background 0.3s ease, border-color 0.3s ease",
+      transition: "background 0.25s ease, border-color 0.25s ease",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan)", display: "flex", alignItems: "center", gap: 8 }}>
-            <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", boxShadow: "0 0 6px var(--cyan)", animation: "pulse 2s ease-in-out infinite" }} />
+            <div className="ma-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", flexShrink: 0 }} />
             Autonomous agent active
           </div>
           <div style={{ fontSize: 12, color: "var(--text-2)", maxWidth: 500, lineHeight: 1.5 }}>
@@ -34,6 +34,7 @@ export default function Footer() {
                 fontFamily: "var(--font-mono)", fontSize: 10,
                 letterSpacing: "0.08em", textTransform: "uppercase",
                 color: "var(--text-muted)", textDecoration: "none",
+                transition: "color 0.15s",
               }}>
                 {label}
               </Link>

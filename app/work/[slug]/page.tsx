@@ -14,36 +14,37 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 48px" }}>
 
-      <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-3)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 40, transition: "color 0.15s" }}>
+      <Link href="/work" className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 40, transition: "color 0.15s" }}>
         <i className="ph-bold ph-arrow-left" style={{ fontSize: 12 }} /> Back to work
       </Link>
 
-      <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+      <div className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
         <span style={{ opacity: 0.4 }}>//</span> {item.category}
       </div>
 
-      <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(36px,5vw,64px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 20 }}>
+      <h1 className="ma-fade-up ma-delay-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(36px,5vw,64px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 20 }}>
         {item.title}
       </h1>
 
-      <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--text-2)", marginBottom: 48, maxWidth: 600 }}>
+      <p className="ma-fade-up ma-delay-2" style={{ fontSize: 18, lineHeight: 1.6, color: "var(--text-2)", marginBottom: 48, maxWidth: 600 }}>
         {item.headline}
       </p>
 
       {/* Metrics */}
       {item.metrics.length > 0 && (
-        <div style={{
+        <div className="ma-fade-up ma-delay-3" style={{
           display: "grid", gridTemplateColumns: `repeat(${item.metrics.length}, 1fr)`,
           gap: 0, marginBottom: 56,
-          border: "1px solid var(--border)", borderRadius: 12,
+          border: "1px solid var(--border)", borderRadius: "var(--radius-lg)",
           background: "var(--surface)", overflow: "hidden",
+          boxShadow: "var(--shadow-md)",
         }}>
           {item.metrics.map((m, i) => (
             <div key={m.label} style={{
               padding: "24px 28px",
               borderRight: i < item.metrics.length - 1 ? "1px solid var(--border)" : "none",
             }}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 700, letterSpacing: "-0.04em", color: "var(--cyan)", marginBottom: 6 }}>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 700, letterSpacing: "-0.04em", color: "var(--yellow)", marginBottom: 6 }}>
                 {m.value}
               </div>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)" }}>
@@ -77,7 +78,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         {item.tags.map(tag => (
           <span key={tag} style={{
             fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase",
-            padding: "5px 12px", borderRadius: 3,
+            padding: "5px 12px", borderRadius: "var(--radius-sm)",
             border: "1px solid var(--border-md)", color: "var(--text-3)",
             background: "rgba(38,192,248,0.06)",
           }}>
@@ -88,17 +89,17 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
 
       {/* Bottom nav */}
       <div style={{ marginTop: 64, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-3)", textDecoration: "none" }}>
-          ← All work
+        <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}>
+          All work
         </Link>
-        <Link href="/contact" style={{
+        <Link href="/contact" className="ma-press" style={{
           fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
           letterSpacing: "0.08em", textTransform: "uppercase",
-          padding: "11px 22px", borderRadius: 5,
-          background: "var(--cyan)", color: "#fff", textDecoration: "none",
-          boxShadow: "var(--shadow-cyan)",
+          padding: "11px 22px", borderRadius: "var(--radius-md)",
+          background: "var(--yellow)", color: "#fff", textDecoration: "none",
+          boxShadow: "var(--shadow-yellow)", transition: "all 0.15s",
         }}>
-          Init contact →
+          Init contact
         </Link>
       </div>
 

@@ -1,10 +1,10 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react"
 
-type Theme = "light" | "dark"
+type Theme = "dark" | "light"
 
 const ThemeContext = createContext<{ theme: Theme; toggle: () => void }>({
-  theme: "light",
+  theme: "dark",
   toggle: () => {},
 })
 
@@ -13,19 +13,18 @@ export function useTheme() {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light")
+  const [theme, setTheme] = useState<Theme>("dark")
 
   useEffect(() => {
     const saved = localStorage.getItem("ma-theme") as Theme | null
-    const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-    const initial = saved ?? preferred
+    const initial = saved ?? "dark"
     setTheme(initial)
     document.documentElement.setAttribute("data-theme", initial)
   }, [])
 
   const toggle = () => {
     setTheme(prev => {
-      const next = prev === "light" ? "dark" : "light"
+      const next = prev === "dark" ? "light" : "dark"
       document.documentElement.setAttribute("data-theme", next)
       localStorage.setItem("ma-theme", next)
       return next

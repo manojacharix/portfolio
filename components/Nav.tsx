@@ -21,15 +21,15 @@ export default function Nav() {
         backdropFilter: "blur(12px)",
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "0 24px",
-        transition: "background 0.3s ease",
+        transition: "background 0.25s ease, border-color 0.25s ease",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-2)", letterSpacing: "0.05em" }}>
-          <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", boxShadow: "0 0 6px var(--cyan)", animation: "pulse 2s ease-in-out infinite" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-3)", letterSpacing: "0.05em" }}>
+          <div className="ma-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", boxShadow: "0 0 6px var(--cyan)", flexShrink: 0 }} />
           <span style={{ color: "var(--cyan)", fontWeight: 500 }}>AGENT ONLINE</span>
           <span style={{ opacity: 0.4 }}>·</span>
           <span>Monitoring Manoj&apos;s work</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-2)", letterSpacing: "0.05em" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-3)", letterSpacing: "0.05em" }}>
           <span>sys.status: <span style={{ color: "var(--cyan)", fontWeight: 500 }}>NOMINAL</span></span>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function Nav() {
         backdropFilter: "blur(20px)",
         borderBottom: "1px solid var(--border)",
         boxShadow: "var(--shadow-sm)",
-        transition: "background 0.3s ease",
+        transition: "background 0.25s ease, border-color 0.25s ease",
       }}>
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center" }}>
@@ -51,7 +51,7 @@ export default function Nav() {
             src="/manoj_logo_full.svg"
             alt={meta.name}
             width={120} height={20}
-            style={{ filter: isDark ? "brightness(0) invert(1)" : "brightness(0)" }}
+            style={{ filter: "brightness(0) invert(1)", transition: "filter 0.25s ease" }}
           />
         </Link>
 
@@ -67,8 +67,8 @@ export default function Nav() {
               <Link key={href} href={href} style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 400,
                 letterSpacing: "0.08em", textTransform: "uppercase",
-                color: active ? "var(--cyan)" : "var(--text-2)",
-                background: active ? "var(--cyan-100)" : "none",
+                color: active ? "var(--cyan)" : "var(--text-3)",
+                background: active ? "rgba(38,192,248,0.1)" : "none",
                 padding: "6px 14px", borderRadius: 4, textDecoration: "none",
                 transition: "all 0.15s",
               }}>
@@ -78,35 +78,29 @@ export default function Nav() {
           })}
         </div>
 
-        {/* Right: theme toggle + CTA */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          {/* Theme toggle */}
+        {/* Right: toggle pill + CTA */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          {/* Theme icon */}
+          <i
+            className={`ph-bold ${isDark ? "ph-moon" : "ph-sun"}`}
+            style={{ fontSize: 13, color: "var(--text-muted)", transition: "color 0.2s" }}
+          />
+          {/* Pill toggle */}
           <button
             onClick={toggle}
-            aria-label="Toggle theme"
-            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            style={{
-              width: 34, height: 34, borderRadius: 8,
-              border: "1.5px solid var(--border-md)",
-              background: "transparent", cursor: "pointer",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              color: "var(--text-2)",
-              transition: "all 0.2s",
-            }}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            className="theme-toggle"
           >
-            <i
-              className={`ph-bold ${isDark ? "ph-sun" : "ph-moon"}`}
-              style={{ fontSize: 15, color: isDark ? "var(--yellow)" : "var(--cyan-800)" }}
-            />
+            <div className="theme-toggle-thumb" />
           </button>
 
           {/* Primary CTA */}
           <Link href="/contact" style={{
             fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
             letterSpacing: "0.08em", textTransform: "uppercase",
-            background: "var(--cyan)", color: "#fff",
-            padding: "8px 18px", borderRadius: 4, textDecoration: "none",
-            boxShadow: "var(--shadow-cyan)",
+            background: "var(--yellow)", color: "#fff",
+            padding: "8px 18px", borderRadius: "var(--radius-md)", textDecoration: "none",
+            boxShadow: "var(--shadow-yellow)",
             transition: "all 0.15s",
           }}>
             Init contact
