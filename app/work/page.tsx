@@ -25,7 +25,7 @@ export default function WorkIndex() {
   const filtered = active === "all" ? ALL_PROJECTS : ALL_PROJECTS.filter(p => p.cat === active)
 
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 80px" }}>
+    <div className="page-wrap" style={{ paddingTop: 60, paddingBottom: 60 }}>
 
       {/* Header */}
       <div style={{ marginBottom: 48 }}>
@@ -68,7 +68,7 @@ export default function WorkIndex() {
       </div>
 
       {/* Grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
+      <div className="work-grid">
         {filtered.map((p, i) => (
           <div key={i} className="project-card" style={{
             background: "var(--surface)", border: "1px solid var(--border)",

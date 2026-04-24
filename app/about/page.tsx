@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 80px" }}>
+    <div className="page-wrap" style={{ paddingTop: 60, paddingBottom: 60 }}>
 
       <div style={{ marginBottom: 64 }}>
         <div className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
@@ -30,7 +30,7 @@ export default function About() {
         </p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "3fr 2fr", gap: 80, alignItems: "start" }}>
+      <div className="about-page-grid">
 
         {/* Left */}
         <div>
@@ -71,7 +71,7 @@ export default function About() {
             <p style={{ fontSize: 15, color: "var(--text-2)", marginBottom: 20, lineHeight: 1.6 }}>
               Actively looking for Product Manager and AI PM roles. If you&apos;re building something interesting, let&apos;s talk.
             </p>
-            <div style={{ display: "flex", gap: 12 }}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href={meta.calendly} target="_blank" rel="noopener noreferrer" className="ma-press btn-primary" style={{
                 fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
                 letterSpacing: "0.08em", textTransform: "uppercase",

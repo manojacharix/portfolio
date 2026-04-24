@@ -28,13 +28,7 @@ export default function Home() {
     <div>
 
       {/* ── HERO ── */}
-      <section style={{
-        maxWidth: 1200, margin: "0 auto",
-        padding: "80px 80px 60px",
-        display: "grid", gridTemplateColumns: "1fr 480px",
-        gap: 48, alignItems: "center",
-        minHeight: "calc(100vh - 88px)",
-      }}>
+      <section className="page-wrap hero-grid">
         <div style={{ display: "flex", flexDirection: "column" }}>
 
           <div className="ma-fade-up" style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 28 }}>
@@ -62,15 +56,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="ma-fade-in ma-delay-3" style={{ height: 460, flexShrink: 0 }}>
+        <div className="ma-fade-in ma-delay-3 hero-terminal-wrap">
           <HeroTerminal />
         </div>
       </section>
 
       {/* ── STATS ── */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 80px", display: "grid", gridTemplateColumns: "repeat(4,1fr)", borderTop: "1px solid var(--border)" }}>
+      <div className="page-wrap stats-grid">
         {STATS.map((s, i) => (
-          <div key={i} className="ma-fade-up" style={{ animationDelay: `${i * 60}ms`, padding: "28px 0", borderRight: i < 3 ? `1px solid var(--border)` : "none", paddingRight: i < 3 ? 32 : 0, paddingLeft: i > 0 ? 32 : 0 }}>
+          <div key={i} className={`ma-fade-up stat-cell`} style={{ animationDelay: `${i * 60}ms`, padding: "28px 0", borderRight: i < 3 ? `1px solid var(--border)` : "none", paddingRight: i < 3 ? 32 : 0, paddingLeft: i > 0 ? 32 : 0 }}>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 38, fontWeight: 700, letterSpacing: "-0.05em", lineHeight: 1, color: "var(--text-1)", marginBottom: 6 }}>
               {s.num}<span style={{ color: "var(--cyan)" }}>{s.accent}</span>
             </div>
@@ -83,7 +77,7 @@ export default function Home() {
 
       {/* ── ABOUT ── */}
       <div style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", marginTop: 40, transition: "background 0.25s ease" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 80px", display: "grid", gridTemplateColumns: "5fr 4fr", gap: 80, alignItems: "start" }}>
+        <div className="page-wrap about-grid" style={{ paddingTop: 80, paddingBottom: 80 }}>
           <div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 18, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ color: "var(--border-md)" }}>//</span> About
@@ -106,7 +100,7 @@ export default function Home() {
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {ABOUT_CARDS.map((c, i) => (
+            {ABOUT_CARDS.map((c) => (
               <div key={c.title} className="about-card" style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: "var(--radius-md)", padding: "18px 20px", display: "flex", gap: 14, alignItems: "flex-start" }}>
                 <div style={{ width: 34, height: 34, borderRadius: 6, background: "var(--cyan-100)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <i className={`ph-bold ${c.icon}`} style={{ fontSize: 16, color: "var(--cyan)" }} />
@@ -122,7 +116,7 @@ export default function Home() {
       </div>
 
       {/* ── SELECTED WORK ── */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 80px" }}>
+      <div className="page-wrap" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 36 }}>
           <div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
@@ -135,7 +129,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
+        <div className="work-grid">
           {PROJECTS.map((p, i) => (
             <Link key={i} href="/work" style={{ textDecoration: "none" }}>
               <div className="project-card" style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>

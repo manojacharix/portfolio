@@ -6,11 +6,10 @@ export default function Footer() {
     <div style={{
       borderTop: "1px solid var(--border)",
       background: "var(--surface)",
-      padding: "28px 80px",
       position: "relative", zIndex: 10,
       transition: "background 0.25s ease, border-color 0.25s ease",
     }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
+      <div className="footer-wrap" style={{ maxWidth: 1200, margin: "0 auto", paddingTop: 28, paddingBottom: 28, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cyan)", display: "flex", alignItems: "center", gap: 8 }}>

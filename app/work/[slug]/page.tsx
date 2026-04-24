@@ -12,7 +12,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   if (!item) notFound()
 
   return (
-    <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 48px" }}>
+    <div className="page-wrap" style={{ paddingTop: 60, paddingBottom: 60, maxWidth: 900 }}>
 
       <Link href="/work" className="ma-fade-up back-link" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 40 }}>
         <i className="ph-bold ph-arrow-left" style={{ fontSize: 12 }} /> Back to work
@@ -33,7 +33,8 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       {/* Metrics */}
       {item.metrics.length > 0 && (
         <div className="ma-fade-up ma-delay-3" style={{
-          display: "grid", gridTemplateColumns: `repeat(${item.metrics.length}, 1fr)`,
+          display: "grid",
+          gridTemplateColumns: `repeat(auto-fit, minmax(140px, 1fr))`,
           gap: 0, marginBottom: 56,
           border: "1px solid var(--border)", borderRadius: "var(--radius-lg)",
           background: "var(--surface)", overflow: "hidden",
@@ -43,6 +44,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             <div key={m.label} style={{
               padding: "24px 28px",
               borderRight: i < item.metrics.length - 1 ? "1px solid var(--border)" : "none",
+              borderBottom: "1px solid var(--border)",
             }}>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 700, letterSpacing: "-0.04em", color: "var(--cyan)", marginBottom: 6 }}>
                 {m.value}
@@ -88,7 +90,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       </div>
 
       {/* Bottom nav */}
-      <div style={{ marginTop: 64, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ marginTop: 64, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
         <Link href="/work" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}>
           All work
         </Link>

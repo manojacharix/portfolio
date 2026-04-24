@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
+import { useState } from "react"
 import { useTheme } from "./ThemeProvider"
 import meta from "@/content/meta.json"
 
@@ -9,6 +10,13 @@ export default function Nav() {
   const path = usePathname()
   const { theme, toggle } = useTheme()
   const isDark = theme === "dark"
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const navLinks = [
+    { href: "/",        label: "Home" },
+    { href: "/work",    label: "Work" },
+    { href: "/contact", label: "Contact" },
+  ]
 
   return (
     <>
@@ -27,7 +35,7 @@ export default function Nav() {
           <div className="ma-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan)", boxShadow: "0 0 6px var(--cyan)", flexShrink: 0 }} />
           <span style={{ color: "var(--cyan)", fontWeight: 500 }}>AGENT ONLINE</span>
           <span style={{ opacity: 0.4 }}>·</span>
-          <span>Monitoring Manoj&apos;s work</span>
+          <span className="agent-bar-text">Monitoring Manoj&apos;s work</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-2)", letterSpacing: "0.05em" }}>
           <span>sys.status: <span style={{ color: "var(--cyan)", fontWeight: 500 }}>NOMINAL</span></span>
@@ -35,10 +43,10 @@ export default function Nav() {
       </div>
 
       {/* Main nav */}
-      <nav style={{
+      <nav className="nav-main" style={{
         position: "fixed", top: 28, left: 0, right: 0, zIndex: 100,
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "0 56px", height: 60,
+        height: 60,
         background: "var(--nav-bg)",
         backdropFilter: "blur(20px)",
         borderBottom: "1px solid var(--border)",
@@ -58,13 +66,9 @@ export default function Nav() {
           />
         </Link>
 
-        {/* Links */}
-        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-          {[
-            { href: "/",        label: "Home" },
-            { href: "/work",    label: "Work" },
-            { href: "/contact", label: "Contact" },
-          ].map(({ href, label }) => {
+        {/* Desktop links */}
+        <div className="nav-desktop-links" style={{ display: "flex", alignItems: "center", gap: 4 }}>
+          {navLinks.map(({ href, label }) => {
             const active = path === href
             return (
               <Link key={href} href={href} className="nav-link-item" style={{
@@ -81,7 +85,7 @@ export default function Nav() {
           })}
         </div>
 
-        {/* Right: toggle pill + CTA */}
+        {/* Right: toggle pill + CTA (desktop) + hamburger (mobile) */}
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           {/* Theme icon */}
           <i
@@ -97,8 +101,8 @@ export default function Nav() {
             <div className="theme-toggle-thumb" />
           </button>
 
-          {/* Primary CTA */}
-          <Link href="/contact" className="nav-cta-btn" style={{
+          {/* Primary CTA (desktop only) */}
+          <Link href="/contact" className="nav-cta-btn nav-desktop-cta" style={{
             fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 500,
             letterSpacing: "0.08em", textTransform: "uppercase",
             background: "var(--cyan)", color: "#fff",
@@ -108,8 +112,37 @@ export default function Nav() {
           }}>
             Contact
           </Link>
+
+          {/* Hamburger (mobile only) */}
+          <button
+            className="nav-hamburger"
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            <i
+              className={`ph-bold ${menuOpen ? "ph-x" : "ph-list"}`}
+              style={{ fontSize: 22, color: "var(--text-2)" }}
+            />
+          </button>
         </div>
       </nav>
+
+      {/* Mobile dropdown menu */}
+      <div className={`nav-mobile-menu${menuOpen ? "" : " closed"}`}>
+        {navLinks.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`nav-mobile-link${path === href ? " active" : ""}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            {label}
+          </Link>
+        ))}
+        <Link href="/contact" className="nav-mobile-cta" onClick={() => setMenuOpen(false)}>
+          Contact
+        </Link>
+      </div>
     </>
   )
 }

@@ -31,7 +31,7 @@ export default function Contact() {
   }
 
   return (
-    <div style={{ maxWidth: 760, margin: "0 auto", padding: "60px 80px" }}>
+    <div className="page-wrap" style={{ paddingTop: 60, paddingBottom: 60, maxWidth: 760 }}>
 
       <div className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
         <span style={{ opacity: 0.4 }}>//</span> Contact
@@ -53,7 +53,7 @@ export default function Contact() {
         </div>
       ) : (
         <form className="ma-fade-up ma-delay-3" onSubmit={handleSubmit}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 20 }}>
+          <div className="contact-form-row">
             {[
               { label: "Name",  key: "name",  type: "text",  placeholder: "Your name" },
               { label: "Email", key: "email", type: "email", placeholder: "you@example.com" },
@@ -64,6 +64,7 @@ export default function Contact() {
                   type={f.type} required placeholder={f.placeholder}
                   value={form[f.key as keyof typeof form]}
                   onChange={e => setForm(p => ({ ...p, [f.key]: e.target.value }))}
+                  className="form-input-field"
                   style={inputStyle}
                 />
               </div>
@@ -77,6 +78,7 @@ export default function Contact() {
               placeholder="Tell me about the product, the problem, where you're stuck. Specific is better."
               value={form.message}
               onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
+              className="form-input-field"
               style={{ ...inputStyle, resize: "vertical" }}
             />
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-muted)", marginTop: 6, letterSpacing: "0.04em" }}>
