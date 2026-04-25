@@ -1,12 +1,24 @@
 import Link from "next/link"
+import Image from "next/image"
 import HeroTerminal from "@/components/HeroTerminal"
 import meta from "@/content/meta.json"
+import work from "@/content/work.json"
 
-const PROJECTS = [
-  { tag: "AI Product",    title: "Intelligent Doc Assistant",  desc: "LLM-powered Q&A with citations. UX, backend, deploy.",       icon: "ph-brain",         grad: "linear-gradient(135deg,#E1F6FE,#A6E5FC,#6DD5FA)", ago: "2h ago" },
-  { tag: "SaaS",          title: "Growth Analytics Platform",  desc: "Real-time metrics for indie SaaS. Wireframe to live, 3 wks.", icon: "ph-chart-line-up", grad: "linear-gradient(135deg,#FFF5E6,#FFD494,#FEA92A)", ago: "5h ago" },
-  { tag: "Design System", title: "Brand OS",                   desc: "Full design system + component library for a B2B startup.",   icon: "ph-cube",          grad: "linear-gradient(135deg,#E1F6FE,#C4EEFD,#26C0F8)", ago: "1d ago" },
-]
+const GRADS: Record<string, string> = {
+  "litscreen":      "linear-gradient(135deg,#1a2a1a,#0d1f0d)",
+  "zataak-se":      "linear-gradient(135deg,#2a1a00,#1a0d00)",
+  "job-automation": "linear-gradient(135deg,#001a2a,#000d1a)",
+  "vordo-ai":       "linear-gradient(135deg,#1a001a,#0d000d)",
+}
+
+const ICONS: Record<string, string> = {
+  "litscreen":      "ph-brain",
+  "zataak-se":      "ph-storefront",
+  "job-automation": "ph-git-branch",
+  "vordo-ai":       "ph-microphone",
+}
+
+const PROJECTS = work.slice(0, 3)
 
 const ABOUT_CARDS = [
   { icon: "ph-brain",         title: "AI-native thinking",    desc: "Every product decision starts with: what does the model know, and where does the human loop in?" },
@@ -130,21 +142,36 @@ export default function Home() {
         </div>
 
         <div className="work-grid">
-          {PROJECTS.map((p, i) => (
-            <Link key={i} href="/work" style={{ textDecoration: "none" }}>
+          {PROJECTS.map((p) => (
+            <Link key={p.slug} href={`/work/${p.slug}`} style={{ textDecoration: "none" }}>
               <div className="project-card" style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
-                <div style={{ height: 160, background: p.grad, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <i className={`ph-thin ${p.icon}`} style={{ fontSize: 56, color: "rgba(5,103,138,0.2)" }} />
+                <div style={{ height: 180, position: "relative", overflow: "hidden", background: GRADS[p.slug] || "var(--surface2)", borderBottom: "1px solid var(--border)" }}>
+                  {p.hero_image ? (
+                    <Image
+                      src={p.hero_image}
+                      alt={p.title}
+                      fill
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <i className={`ph-thin ${ICONS[p.slug] || "ph-cube"}`} style={{ fontSize: 56, color: "rgba(38,192,248,0.15)" }} />
+                    </div>
+                  )}
                 </div>
                 <div style={{ padding: 18 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8 }}>{p.tag}</div>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 8 }}>{p.category}</div>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--text-1)", marginBottom: 6, letterSpacing: "-0.01em" }}>{p.title}</div>
-                  <div className="project-desc-text" style={{ fontSize: 12, color: "var(--text-2)", lineHeight: 1.5, marginBottom: 14 }}>{p.desc}</div>
+                  <div className="project-desc-text" style={{ fontSize: 12, color: "var(--text-2)", lineHeight: 1.5, marginBottom: 14 }}>{p.summary}</div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: 12 }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 4 }}>
-                      <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--cyan)", display: "inline-block", opacity: 0.7 }} />
-                      indexed {p.ago}
-                    </span>
+                    <div style={{ display: "flex", gap: 6 }}>
+                      {p.tags.slice(0, 2).map(tag => (
+                        <span key={tag} style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.06em", textTransform: "uppercase", padding: "3px 8px", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)", color: "var(--text-muted)" }}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                     <i className="ph-bold ph-arrow-right project-arrow" style={{ fontSize: 13, color: "var(--cyan)" }} />
                   </div>
                 </div>
