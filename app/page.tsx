@@ -98,7 +98,7 @@ export default function Home() {
               Not just a PM.<br />A builder.
             </h2>
             <p className="about-body-text" style={{ fontSize: 16, lineHeight: 1.75, color: "var(--text-2)", marginBottom: 14 }}>
-              I&apos;m Manoj — an AI product manager who doesn&apos;t stop at the PRD. I prototype in Figma, ship in code, and deploy before the meeting where we&apos;d normally &quot;discuss next steps.&quot;
+              I&apos;m Manoj, an AI product manager who doesn&apos;t stop at the PRD. I prototype in Figma, ship in code, and deploy before the meeting where we&apos;d normally &quot;discuss next steps.&quot;
             </p>
             <p className="about-body-text" style={{ fontSize: 16, lineHeight: 1.75, color: "var(--text-2)" }}>
               No hand-waving. No &quot;we&apos;ll figure out engineering later.&quot; Just product thinking with the receipts to back it up.

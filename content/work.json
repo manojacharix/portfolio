@@ -4,12 +4,12 @@
     "title": "Litscreen",
     "category": "AI Product · 0 to 1",
     "tags": ["AI/LLM", "SaaS", "0-to-1", "Automation"],
-    "headline": "Built a multi-model AI screening tool solo in 8 weeks — 89% faster than manual.",
+    "headline": "Built a multi-model AI screening tool solo in 8 weeks - 89% faster than manual.",
     "summary": "Litscreen is an AI-powered design research tool I designed and built solo from scratch. A two-model pipeline using Gemini and Claude cut admin workflow from 45 minutes to 5 minutes per task.",
     "context": "Solo builder · Litscreen · 2024",
     "hero_image": "/images/litscreen/pipeline.png",
     "images": [
-      { "src": "/images/litscreen/architecture.png", "alt": "Litscreen system architecture — client, application, data, and AI layers" },
+      { "src": "/images/litscreen/architecture.png", "alt": "Litscreen system architecture - client, application, data, and AI layers" },
       { "src": "/images/litscreen/tools.png", "alt": "Tools used: Gemini 3 Pro for image understanding, Claude Sonnet for reasoning, VS Code" }
     ],
     "metrics": [
@@ -18,11 +18,11 @@
       { "label": "Efficiency gain", "value": "89%" },
       { "label": "Screening time", "value": "45→5 min" }
     ],
-    "problem": "Design research teams were spending 45+ minutes per screen manually tagging UI components, categorising patterns, and writing metadata — unscalable for any team with volume. The process was entirely manual, inconsistent across reviewers, and impossible to search.",
-    "my_call": "When Gemini 3 Pro launched, I noticed it had strong visual reasoning — far better than anything available for image understanding at the time. Claude, on the other hand, was the best model for structured reasoning and scoring. Most builders would default to one model and accept the tradeoff. I decided to play to the strengths of each: Gemini handles the visual parsing and component recognition, Claude takes that structured output and applies reasoning, scoring, and metadata generation. Two models, two jobs, one pipeline — with a human-in-the-loop verification step so the output stays trustworthy.",
+    "problem": "Design research teams were spending 45+ minutes per screen manually tagging UI components, categorising patterns, and writing metadata - unscalable for any team with volume. The process was entirely manual, inconsistent across reviewers, and impossible to search.",
+    "my_call": "When Gemini 3 Pro launched, I noticed it had strong visual reasoning - far better than anything available for image understanding at the time. Claude, on the other hand, was the best model for structured reasoning and scoring. Most builders would default to one model and accept the tradeoff. I decided to play to the strengths of each: Gemini handles the visual parsing and component recognition, Claude takes that structured output and applies reasoning, scoring, and metadata generation. Two models, two jobs, one pipeline - with a human-in-the-loop verification step so the output stays trustworthy.",
     "what_i_shipped": "A full-stack AI research tool with an admin dashboard, public search interface, and component library. The AI pipeline processes uploaded screenshots end-to-end: image analysis, metadata extraction, contextual tagging, structured output, human review, and database publishing. Built on Next.js, Node.js, and Supabase. Deployed to production.",
-    "outcome": "Workflow dropped from 45 minutes to 5 minutes per screen — an 89% efficiency gain. 23,000 lines of production code shipped in 8 weeks. Proved that a PM with a sharp technical point of view can move as fast as a small engineering team.",
-    "how_i_built_it": "Stack: Next.js (frontend + API routes), Node.js, Supabase (PostgreSQL + storage), Cloudinary CDN. AI layer: Gemini 3 Pro for image understanding and component recognition, Claude Sonnet for reasoning, metadata generation and scoring, with human-in-the-loop (HITL) verification to catch hallucinations. Search: PostgreSQL full-text search with custom ranking logic. Prompt architecture was iterated heavily — structured output format, token optimisation (SOPs, context window management), and 40% cost reduction through prompt engineering.",
+    "outcome": "Workflow dropped from 45 minutes to 5 minutes per screen - an 89% efficiency gain. 23,000 lines of production code shipped in 8 weeks. Proved that a PM with a sharp technical point of view can move as fast as a small engineering team.",
+    "how_i_built_it": "Stack: Next.js (frontend + API routes), Node.js, Supabase (PostgreSQL + storage), Cloudinary CDN. AI layer: Gemini 3 Pro for image understanding and component recognition, Claude Sonnet for reasoning, metadata generation and scoring, with human-in-the-loop (HITL) verification to catch hallucinations. Search: PostgreSQL full-text search with custom ranking logic. Prompt architecture was iterated heavily - structured output format, token optimisation (SOPs, context window management), and 40% cost reduction through prompt engineering.",
     "tags_target": ["AI PM", "LLM", "Technical PM", "0-to-1", "SaaS", "Automation", "Health", "Insurance", "Mental Health"]
   },
   {
@@ -30,14 +30,14 @@
     "title": "Zataak Se",
     "category": "Fintech · Payments · Quick Commerce",
     "tags": ["Payments", "Fintech", "Ecommerce", "B2C"],
-    "headline": "Founding designer turned de facto PM — 3 apps, 1 design system, real outcomes.",
+    "headline": "Founding designer turned de facto PM - 3 apps, 1 design system, real outcomes.",
     "summary": "Joined as founding designer at a quick commerce and payments startup. Grew into a PM role owning product across consumer, merchant, and operations apps under constant shipping pressure.",
     "context": "Founding Designer → de facto PM · Zataak Se · 2023–2024",
     "hero_image": "/images/zataak-se/consumer-app.jpg",
     "images": [
-      { "src": "/images/zataak-se/merchant-app.jpg", "alt": "Zataak Se Merchant App — order management and inventory interface" },
-      { "src": "/images/zataak-se/operations-app.jpg", "alt": "Zataak Se Operations App — delivery tracking with geo-fencing and ETA" },
-      { "src": "/images/zataak-se/design-system.jpg", "alt": "Zataak Se Design System — shared component library across all three apps" }
+      { "src": "/images/zataak-se/merchant-app.jpg", "alt": "Zataak Se Merchant App - order management and inventory interface" },
+      { "src": "/images/zataak-se/operations-app.jpg", "alt": "Zataak Se Operations App - delivery tracking with geo-fencing and ETA" },
+      { "src": "/images/zataak-se/design-system.jpg", "alt": "Zataak Se Design System - shared component library across all three apps" }
     ],
     "metrics": [
       { "label": "Engagement increase", "value": "20%" },
@@ -45,8 +45,8 @@
       { "label": "Reconciliation reduction", "value": "80%" },
       { "label": "UI inconsistencies", "value": "−30%" }
     ],
-    "problem": "Three separate product surfaces — a consumer app, a merchant app, and an operations/delivery app — were being built in parallel with no shared design language. During UAT, inconsistencies kept surfacing: components looked different across apps, developers were rebuilding the same UI elements from scratch for each surface, and bugs were slipping through because there was no single source of truth. On top of that, payment reconciliation was a fully manual process costing hours every day.",
-    "my_call": "There was serious pressure to keep shipping features — timelines were tight and stakeholder expectations were high. But I kept seeing the same problem repeat in UAT: inconsistencies that ate up developer time and pushed back releases. I made the call to pause feature work briefly and build a proper design system — but with a deliberate split. The consumer app needed its own polished, user-facing system since it was the product end-users would judge us on. The merchant and operations apps shared a common component library, since they had overlapping use cases and the same dev team. That two-tier approach meant developers could reuse components across the back-end apps and focus their energy on features and APIs instead of recreating UI.",
+    "problem": "Three separate product surfaces - a consumer app, a merchant app, and an operations/delivery app - were being built in parallel with no shared design language. During UAT, inconsistencies kept surfacing: components looked different across apps, developers were rebuilding the same UI elements from scratch for each surface, and bugs were slipping through because there was no single source of truth. On top of that, payment reconciliation was a fully manual process costing hours every day.",
+    "my_call": "There was serious pressure to keep shipping features - timelines were tight and stakeholder expectations were high. But I kept seeing the same problem repeat in UAT: inconsistencies that ate up developer time and pushed back releases. I made the call to pause feature work briefly and build a proper design system - but with a deliberate split. The consumer app needed its own polished, user-facing system since it was the product end-users would judge us on. The merchant and operations apps shared a common component library, since they had overlapping use cases and the same dev team. That two-tier approach meant developers could reuse components across the back-end apps and focus their energy on features and APIs instead of recreating UI.",
     "what_i_shipped": "A unified design system with two tiers: a consumer-facing system for the customer app and a shared operational system covering merchant and delivery surfaces. Wrote PRDs for the payments flow and geo-fencing features. Partnered with engineers on Kafka integration and Google Maps API implementation for real-time delivery tracking. Also drove an AI automation layer that eliminated manual payment reconciliation.",
     "outcome": "20% increase in user engagement within 3 months. 80% reduction in manual payment reconciliation through AI automation. 30% fewer UI inconsistencies across the product suite. Developer velocity improved significantly once the design system removed the rebuild cycle.",
     "how_i_built_it": "Design system built in Figma with two tracks: consumer (polished, brand-forward) and operational (functional, shared components). Tech stack involved Kafka for event streaming, Google Maps API and geo-fencing for delivery tracking, and a payments integration layer. The AI reconciliation tool was built on top of the existing payments data pipeline to auto-match transactions and flag exceptions.",
@@ -57,8 +57,8 @@
     "title": "Job Search Automation",
     "category": "AI Pipeline · 0 to 1 · Ops Tooling",
     "tags": ["AI/LLM", "Automation", "SaaS", "0-to-1"],
-    "headline": "Turned my job search into a product — end-to-end AI pipeline, zero spray-and-pray.",
-    "summary": "Built a fully automated outreach system from scratch: multi-portal scraping, contact resolution, AI-personalised emails, per-JD resume tailoring, OOO detection, scheduled sends, and A/B template testing — all tracked in Google Sheets.",
+    "headline": "Turned my job search into a product - end-to-end AI pipeline, zero spray-and-pray.",
+    "summary": "Built a fully automated outreach system from scratch: multi-portal scraping, contact resolution, AI-personalised emails, per-JD resume tailoring, OOO detection, scheduled sends, and A/B template testing - all tracked in Google Sheets.",
     "context": "Solo builder · Self-initiated · 2024–present",
     "hero_image": null,
     "images": [],
@@ -68,8 +68,8 @@
       { "label": "Resume", "value": "Per-JD tailored" },
       { "label": "Send cadence", "value": "1/hr automated" }
     ],
-    "problem": "Manual job applications are spray-and-pray — high volume, low signal, zero personalisation. A generic resume can't match every role without going over two pages or diluting the story. And finding the right person to contact at each company, writing a tailored email, customising the resume, and sending at the right time? Doing that manually for every application is a full-time job in itself.",
-    "my_call": "I decided to treat my job search as a product problem. The insight was that I didn't need to apply to more jobs — I needed to apply better, with less manual effort per application. The first version was simple: paste a JD, generate a tailored resume and cover letter, apply. That alone saved time. But the real unlock was automating the sourcing layer so I could focus entirely on quality and personalisation at the output end, not on finding jobs manually. I spec'd the full pipeline before building, cut features that added complexity without improving outreach quality, and iterated on what actually affected reply rates.",
+    "problem": "Manual job applications are spray-and-pray - high volume, low signal, zero personalisation. A generic resume can't match every role without going over two pages or diluting the story. And finding the right person to contact at each company, writing a tailored email, customising the resume, and sending at the right time? Doing that manually for every application is a full-time job in itself.",
+    "my_call": "I decided to treat my job search as a product problem. The insight was that I didn't need to apply to more jobs - I needed to apply better, with less manual effort per application. The first version was simple: paste a JD, generate a tailored resume and cover letter, apply. That alone saved time. But the real unlock was automating the sourcing layer so I could focus entirely on quality and personalisation at the output end, not on finding jobs manually. I spec'd the full pipeline before building, cut features that added complexity without improving outreach quality, and iterated on what actually affected reply rates.",
     "what_i_shipped": "A fully automated end-to-end outreach pipeline: Apify actors scrape jobs across 5+ portals (Hiring.cafe, Startup.jobs, Ashby, Greenhouse, RemoteOK), Apollo resolves decision-maker contacts with confidence scoring, OpenAI generates personalised emails with playbook enforcement, tectonic compiles per-JD LaTeX resumes, Gmail API creates drafts with OOO detection and scheduled sends, and Google Sheets tracks everything with A/B template testing across variants. Also built a Claude Code skill that runs the entire workflow automatically.",
     "outcome": "Fully automated daily outreach pipeline running in production. Every email is personalised, every resume is tailored to the JD, and sends are timed and tracked. The system itself is a live PM proof point: 0-to-1 build, iterated from a manual process to full automation, driven by a clear product insight about quality over volume.",
     "how_i_built_it": "Apify for multi-portal job scraping, Apollo API for contact resolution with confidence scoring, OpenAI GPT for email generation with template A/B testing, LaTeX + tectonic for per-JD resume compilation, Gmail API for draft creation and scheduled sends, Google Sheets as the tracking and analytics layer. Built a Claude Code skill (digiman) that orchestrates the full daily pipeline. OOO detection parses email headers and defers sends to the contact's return date.",
@@ -81,15 +81,15 @@
     "category": "AI SaaS · Product Strategy · Design",
     "tags": ["AI/LLM", "SaaS", "0-to-1"],
     "headline": "Designed an AI note-taking system that thinks in tasks, not just text.",
-    "summary": "Led product strategy and UX design for Vordo AI — a voice-first note-taking app that uses AI to automatically categorise tasks by time horizon: macro goals, daily tasks, and long-term memory.",
+    "summary": "Led product strategy and UX design for Vordo AI - a voice-first note-taking app that uses AI to automatically categorise tasks by time horizon: macro goals, daily tasks, and long-term memory.",
     "context": "Product Designer · Vordo AI · Concept stage",
     "hero_image": null,
     "images": [],
     "metrics": [],
-    "problem": "Every note-taking and task management app has the same problem: you still have to do the organising. You type a task, then manually decide which list it goes in, which priority it gets, which date it belongs to. The cognitive overhead of maintaining the system is almost as high as the work itself. Voice input exists but it just transcribes — it doesn't think.",
-    "my_call": "The core insight was that tasks naturally fall into different time horizons — and AI could classify them automatically from how you describe them. A project that takes weeks is fundamentally different from a task you'll do today, which is different again from something you want to remember years from now. I designed a three-tier system: macro tasks (multi-day projects), daily tasks (today's to-do), and memory (long-term records like when you changed your car battery — searchable forever). The key product decision was making voice the primary input, not a secondary feature, and using ElevenLabs for the voice layer with AI classification happening in the background before anything hits the UI.",
-    "what_i_shipped": "Full product strategy, UX design, and PRD for Vordo AI. Designed the three-tier task classification system, voice input flow, custom calendar integration, and search interface. The product reached a complete design and specification stage but was not developed — the concept was validated at the design level.",
-    "outcome": "Delivered a complete product design and go-to-market strategy. The three-tier classification model and voice-first architecture were validated through design review. The product did not reach production — this is a product strategy and design case study.",
+    "problem": "Every note-taking and task management app has the same problem: you still have to do the organising. You type a task, then manually decide which list it goes in, which priority it gets, which date it belongs to. The cognitive overhead of maintaining the system is almost as high as the work itself. Voice input exists but it just transcribes - it doesn't think.",
+    "my_call": "The core insight was that tasks naturally fall into different time horizons - and AI could classify them automatically from how you describe them. A project that takes weeks is fundamentally different from a task you'll do today, which is different again from something you want to remember years from now. I designed a three-tier system: macro tasks (multi-day projects), daily tasks (today's to-do), and memory (long-term records like when you changed your car battery - searchable forever). The key product decision was making voice the primary input, not a secondary feature, and using ElevenLabs for the voice layer with AI classification happening in the background before anything hits the UI.",
+    "what_i_shipped": "Full product strategy, UX design, and PRD for Vordo AI. Designed the three-tier task classification system, voice input flow, custom calendar integration, and search interface. The product reached a complete design and specification stage but was not developed - the concept was validated at the design level.",
+    "outcome": "Delivered a complete product design and go-to-market strategy. The three-tier classification model and voice-first architecture were validated through design review. The product did not reach production - this is a product strategy and design case study.",
     "how_i_built_it": "Product designed in Figma. AI classification architecture designed around ElevenLabs for voice input and an LLM layer for intent classification and task routing. Custom calendar designed to surface time-horizon context alongside standard scheduling. Full PRD written covering user flows, edge cases, and the classification logic.",
     "tags_target": ["AI PM", "SaaS", "LLM", "SAAS", "Product Strategy", "0-to-1"]
   }

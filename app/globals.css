@@ -404,6 +404,14 @@ body::before {
   opacity: 0.7;
 }
 
+/* Clamp card summaries to 3 lines for consistency */
+.project-desc-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* About body text in light */
 [data-theme="light"] .about-body-text {
   color: var(--cyan-800) !important;

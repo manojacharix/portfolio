@@ -42,7 +42,7 @@ export default function Contact() {
       </h1>
 
       <p className="ma-fade-up ma-delay-2 page-sub-text" style={{ fontSize: 16, lineHeight: 1.65, color: "var(--text-2)", maxWidth: 480, marginBottom: 48 }}>
-        No sales funnel, no 5-step form, no &quot;our team will get back to you.&quot; Just me — and I&apos;m actually fast.
+        No sales funnel, no 5-step form, no &quot;our team will get back to you.&quot; Just me. I&apos;m actually fast.
       </p>
 
       {sent ? (

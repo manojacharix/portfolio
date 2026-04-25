@@ -1,5 +1,5 @@
 {
-  "bio": "I'm a Product Manager with a design background — which means I can go deep on user problems, speak the language of engineers, and still write a PRD that holds up to scrutiny.",
+  "bio": "I'm a Product Manager with a design background, which means I can go deep on user problems, speak the language of engineers, and still write a PRD that holds up to scrutiny.",
   "philosophy": "I believe the best products are built at the intersection of sharp user insight, disciplined execution, and a bias for shipping. I've done it at payments startups, built AI tools solo from 0 to 1, and automated my own job search pipeline as a live proof point.",
   "skills": [
     "Product Strategy & Roadmapping",
@@ -20,10 +20,10 @@
       "summary": "Led product and design across 3 apps (consumer, merchant, operations). Owned PRDs, design system, and cross-functional delivery. Drove 20% engagement increase in 3 months and 80% reduction in manual payment reconciliation via AI."
     },
     {
-      "role": "Builder — 0 to 1",
+      "role": "Builder, 0 to 1",
       "company": "Litscreen (solo project)",
       "period": "2024",
-      "summary": "Designed, built, and shipped an AI-powered screening tool in 8 weeks. Multi-model pipeline (Gemini + Claude). Reduced screening time from 45 min to 5 min — 89% efficiency gain."
+      "summary": "Designed, built, and shipped an AI-powered screening tool in 8 weeks. Multi-model pipeline (Gemini + Claude). Reduced screening time from 45 min to 5 min. 89% efficiency gain."
     },
     {
       "role": "Growth Marketing Manager",
