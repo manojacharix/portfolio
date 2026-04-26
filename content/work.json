@@ -7,10 +7,10 @@
     "headline": "Built a multi-model AI screening tool solo in 8 weeks - 89% faster than manual.",
     "summary": "Litscreen is an AI-powered design research tool I designed and built solo from scratch. A two-model pipeline using Gemini and Claude cut admin workflow from 45 minutes to 5 minutes per task.",
     "context": "Solo builder · Litscreen · 2024",
-    "hero_image": "/images/litscreen/pipeline.png",
+    "hero_image": "/images/litscreen/hero.webp",
     "images": [
-      { "src": "/images/litscreen/architecture.png", "alt": "Litscreen system architecture - client, application, data, and AI layers" },
-      { "src": "/images/litscreen/tools.png", "alt": "Tools used: Gemini 3 Pro for image understanding, Claude Sonnet for reasoning, VS Code" }
+      { "src": "/images/litscreen/architecture.webp", "alt": "Litscreen system architecture - client, application, data, and AI layers" },
+      { "src": "/images/litscreen/tools.webp", "alt": "Tools used: Gemini 3 Pro for image understanding, Claude Sonnet for reasoning, VS Code" }
     ],
     "metrics": [
       { "label": "Time to build", "value": "8 weeks" },
@@ -33,11 +33,11 @@
     "headline": "Founding designer turned de facto PM - 3 apps, 1 design system, real outcomes.",
     "summary": "Joined as founding designer at a quick commerce and payments startup. Grew into a PM role owning product across consumer, merchant, and operations apps under constant shipping pressure.",
     "context": "Founding Designer → de facto PM · Zataak Se · 2023–2024",
-    "hero_image": "/images/zataak-se/consumer-app.jpg",
+    "hero_image": "/images/zataak-se/hero.webp",
     "images": [
-      { "src": "/images/zataak-se/merchant-app.jpg", "alt": "Zataak Se Merchant App - order management and inventory interface" },
-      { "src": "/images/zataak-se/operations-app.jpg", "alt": "Zataak Se Operations App - delivery tracking with geo-fencing and ETA" },
-      { "src": "/images/zataak-se/design-system.jpg", "alt": "Zataak Se Design System - shared component library across all three apps" }
+      { "src": "/images/zataak-se/merchant-app.webp", "alt": "Zataak Se Merchant App - order management and inventory interface" },
+      { "src": "/images/zataak-se/operations-app.webp", "alt": "Zataak Se Operations App - delivery tracking with geo-fencing and ETA" },
+      { "src": "/images/zataak-se/design-system.webp", "alt": "Zataak Se Design System - shared component library across all three apps" }
     ],
     "metrics": [
       { "label": "Engagement increase", "value": "20%" },
@@ -60,7 +60,7 @@
     "headline": "Turned my job search into a product - end-to-end AI pipeline, zero spray-and-pray.",
     "summary": "Built a fully automated outreach system from scratch: multi-portal scraping, contact resolution, AI-personalised emails, per-JD resume tailoring, OOO detection, scheduled sends, and A/B template testing - all tracked in Google Sheets.",
     "context": "Solo builder · Self-initiated · 2024–present",
-    "hero_image": null,
+    "hero_image": "/images/job-automation/hero.webp",
     "images": [],
     "metrics": [
       { "label": "Portals scraped", "value": "5+" },
@@ -83,7 +83,7 @@
     "headline": "Designed an AI note-taking system that thinks in tasks, not just text.",
     "summary": "Led product strategy and UX design for Vordo AI - a voice-first note-taking app that uses AI to automatically categorise tasks by time horizon: macro goals, daily tasks, and long-term memory.",
     "context": "Product Designer · Vordo AI · Concept stage",
-    "hero_image": null,
+    "hero_image": "/images/vordo-ai/hero.webp",
     "images": [],
     "metrics": [],
     "problem": "Every note-taking and task management app has the same problem: you still have to do the organising. You type a task, then manually decide which list it goes in, which priority it gets, which date it belongs to. The cognitive overhead of maintaining the system is almost as high as the work itself. Voice input exists but it just transcribes - it doesn't think.",
