@@ -107,6 +107,7 @@ export default function Contact() {
         {[
           { label: "Email",       icon: "ph-envelope",      href: `mailto:${meta.email}` },
           { label: "LinkedIn",    icon: "ph-linkedin-logo", href: meta.linkedin },
+          { label: "Resume",      icon: "ph-file-pdf",      href: meta.resume },
           { label: "Twitter / X", icon: "ph-twitter-logo",  href: "https://x.com/x_achari" },
           { label: "GitHub",      icon: "ph-github-logo",   href: "https://github.com/manojacharix" },
         ].map(s => (

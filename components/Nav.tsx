@@ -16,6 +16,7 @@ export default function Nav() {
     { href: "/",        label: "Home" },
     { href: "/work",    label: "Work" },
     { href: "/contact", label: "Contact" },
+    { href: meta.resume, label: "Resume", external: true },
   ]
 
   return (
@@ -69,17 +70,20 @@ export default function Nav() {
 
         {/* Desktop links */}
         <div className="nav-desktop-links" style={{ alignItems: "center", gap: 4 }}>
-          {navLinks.map(({ href, label }) => {
+          {navLinks.map(({ href, label, external }) => {
             const active = path === href
             return (
-              <Link key={href} href={href} className="nav-link-item" style={{
-                fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 400,
-                letterSpacing: "0.08em", textTransform: "uppercase",
-                color: active ? "var(--cyan)" : "var(--text-2)",
-                background: active ? (isDark ? "rgba(38,192,248,0.1)" : "rgba(38,192,248,0.12)") : "none",
-                padding: "6px 14px", borderRadius: 4, textDecoration: "none",
-                transition: "all 0.15s",
-              }}>
+              <Link key={label} href={href} className="nav-link-item"
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                style={{
+                  fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 400,
+                  letterSpacing: "0.08em", textTransform: "uppercase",
+                  color: active ? "var(--cyan)" : "var(--text-2)",
+                  background: active ? (isDark ? "rgba(38,192,248,0.1)" : "rgba(38,192,248,0.12)") : "none",
+                  padding: "6px 14px", borderRadius: 4, textDecoration: "none",
+                  transition: "all 0.15s",
+                }}>
                 {label}
               </Link>
             )
@@ -129,11 +133,13 @@ export default function Nav() {
 
       {/* Mobile dropdown menu */}
       <div className={`nav-mobile-menu${menuOpen ? "" : " closed"}`}>
-        {navLinks.map(({ href, label }) => (
+        {navLinks.map(({ href, label, external }) => (
           <Link
-            key={href}
+            key={label}
             href={href}
             className={`nav-mobile-link${path === href ? " active" : ""}`}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
             onClick={() => setMenuOpen(false)}
           >
             {label}
