@@ -103,7 +103,7 @@ export default function WorkIndex() {
                 {/* Metrics preview */}
                 {p.metrics.length > 0 && (
                   <div style={{
-                    display: "flex", gap: 16, flexWrap: "nowrap", overflow: "hidden",
+                    display: "flex", gap: 16, flexWrap: "wrap",
                     marginBottom: 16, paddingBottom: 16,
                     borderBottom: "1px solid var(--border)",
                   }}>

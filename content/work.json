@@ -13,10 +13,10 @@
       { "src": "/images/litscreen/tools.webp", "alt": "Tools used: Gemini 3 Pro for image understanding, Claude Sonnet for reasoning, VS Code" }
     ],
     "metrics": [
-      { "label": "Time to build", "value": "8 weeks" },
-      { "label": "Code written", "value": "23K LOC" },
-      { "label": "Efficiency gain", "value": "89%" },
-      { "label": "Screening time", "value": "45→5 min" }
+      { "label": "Built in", "value": "8 weeks" },
+      { "label": "Code", "value": "23K LOC" },
+      { "label": "Faster", "value": "89%" },
+      { "label": "Per task", "value": "45→5 min" }
     ],
     "problem": "Design research teams were spending 45+ minutes per screen manually tagging UI components, categorising patterns, and writing metadata - unscalable for any team with volume. The process was entirely manual, inconsistent across reviewers, and impossible to search.",
     "my_call": "When Gemini 3 Pro launched, I noticed it had strong visual reasoning - far better than anything available for image understanding at the time. Claude, on the other hand, was the best model for structured reasoning and scoring. Most builders would default to one model and accept the tradeoff. I decided to play to the strengths of each: Gemini handles the visual parsing and component recognition, Claude takes that structured output and applies reasoning, scoring, and metadata generation. Two models, two jobs, one pipeline - with a human-in-the-loop verification step so the output stays trustworthy.",
@@ -40,10 +40,10 @@
       { "src": "/images/zataak-se/design-system.webp", "alt": "Zataak Se Design System - shared component library across all three apps" }
     ],
     "metrics": [
-      { "label": "Engagement increase", "value": "20%" },
-      { "label": "Timeframe", "value": "3 months" },
-      { "label": "Reconciliation reduction", "value": "80%" },
-      { "label": "UI inconsistencies", "value": "−30%" }
+      { "label": "Engagement", "value": "20%" },
+      { "label": "Timeline", "value": "3 months" },
+      { "label": "Reconciliation", "value": "80%" },
+      { "label": "UI issues", "value": "−30%" }
     ],
     "problem": "Three separate product surfaces - a consumer app, a merchant app, and an operations/delivery app - were being built in parallel with no shared design language. During UAT, inconsistencies kept surfacing: components looked different across apps, developers were rebuilding the same UI elements from scratch for each surface, and bugs were slipping through because there was no single source of truth. On top of that, payment reconciliation was a fully manual process costing hours every day.",
     "my_call": "There was serious pressure to keep shipping features - timelines were tight and stakeholder expectations were high. But I kept seeing the same problem repeat in UAT: inconsistencies that ate up developer time and pushed back releases. I made the call to pause feature work briefly and build a proper design system - but with a deliberate split. The consumer app needed its own polished, user-facing system since it was the product end-users would judge us on. The merchant and operations apps shared a common component library, since they had overlapping use cases and the same dev team. That two-tier approach meant developers could reuse components across the back-end apps and focus their energy on features and APIs instead of recreating UI.",
@@ -63,10 +63,10 @@
     "hero_image": "/images/job-automation/hero.webp",
     "images": [],
     "metrics": [
-      { "label": "Portals scraped", "value": "5+" },
-      { "label": "Pipeline stages", "value": "8" },
-      { "label": "Resume", "value": "Per-JD tailored" },
-      { "label": "Send cadence", "value": "1/hr automated" }
+      { "label": "Portals", "value": "5+" },
+      { "label": "Stages", "value": "8" },
+      { "label": "Resume", "value": "Per-JD" },
+      { "label": "Cadence", "value": "1/hr" }
     ],
     "problem": "Manual job applications are spray-and-pray - high volume, low signal, zero personalisation. A generic resume can't match every role without going over two pages or diluting the story. And finding the right person to contact at each company, writing a tailored email, customising the resume, and sending at the right time? Doing that manually for every application is a full-time job in itself.",
     "my_call": "I decided to treat my job search as a product problem. The insight was that I didn't need to apply to more jobs - I needed to apply better, with less manual effort per application. The first version was simple: paste a JD, generate a tailored resume and cover letter, apply. That alone saved time. But the real unlock was automating the sourcing layer so I could focus entirely on quality and personalisation at the output end, not on finding jobs manually. I spec'd the full pipeline before building, cut features that added complexity without improving outreach quality, and iterated on what actually affected reply rates.",
