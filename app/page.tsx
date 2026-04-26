@@ -151,7 +151,7 @@ export default function Home() {
                       src={p.hero_image}
                       alt={p.title}
                       fill
-                      style={{ objectFit: "cover", objectPosition: "top" }}
+                      style={{ objectFit: "cover", objectPosition: "center" }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   ) : (
