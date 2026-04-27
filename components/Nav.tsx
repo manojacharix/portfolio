@@ -15,7 +15,6 @@ export default function Nav() {
   const navLinks = [
     { href: "/",        label: "Home" },
     { href: "/work",    label: "Work" },
-    { href: "/contact", label: "Contact" },
     { href: meta.resume, label: "Resume", external: true },
   ]
 

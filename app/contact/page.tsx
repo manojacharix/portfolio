@@ -1,17 +1,42 @@
 "use client"
-import { useState } from "react"
+import { useState, useRef } from "react"
+import { Turnstile } from "@marsidev/react-turnstile"
 import meta from "@/content/meta.json"
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+  const turnstileToken = useRef<string>("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Message from ${form.name}`)
-    const body = encodeURIComponent(`${form.message}\n\nFrom: ${form.name} <${form.email}>`)
-    window.open(`mailto:${meta.email}?subject=${subject}&body=${body}`)
-    setSent(true)
+    setError("")
+
+    if (!turnstileToken.current) {
+      setError("Please wait for the security check to complete.")
+      return
+    }
+
+    setLoading(true)
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, turnstileToken: turnstileToken.current }),
+      })
+      if (res.ok) {
+        setSent(true)
+      } else {
+        const data = await res.json()
+        setError(data.error || "Something went wrong. Try again.")
+      }
+    } catch {
+      setError("Network error. Try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputStyle = {
@@ -86,17 +111,35 @@ export default function Contact() {
             </div>
           </div>
 
-          <div style={{ marginTop: 20 }}>
-            <button type="submit" className="ma-press" style={{
+          {/* Turnstile widget */}
+          <div style={{ margin: "16px 0" }}>
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+              onSuccess={(token) => { turnstileToken.current = token }}
+              onError={() => setError("Security check failed. Please refresh.")}
+              options={{ theme: "auto" }}
+            />
+          </div>
+
+          {error && (
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--yellow)", marginBottom: 12 }}>
+              {error}
+            </div>
+          )}
+
+          <div style={{ marginTop: 8 }}>
+            <button type="submit" disabled={loading} className="ma-press" style={{
               fontFamily: "var(--font-mono)", fontWeight: 500, fontSize: 12,
               letterSpacing: "0.08em", textTransform: "uppercase",
-              padding: "13px 28px", borderRadius: "var(--radius-md)", cursor: "pointer", border: "none",
+              padding: "13px 28px", borderRadius: "var(--radius-md)", cursor: loading ? "not-allowed" : "pointer", border: "none",
               background: "var(--cyan)", color: "#fff",
               boxShadow: "0 4px 20px rgba(38,192,248,0.3)",
               display: "inline-flex", alignItems: "center", gap: 10,
               transition: "all 0.2s",
+              opacity: loading ? 0.7 : 1,
             }}>
-              <i className="ph-bold ph-paper-plane-tilt" /> Transmit
+              <i className="ph-bold ph-paper-plane-tilt" />
+              {loading ? "Sending..." : "Transmit"}
             </button>
           </div>
         </form>
