@@ -9,8 +9,8 @@
     "context": "Solo builder · Litscreen · 2024",
     "hero_image": "/images/litscreen/hero.webp",
     "images": [
-      { "src": "/images/litscreen/architecture.webp", "alt": "Litscreen system architecture - client, application, data, and AI layers" },
-      { "src": "/images/litscreen/tools.webp", "alt": "Tools used: Gemini 3 Pro for image understanding, Claude Sonnet for reasoning, VS Code" }
+      { "src": "/images/litscreen/product.webp", "alt": "Litscreen product - AI-powered design research tool" },
+      { "src": "/images/litscreen/pm-decision.webp", "alt": "Litscreen PM decision - two-model pipeline rationale" }
     ],
     "metrics": [
       { "label": "Built in", "value": "8 weeks" },
@@ -35,9 +35,9 @@
     "context": "Founding Designer → de facto PM · Zataak Se · 2023–2024",
     "hero_image": "/images/zataak-se/hero.webp",
     "images": [
-      { "src": "/images/zataak-se/merchant-app.webp", "alt": "Zataak Se Merchant App - order management and inventory interface" },
-      { "src": "/images/zataak-se/operations-app.webp", "alt": "Zataak Se Operations App - delivery tracking with geo-fencing and ETA" },
-      { "src": "/images/zataak-se/design-system.webp", "alt": "Zataak Se Design System - shared component library across all three apps" }
+      { "src": "/images/zataak-se/metrics.webp", "alt": "Consumer app results - 500+ beta testers, 25% user retention, 30% task completion rate" },
+      { "src": "/images/zataak-se/merchant-metrics.webp", "alt": "Merchant app results" },
+      { "src": "/images/zataak-se/operations-metrics.webp", "alt": "Operations app results" }
     ],
     "metrics": [
       { "label": "Engagement", "value": "20%" },

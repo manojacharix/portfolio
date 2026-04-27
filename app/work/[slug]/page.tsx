@@ -1,7 +1,7 @@
 import Link from "next/link"
-import Image from "next/image"
 import { notFound } from "next/navigation"
 import work from "@/content/work.json"
+import CaseStudyImages from "@/components/CaseStudyImages"
 
 export function generateStaticParams() {
   return work.map((item) => ({ slug: item.slug }))
@@ -95,20 +95,6 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         </div>
       )}
 
-      {/* Hero image */}
-      {item.hero_image && (
-        <div className="ma-fade-up cs-hero-image" style={{ marginBottom: 56 }}>
-          <Image
-            src={item.hero_image}
-            alt={`${item.title} hero`}
-            width={900}
-            height={500}
-            style={{ width: "100%", height: "auto", borderRadius: "var(--radius-lg)", display: "block" }}
-            priority
-          />
-        </div>
-      )}
-
       {/* First two sections: Problem + My call */}
       {beforeImages.length > 0 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 40, marginBottom: 56 }}>
@@ -129,22 +115,12 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         </div>
       )}
 
-      {/* Inline image grid */}
-      {item.images && item.images.length > 0 && (
-        <div className="cs-image-grid" style={{ marginBottom: 56 }}>
-          {item.images.map((img) => (
-            <div key={img.src} className="cs-image-item">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={600}
-                height={400}
-                style={{ width: "100%", height: "auto", borderRadius: "var(--radius-lg)", display: "block" }}
-              />
-            </div>
-          ))}
-        </div>
-      )}
+      {/* Hero image + inline image grid (client — supports lightbox) */}
+      <CaseStudyImages
+        heroImage={item.hero_image}
+        heroAlt={`${item.title} hero`}
+        images={item.images || []}
+      />
 
       {/* Remaining sections: What I shipped, Outcome, How I built it */}
       {afterImages.length > 0 && (

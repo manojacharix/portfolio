@@ -18,14 +18,14 @@ export default function About() {
   return (
     <div className="page-wrap" style={{ paddingTop: 60, paddingBottom: 60 }}>
 
-      <div style={{ marginBottom: 64 }}>
+      <div style={{ marginBottom: 48 }}>
         <div className="ma-fade-up" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ opacity: 0.4 }}>//</span> About
         </div>
         <h1 className="ma-fade-up ma-delay-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px,5vw,72px)", fontWeight: 700, lineHeight: 0.96, letterSpacing: "-0.04em", color: "var(--text-1)", marginBottom: 20 }}>
           Not just a PM.<br />A builder.
         </h1>
-        <p className="ma-fade-up ma-delay-2 page-sub-text" style={{ fontSize: 17, lineHeight: 1.75, color: "var(--text-2)", maxWidth: 560 }}>
+        <p className="ma-fade-up ma-delay-2 page-sub-text" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--text-2)", maxWidth: 560 }}>
           {about.bio}
         </p>
       </div>
@@ -34,7 +34,7 @@ export default function About() {
 
         {/* Left */}
         <div>
-          <p style={{ fontSize: 16, lineHeight: 1.8, color: "var(--text-2)", marginBottom: 48 }}>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--text-2)", marginBottom: 40 }}>
             {about.philosophy}
           </p>
 
@@ -130,6 +130,21 @@ export default function About() {
                   {t}
                 </span>
               ))}
+            </div>
+          </div>
+
+          <div style={{ padding: 24, border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", background: "var(--surface)" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ opacity: 0.4 }}>//</span> GitHub contributions
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://ghchart.rshah.org/26C0F8/manojacharix"
+              alt="Manoj Achari GitHub contribution chart"
+              style={{ width: "100%", borderRadius: 4, filter: "invert(0)" }}
+            />
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--text-muted)", marginTop: 10, letterSpacing: "0.04em" }}>
+              github.com/manojacharix
             </div>
           </div>
 

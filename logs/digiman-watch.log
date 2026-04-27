@@ -240,3 +240,1568 @@ Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, 
 === AUDIT COMPLETE ===
 [2026-04-24 17:03:01] Audit complete.
 [2026-04-24 17:03:01] Audit complete.
+[2026-04-24 21:24:09] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-24 21:24:09] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-24 21:24:09] Running Digiman audit...
+[2026-04-24 21:24:09] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 3.3s
+  Running TypeScript ...
+Failed to type check.
+
+./app/work/[slug]/page.tsx:64:45
+Type error: Property 'approach' does not exist on type '{ slug: string; title: string; category: string; tags: string[]; headline: string; summary: string; context: string; hero_image: string; images: { src: string; alt: string; }[]; metrics: { label: string; value: string; }[]; ... 5 more ...; tags_target: string[]; } | { ...; }'.
+  Property 'approach' does not exist on type '{ slug: string; title: string; category: string; tags: string[]; headline: string; summary: string; context: string; hero_image: string; images: { src: string; alt: string; }[]; metrics: { label: string; value: string; }[]; ... 5 more ...; tags_target: string[]; }'.
+
+  [90m62 |[0m ...       {[
+  [90m63 |[0m ...         { heading: [32m"Problem"[0m,  body: item.problem },
+[31m[1m>[0m [90m64 |[0m ...         { heading: [32m"Approach"[0m, body: item.approach },
+  [90m   |[0m                                               [31m[1m^[0m
+  [90m65 |[0m ...         { heading: [32m"Outcome"[0m,  body: item.outcome },
+  [90m66 |[0m ...       ].map(s => (
+  [90m67 |[0m ...         <div key={s.heading} style={{ borderLeft: [32m"2px solid var(--border-md)"[0m, paddin...
+Next.js build worker exited with code: 1 and signal: null
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-24 21:24:16] Audit complete.
+[2026-04-24 21:24:16] Audit complete.
+[2026-04-24 21:24:16] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-24 21:24:16] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-24 21:24:16] Running Digiman audit...
+[2026-04-24 21:24:16] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1391ms
+  Running TypeScript ...
+Failed to type check.
+
+./app/work/[slug]/page.tsx:64:45
+Type error: Property 'approach' does not exist on type '{ slug: string; title: string; category: string; tags: string[]; headline: string; summary: string; context: string; hero_image: string; images: { src: string; alt: string; }[]; metrics: { label: string; value: string; }[]; ... 5 more ...; tags_target: string[]; } | { ...; }'.
+  Property 'approach' does not exist on type '{ slug: string; title: string; category: string; tags: string[]; headline: string; summary: string; context: string; hero_image: string; images: { src: string; alt: string; }[]; metrics: { label: string; value: string; }[]; ... 5 more ...; tags_target: string[]; }'.
+
+  [90m62 |[0m ...       {[
+  [90m63 |[0m ...         { heading: [32m"Problem"[0m,  body: item.problem },
+[31m[1m>[0m [90m64 |[0m ...         { heading: [32m"Approach"[0m, body: item.approach },
+  [90m   |[0m                                               [31m[1m^[0m
+  [90m65 |[0m ...         { heading: [32m"Outcome"[0m,  body: item.outcome },
+  [90m66 |[0m ...       ].map(s => (
+  [90m67 |[0m ...         <div key={s.heading} style={{ borderLeft: [32m"2px solid var(--border-md)"[0m, paddin...
+Next.js build worker exited with code: 1 and signal: null
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-24 21:24:20] Audit complete.
+[2026-04-24 21:24:20] Audit complete.
+[2026-04-25 12:20:46] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-25 12:20:46] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-25 12:20:46] Running Digiman audit...
+[2026-04-25 12:20:46] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.2s
+  Running TypeScript ...
+  Finished TypeScript in 2.4s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 228ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-25 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-25 12:20:59] Audit complete.
+[2026-04-25 12:20:59] Audit complete.
+[2026-04-25 12:20:59] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-25 12:20:59] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-25 12:20:59] Running Digiman audit...
+[2026-04-25 12:20:59] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.6s
+  Running TypeScript ...
+  Finished TypeScript in 1956ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 290ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-25 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-25 12:21:09] Audit complete.
+[2026-04-25 12:21:09] Audit complete.
+[2026-04-25 12:21:09] Change detected: /Users/manojachari/Sites/portfolio/content/about.json
+[2026-04-25 12:21:09] Change detected: /Users/manojachari/Sites/portfolio/content/about.json
+[2026-04-25 12:21:09] Running Digiman audit...
+[2026-04-25 12:21:09] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 8.9s
+  Running TypeScript ...
+  Finished TypeScript in 1820ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 301ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-25 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-25 12:21:22] Audit complete.
+[2026-04-25 12:21:22] Audit complete.
+[2026-04-25 12:21:22] Change detected: /Users/manojachari/Sites/portfolio/content/about.json
+[2026-04-25 12:21:22] Change detected: /Users/manojachari/Sites/portfolio/content/about.json
+[2026-04-25 12:21:22] Running Digiman audit...
+[2026-04-25 12:21:22] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.0s
+  Running TypeScript ...
+  Finished TypeScript in 1956ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 268ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-25 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-25 12:21:33] Audit complete.
+[2026-04-25 12:21:33] Audit complete.
+[2026-04-25 12:21:33] Change detected: /Users/manojachari/Sites/portfolio/content/about.json
+[2026-04-25 12:21:33] Change detected: /Users/manojachari/Sites/portfolio/content/about.json
+[2026-04-25 12:21:33] Running Digiman audit...
+[2026-04-25 12:21:33] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+⨯ Another next build process is already running.
+
+  This could be:
+  - A next build still in progress
+  - A previous build that didn't exit cleanly
+
+  Suggestion: Wait for the build to complete.
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-25 12:21:35] Audit complete.
+[2026-04-25 12:21:35] Audit complete.
+[2026-04-26 05:39:35] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:35] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:35] Running Digiman audit...
+[2026-04-26 05:39:35] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1668ms
+  Running TypeScript ...
+  Finished TypeScript in 1531ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 229ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:39:40] Audit complete.
+[2026-04-26 05:39:40] Audit complete.
+[2026-04-26 05:39:40] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:40] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:40] Running Digiman audit...
+[2026-04-26 05:39:40] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1411ms
+  Running TypeScript ...
+  Finished TypeScript in 1678ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 215ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:39:45] Audit complete.
+[2026-04-26 05:39:45] Audit complete.
+[2026-04-26 05:39:45] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:45] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:45] Running Digiman audit...
+[2026-04-26 05:39:45] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1476ms
+  Running TypeScript ...
+  Finished TypeScript in 1851ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 216ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:39:50] Audit complete.
+[2026-04-26 05:39:50] Audit complete.
+[2026-04-26 05:39:50] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:50] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:50] Running Digiman audit...
+[2026-04-26 05:39:50] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1577ms
+  Running TypeScript ...
+  Finished TypeScript in 1967ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 228ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:39:56] Audit complete.
+[2026-04-26 05:39:56] Audit complete.
+[2026-04-26 05:39:56] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:56] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:39:56] Running Digiman audit...
+[2026-04-26 05:39:56] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.9s
+  Running TypeScript ...
+  Finished TypeScript in 2.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 359ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:40:03] Audit complete.
+[2026-04-26 05:40:03] Audit complete.
+[2026-04-26 05:40:03] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:40:03] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:40:03] Running Digiman audit...
+[2026-04-26 05:40:03] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1894ms
+  Running TypeScript ...
+  Finished TypeScript in 2.1s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 369ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:40:10] Audit complete.
+[2026-04-26 05:40:10] Audit complete.
+[2026-04-26 05:40:10] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:40:10] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:40:10] Running Digiman audit...
+[2026-04-26 05:40:10] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-26 05:40:11] Audit complete.
+[2026-04-26 05:40:11] Audit complete.
+[2026-04-26 05:48:23] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:48:23] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:48:23] Running Digiman audit...
+[2026-04-26 05:48:23] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1754ms
+  Running TypeScript ...
+  Finished TypeScript in 1621ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 238ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:48:29] Audit complete.
+[2026-04-26 05:48:29] Audit complete.
+[2026-04-26 05:48:29] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:48:29] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:48:29] Running Digiman audit...
+[2026-04-26 05:48:29] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.0s
+  Running TypeScript ...
+  Finished TypeScript in 2.4s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 251ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:48:36] Audit complete.
+[2026-04-26 05:48:36] Audit complete.
+[2026-04-26 05:48:36] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:48:36] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:48:36] Running Digiman audit...
+[2026-04-26 05:48:36] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.6s
+  Running TypeScript ...
+  Finished TypeScript in 1935ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 302ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 05:48:43] Audit complete.
+[2026-04-26 05:48:43] Audit complete.
+[2026-04-26 05:48:43] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:48:43] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-26 05:48:43] Running Digiman audit...
+[2026-04-26 05:48:43] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+⨯ Another next build process is already running.
+
+  This could be:
+  - A next build still in progress
+  - A previous build that didn't exit cleanly
+
+  Suggestion: Wait for the build to complete.
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-26 05:48:44] Audit complete.
+[2026-04-26 05:48:44] Audit complete.
+[2026-04-26 06:18:44] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-26 06:18:44] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-26 06:18:44] Running Digiman audit...
+[2026-04-26 06:18:44] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.5s
+  Running TypeScript ...
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-26 06:18:53] Audit complete.
+[2026-04-26 06:18:53] Audit complete.
+[2026-04-26 06:18:53] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-26 06:18:53] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-26 06:18:53] Running Digiman audit...
+[2026-04-26 06:18:53] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1528ms
+  Running TypeScript ...
+  Finished TypeScript in 1551ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 143ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 06:18:58] Audit complete.
+[2026-04-26 06:18:58] Audit complete.
+[2026-04-26 06:24:54] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-26 06:24:54] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-26 06:24:54] Running Digiman audit...
+[2026-04-26 06:24:54] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.6s
+  Running TypeScript ...
+  Finished TypeScript in 1716ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 141ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 06:25:04] Audit complete.
+[2026-04-26 06:25:04] Audit complete.
+[2026-04-26 06:25:04] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-26 06:25:04] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-26 06:25:04] Running Digiman audit...
+[2026-04-26 06:25:04] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1510ms
+  Running TypeScript ...
+  Finished TypeScript in 2.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 284ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-26 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-26 06:25:10] Audit complete.
+[2026-04-26 06:25:10] Audit complete.
+[2026-04-27 13:50:33] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 13:50:33] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 13:50:33] Running Digiman audit...
+[2026-04-27 13:50:33] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+/Users/manojachari/Sites/portfolio/scripts/digiman-audit.sh: line 13: 39943 Killed: 9               npm run build 2>&1
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-27 13:50:43] Audit complete.
+[2026-04-27 13:50:43] Audit complete.
+[2026-04-27 13:50:43] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 13:50:43] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 13:50:43] Running Digiman audit...
+[2026-04-27 13:50:43] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 26.9s
+  Running TypeScript ...
+  Finished TypeScript in 12.6s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/13) ...
+  Generating static pages using 7 workers (3/13) 
+  Generating static pages using 7 workers (6/13) 
+  Generating static pages using 7 workers (9/13) 
+✓ Generating static pages using 7 workers (13/13) in 1014ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/contact
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-27 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-27 13:51:30] Audit complete.
+[2026-04-27 13:51:30] Audit complete.
+[2026-04-27 14:01:59] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 14:01:59] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 14:01:59] Running Digiman audit...
+[2026-04-27 14:01:59] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.6s
+  Running TypeScript ...
+  Finished TypeScript in 5.4s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/13) ...
+  Generating static pages using 7 workers (3/13) 
+  Generating static pages using 7 workers (6/13) 
+  Generating static pages using 7 workers (9/13) 
+✓ Generating static pages using 7 workers (13/13) in 541ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/contact
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-27 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-27 14:02:27] Audit complete.
+[2026-04-27 14:02:27] Audit complete.
+[2026-04-27 14:02:27] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 14:02:27] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 14:02:27] Running Digiman audit...
+[2026-04-27 14:02:27] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.9s
+  Running TypeScript ...
+  Finished TypeScript in 3.9s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/13) ...
+  Generating static pages using 7 workers (3/13) 
+  Generating static pages using 7 workers (6/13) 
+  Generating static pages using 7 workers (9/13) 
+✓ Generating static pages using 7 workers (13/13) in 668ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/contact
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-27 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-27 14:02:41] Audit complete.
+[2026-04-27 14:02:41] Audit complete.
+[2026-04-27 14:33:38] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 14:33:38] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 14:33:38] Running Digiman audit...
+[2026-04-27 14:33:38] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+/Users/manojachari/Sites/portfolio/scripts/digiman-audit.sh: line 13: 41483 Killed: 9               npm run build 2>&1
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-27 14:33:51] Audit complete.
+[2026-04-27 14:33:51] Audit complete.
+[2026-04-27 14:33:51] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 14:33:51] Change detected: /Users/manojachari/Sites/portfolio/content/work.json
+[2026-04-27 14:33:51] Running Digiman audit...
+[2026-04-27 14:33:51] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+⨯ Another next build process is already running.
+
+  This could be:
+  - A next build still in progress
+  - A previous build that didn't exit cleanly
+
+  Suggestion: Wait for the build to complete.
+BUILD FAILED — skipping audit. Fix errors before changes go live.
+[2026-04-27 14:34:07] Audit complete.
+[2026-04-27 14:34:07] Audit complete.
+[2026-04-27 14:48:11] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-27 14:48:11] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-27 14:48:11] Running Digiman audit...
+[2026-04-27 14:48:11] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.6s
+  Running TypeScript ...
+  Finished TypeScript in 2.9s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/13) ...
+  Generating static pages using 7 workers (3/13) 
+  Generating static pages using 7 workers (6/13) 
+  Generating static pages using 7 workers (9/13) 
+✓ Generating static pages using 7 workers (13/13) in 390ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/contact
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-27 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-27 14:48:23] Audit complete.
+[2026-04-27 14:48:23] Audit complete.
+[2026-04-27 14:48:24] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-27 14:48:24] Change detected: /Users/manojachari/Sites/portfolio/content/meta.json
+[2026-04-27 14:48:24] Running Digiman audit...
+[2026-04-27 14:48:24] Running Digiman audit...
+=== BUILD CHECK ===
+
+> portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.7s
+  Running TypeScript ...
+  Finished TypeScript in 2.1s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/13) ...
+  Generating static pages using 7 workers (3/13) 
+  Generating static pages using 7 workers (6/13) 
+  Generating static pages using 7 workers (9/13) 
+✓ Generating static pages using 7 workers (13/13) in 298ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/contact
+├ ○ /contact
+├ ○ /icon.svg
+├ ○ /work
+└ ● /work/[slug]
+  ├ /work/litscreen
+  ├ /work/zataak-se
+  ├ /work/job-automation
+  └ /work/vordo-ai
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+=== SECTOR COVERAGE AUDIT — 2026-04-27 ===
+SECTOR             STATUS       COVERED BY
+============================================================
+Insurance          ✓            Litscreen, Job Search Automation
+Payments           ✓            Zataak Se, Job Search Automation
+Fintech            ✓            Zataak Se, Job Search Automation
+Mental Health      ✓            Litscreen, Job Search Automation
+Wellness           ✓            Litscreen, Job Search Automation
+Fitness            ✓            Litscreen, Job Search Automation
+Health             ✓            Litscreen, Job Search Automation
+Pharmaceutical     ✓            Litscreen, Job Search Automation
+SAAS               ✓            Litscreen, Job Search Automation
+B2C                ✓            Zataak Se
+Ecommerce          ✓            Zataak Se
+Travel             ✓            Zataak Se
+AI/LLM             ✓            Litscreen, Job Search Automation
+
+Coverage OK — all active sectors have at least one matching case study.
+
+Excluded sectors: Biotech, Gambling, Gaming, Manufacturing, Aerospace, Defense, Airlines
+
+=== AUDIT COMPLETE ===
+[2026-04-27 14:48:34] Audit complete.
+[2026-04-27 14:48:34] Audit complete.

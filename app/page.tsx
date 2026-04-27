@@ -110,6 +110,11 @@ export default function Home() {
                 </span>
               ))}
             </div>
+            <div style={{ marginTop: 28 }}>
+              <Link href="/about" style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--cyan)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}>
+                Read more <i className="ph-bold ph-arrow-right" style={{ fontSize: 12 }} />
+              </Link>
+            </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {ABOUT_CARDS.map((c) => (
